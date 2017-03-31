@@ -11,7 +11,7 @@ h1{
 #menu {
     list-style-type: none;
     margin: 0;
-    padding: 0.2%;
+    padding: 0;
     overflow: hidden;
     background-color: rgba(0,0,102,0.15);
 }
@@ -23,19 +23,17 @@ h1{
 .other a {
     display: block;
     color: white;
-    margin-top: 20px;
     text-align: center;
-    padding: 10px 12px;
+    padding: 27px 14px;
     font-size: 18px;
     text-decoration: none;
     font-family: Trebuchet MS;
 }
 .barra a {
-    margin-top: 20px;
     display: block;
     color: rgb(255,204,0);
     text-align: center;
-    padding: 10px 12px;
+    padding: 27px 12px;
     font-size: 18px;
     text-decoration: none;
     font-family: Trebuchet MS;
@@ -52,8 +50,8 @@ h1{
 #option {
     list-style-type: none;
     margin-top: 8%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 18%;
+    margin-right: 18%;
     padding: 0;
     
 }
