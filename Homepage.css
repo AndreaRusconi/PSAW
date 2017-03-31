@@ -1,6 +1,7 @@
 h1{
-    font-family: Verdana;
+    font-family: Arial;
     color: white;
+    font-size: 40px;
     text-align:center;
     margin-top: 10%;    
 }
@@ -24,7 +25,7 @@ h1{
     padding: 14px 16px;
     font-size: 18px;
     text-decoration: none;
-    font-family: Verdana;
+    font-family: Trebuchet MS;
 }
 .bar a {
     display: block;
@@ -43,7 +44,7 @@ h1{
     font-size: 18px;
     padding: 14px 16px;
     text-decoration: none;
-    font-family: Verdana;
+    font-family: Trebuchet MS;
 }
 
 #menu .events a:hover {color:white;}
@@ -68,7 +69,7 @@ h1{
     font-size: 20px;
     padding: 10px 90px;
     text-decoration: none;
-    font-family: Verdana;
+    font-family: Trebuchet MS;
     border: white solid 3px;
     background-color: transparent
 }
