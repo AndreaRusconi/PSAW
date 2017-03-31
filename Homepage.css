@@ -14,9 +14,19 @@ h1{
 }
 
 .other {float: right;}
+.bar {float: right}
 .events {float: left;}
 
 .other a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Verdana;
+}
+.bar a {
     display: block;
     color: white;
     text-align: center;
@@ -36,7 +46,8 @@ h1{
     font-family: Verdana;
 }
 
-li a:hover {color: yellow;}
+#menu .events a:hover {color: yellow;}
+#menu .other a:hover {color: yellow;}
 
 #scelta {
     list-style-type: none;
