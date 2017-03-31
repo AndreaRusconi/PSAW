@@ -11,7 +11,7 @@ h1{
 #menu {
     list-style-type: none;
     margin: 0;
-    padding: 0.8%;
+    padding: 0.2%;
     overflow: hidden;
     background-color: rgba(0,0,102,0.15);
 }
@@ -23,19 +23,19 @@ h1{
 .other a {
     display: block;
     color: white;
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 12px;
     font-size: 18px;
     text-decoration: none;
     font-family: Trebuchet MS;
 }
 .barra a {
-    margin-top: 30px;
+    margin-top: 20px;
     display: block;
     color: rgb(255,204,0);
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 12px;
     font-size: 18px;
     text-decoration: none;
     font-family: Trebuchet MS;
@@ -43,15 +43,10 @@ h1{
 
 .event a {
     display: block;
-    color: rgb(255,204,0);
-    text-align: center;
-    font-size: 18px;
     padding: 14px 16px;
-    text-decoration: none;
-    font-family: Trebuchet MS;
 }
 
-#menu .event a:hover {color:white;}
+
 #menu .other a:hover {color: rgb(255,204,0);}
 
 #option {
