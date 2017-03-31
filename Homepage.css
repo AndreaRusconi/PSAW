@@ -1,0 +1,75 @@
+
+h1{
+    font-family: Verdana;
+    color: white;
+    text-align:center;
+    margin-top: 10%;    
+}
+
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: rgba(0,105,190,0.2)
+}
+
+.other {float: right;}
+.events {float: left;}
+
+.other a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Verdana;
+}
+
+.events a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Verdana;
+}
+
+li a:hover {color: yellow;}
+
+#scelta {
+    list-style-type: none;
+    margin-top: 10%;
+    margin-left: 22%;
+    margin-right: 22%;
+    padding: 0;
+    
+}
+
+.report {float : left}
+.search {float: right}
+
+#scelta a {
+    display: block;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 10px 90px;
+    text-decoration: none;
+    font-family: Verdana;
+    border: white solid 3px;
+    background-color: rgba(0,105,190,1)
+}
+
+#scelta a:hover {
+   background-color: rgba(0,105,190,0.4)
+}
+
+body { 
+    background-image: url(image/20170331_100251.jpg);
+    background-size:cover;
+    margin: 0;
+}
