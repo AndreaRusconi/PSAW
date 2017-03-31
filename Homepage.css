@@ -1,11 +1,9 @@
-
-
 h1{
     font-family: Trebuchet MS;
     font-weight: 500;
     color: rgb(255,204,0);
     font-size: 50px;
-    text-align:center;
+    text-align: center;
     margin-top: 7%;  
     font-style: oblique;
 }
@@ -19,8 +17,8 @@ h1{
 }
 
 .other {float: right;}
-.bar {float: right}
-.events {float: left;}
+.barra {float: right}
+.event {float: left;}
 
 .other a {
     display: block;
@@ -31,7 +29,7 @@ h1{
     text-decoration: none;
     font-family: Trebuchet MS;
 }
-.bar a {
+.barra a {
     display: block;
     color: rgb(255,204,0);
     text-align: center;
@@ -41,7 +39,7 @@ h1{
     font-family: Trebuchet MS;
 }
 
-.events a {
+.event a {
     display: block;
     color: rgb(255,204,0);
     text-align: center;
@@ -51,10 +49,10 @@ h1{
     font-family: Trebuchet MS;
 }
 
-#menu .events a:hover {color:white;}
-#menu .other a:hover {color: white;}
+#menu .event a:hover {color:white;}
+#menu .other a:hover {color: rgb(255,204,0);}
 
-#scelta {
+#option {
     list-style-type: none;
     margin-top: 8%;
     margin-left: 20%;
@@ -63,10 +61,10 @@ h1{
     
 }
 
-.report {float : left}
+.share {float : left}
 .search {float: right}
 
-#scelta a {
+#option a {
     display: block;
     color: rgb(255,204,0);
     text-align: center;
@@ -93,7 +91,7 @@ h1{
     
 }
 
-#scelta a:hover {
+#option a:hover {
     color: white;
     border-color: white;
 }
