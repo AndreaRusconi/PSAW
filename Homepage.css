@@ -19,7 +19,7 @@ h1{
 
 .other a {
     display: block;
-    color: white;
+    color: yellow;
     text-align: center;
     padding: 14px 16px;
     font-size: 20px;
@@ -28,17 +28,17 @@ h1{
 }
 .bar a {
     display: block;
-    color: white;
+    color: yellow;
     text-align: center;
     padding: 14px 16px;
-    font-size: 20px;
+    font-size: 15px;
     text-decoration: none;
     font-family: Verdana;
 }
 
 .events a {
     display: block;
-    color: white;
+    color: yellow;
     text-align: center;
     font-size: 20px;
     padding: 14px 16px;
@@ -46,8 +46,8 @@ h1{
     font-family: Verdana;
 }
 
-#menu .events a:hover {color: yellow;}
-#menu .other a:hover {color: yellow;}
+#menu .events a:hover {color:white;}
+#menu .other a:hover {color: white;}
 
 #scelta {
     list-style-type: none;
@@ -78,7 +78,7 @@ h1{
 }
 
 body { 
-    background-image: url(Images/20170331_100251.jpg);
+    background-image: url( Images/party-wallpaper-2.jpg);
     background-size:cover;
     margin: 0;
 }
