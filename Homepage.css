@@ -22,7 +22,7 @@ h1{
 
 .other a {
     display: block;
-    color: white;
+    color: rgb(255,204,0);
     text-align: center;
     padding: 27px 14px;
     font-size: 18px;
@@ -45,7 +45,7 @@ h1{
 }
 
 
-#menu .other a:hover {color: rgb(255,204,0);}
+#menu .other a:hover {color: white;}
 
 #option {
     list-style-type: none;
