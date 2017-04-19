@@ -11,15 +11,14 @@ body {
 }
 
 
-
-.nome{
+.userName{
     
     text-align: center;
     margin-top: 1%;
 }
 
 
-.nome input{
+.userName input{
     
     height: 44px;
     width: 30%;
@@ -97,15 +96,15 @@ body {
 .registrati{
     
     text-align: center;
-    margin-top: 2.5%; 
+    margin-top: 2.5%;
     
 }
 
-.registrati a{
+.registrati input{
     
     text-decoration: none;
     padding: 5px 20px;
-    color: white;
+    color: black;
     border: 2px solid white;
     font-family: Trebuchet MS;
     border-radius: 5px;

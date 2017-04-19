@@ -10,12 +10,14 @@
                     <p class="logoEvent"><img src="Images/logo.png" height="100px" width="300px"></p>
                 </header>
     
-                <div class="menu">
-                    <div class = "nome">
-                            <input id="nome" type="nome" class="nome" required="required" aria-required="true" value="" autocomplete="off" placeholder="Inserisce il tuo nome">
+                <form class="menu" action="registration.php" >
+                    <div class = "userName">
+                            <input id="userName" type="text" required="required" aria-required="true" value="" autocomplete="off" placeholder="Inserisci username">
+                    
+                        
                     </div>
                     <div class = "email">
-                            <input id="email" type="email" class="email" required="required" aria-required="true" value="" autocomplete="off" placeholder="Inserisci email">
+                            <input id="email" type="email" required="required" aria-required="true" value="" autocomplete="off" placeholder="Inserisci email">
                     </div>
                     <div class = "password">
                             <input id="password" type="password" class="password" required="required" aria-required="true" value="" autocomplete="off" placeholder="Inserisci password">
@@ -23,17 +25,11 @@
                     <div class="passwordConfirm">
                             <input id="passwordConfirm" type="passwordConfirm" class="passwordConfirm" required="required" aria-required="true" value="" autocomplete="off" placeholder="Conferma password">
                     </div>
+                    
                     <div class="registrati">
-                        <a href="" >Crea account event</a>
+                        <input name="invia" type="submit" value="Crea il tuo account Event">
                     </div>
-    
-    
-    
-    
-                </div>
-    
-    
-    
+                </form>
     
     
 </body>
