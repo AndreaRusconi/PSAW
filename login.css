@@ -9,46 +9,39 @@ body {
 .logoEvent{
    
     text-align: center;
-    margin-top: 4%;
+    margin-top: 5%;
 }
 
 
-.box{
-    
+.menu{
     
     border-radius: 4px;
     border: 1px #ddd solid;
     background-color: transparent;
-    margin-left: 32%;
-    margin-right: 32%;
-   
-    
-    
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
 }
 
-.accedi h1{
+h1{
     
+    text-align: left;
     margin-left: 7%;
+    margin-top: 6%;
     color: white;
     font-family: Trebuchet MS;
     font-weight: 200;
+    margin-bottom: 1%;
     
     
 }
 
 
-.fieldEmail{
+
+#username{
     
-    text-align: center;
-    margin-top: 1%;
-}
-
-
-
-
-.fieldEmail input{
-    
-    height: 44px;
+    margin-top: 3%;
+    height: 40px;
     width: 80%;
     padding: 0 10px;
     border-radius: 5px;
@@ -57,17 +50,11 @@ body {
 }
 
 
-
-.fieldPassword{
+#password{
     
-    text-align: center;
-    margin-top: 2%; 
-}
-
-.fieldPassword input{
-    
-    height: 44px;
+    height: 40px;
     width: 80%;
+    margin-top: 4%;
     padding: 0 10px;
     border-radius: 5px;
     border: 1px solid white;
@@ -76,100 +63,71 @@ body {
     
 }
 
-.rememberMe{
-    
-    text-align:left;
-    margin-top: 1.5%;
-    margin-left: 7%;
+.rememberMe{    
     color: white;
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 7%;
 }
 
 
-.accesso{
+#accesso{
     
-    text-align: center;
-    margin-top: 4%; 
-    
-}
-
-.accesso input{
-    
-    text-decoration: none;
-    height: 44px;
-    width: 84%;
-    padding: 0px 10px;
-    
+    margin-top: 4%;
+    height: 40px;
+    width: 85%;
+    border: 1px solid lightgray;
+    padding: 0 10px;
     color: black;
-    border: 2px solid lightgrey;
     font-family: Trebuchet MS;
     border-radius: 5px;
-    background: lightgrey;
     font-weight: 600;
     font-size: 1em; 
-    
 }
 
-.new{
+  
+
+
+h2{
     
-    text-align: center;
-    position: relative;
-    top: 2px;
-    padding-top: 1px;
-    margin-bottom: 14px;
-    line-height: 0;
+    margin-top: 4%;
     color: white;
     font-family: Trebuchet MS;
-   
-    
-    
+    font-weight: 200;
+    font-size: 20px;
 }
 
-.h5{
-    
-    line-height: 1;
-    font-size: 12px;
-    font-weight: 400;
-    position: relative;
-    display: inline-block;
-    background-color: #fff;
-    padding: 0 8px 0 7px;
-    z-index: 2;
-    
-}
 
-.new :after{
+#new {
     
     content: "";
-    width: 30%;
-    margin-left: 35%;
+    width: 20%;
+    margin-left: 5%;
     background-color: transparent;
     display: block;
     height: 1px;
     border-top: 1px solid #e7e7e7;
     position: absolute;
-    margin-top: 0px;
-    z-index: 1;
+    margin-top: -1%;
     
 }
 
 
-.registration{
+.account{
     
-    text-align: center;
-    margin-top: 7%;
-    margin-bottom: 8%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    
 }
 
-.registration a{
+#createAccount{
     
-    height: 44px;
-    width: 10%;
     color: black;
-    background-color: lightgrey;
+    background-color: lightgray;
     text-decoration: none;
-    padding: 10px 135px;
+    padding: 10px 100px;
     border-radius: 5px;
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     font-size: 1em;
     font-weight: 600;
     font-family: Trebuchet MS;

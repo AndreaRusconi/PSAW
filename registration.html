@@ -10,21 +10,25 @@
                     <p class="logoEvent"><img src="Images/logo.png" height="100px" width="300px"></p>
                 </header>
     
-                <form class="menu" action="registration.php" id="form1" method="post" >
-                            <input name="UserName" id="userName" type="text" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci username">
-                    <div class = "email">
-                            <input name="email" id="email" type="email" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci email">
-                    </div>
-                    <div class = "password">
-                            <input name="password" id="password" type="password" class="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci password">
-                    </div>
-                    <div class="passwordConfirm">
-                            <input name="passwordConfirm" id="passwordConfirm" type="passwordConfirm" class="passwordConfirm" required="required" aria-required="true" autocomplete="off" placeholder="Conferma password">
+                <form class="menu" action="registration.php" method="post" >
+                    
+                    <div id="registrati">
+                        <h1>Registrati</h1>
                     </div>
                     
-                    <div class="registrati">
-                        <input name="invia" type="submit" value="Crea il tuo account Event">
-                    </div>
+                    
+                    <input name="UserName" id="userName" type="text" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci username">
+                    
+                    <input name="email" id="email" type="email" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci email">
+            
+                    <input name="password" id="password" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci password">
+                    
+                    <input name="passwordConfirm" id="passwordConfirm" type="password" class="passwordConfirm" required="required" aria-required="true" autocomplete="off" placeholder="Conferma password">
+                    
+                    <div id="new"></div>
+                    
+                    <input id="creaAccount" name="invia" type="submit" value="Crea il tuo account Event">
+                
                 </form>
     
     

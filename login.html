@@ -9,43 +9,30 @@
                 <header>
                     <p class="logoEvent"><img src="Images/logo.png" height="100px" width="300px"></p>
                 </header>
-                <form action="login.php" method="post" class="proceedMaskable" name="login" autocomplete="off" novalidate="">
-                    <div class="box">
-                        <div class="accedi">
-                            <h1>
-                                Accedi
-                                </h1>
+                <form action="login.php" method="post" class="menu" name="login" autocomplete="off" novalidate="">
+                    
+                        <h1>Accedi</h1>
+                    
+                        <input id="username" name="UserName" type="text" required="required" aria-required="true" value="" autocomplete="off" placeholder="Indirizzo email o username">
+                        
+                        <input id="password" name="password" type="password" required="required" aria-required="true" value="" placeholder="Password">
+                        
+                        <div class="rememberMe">
+                        <input type="checkbox" id="remBox" name="_remember_me" checked>
+                                <label id="remLabel" for="remBox">Remember me.</label>
                         </div>
-                    <div id="passwordSection" class="clearfix">
-                            
-                            <div class="fieldEmail">
-                                <input id="username" name="username" type="text" class="hasHelp  validateEmpty   " required="required" aria-required="true" value="" autocomplete="off" placeholder="Indirizzo email o username">
-                            </div>
-                            <div class="fieldPassword">
-                                <input id="password" name="login_password" type="password" class="hasHelp  validateEmpty   pin-password" required="required" aria-required="true" value="" placeholder="Password">
-                            </div>
-                             <div class = "rememberMe">
-                                <input type="checkbox" id="remember_me" name="_remember_me" checked />
-                                <label for="remember_me">Remember me.</label>
-                            </div>
-                    </div>
                     
+                        <input id="accesso" name="invia" type="submit" value="Accedi">
+                        
+                        
+                        <h2>Sei nuovo su Event?</h2>   
                     
-                   <div class="accesso">
-                        <input name="invia" type="submit" value="Accedi">
-                    </div>
+                        <div id="new"></div>
                     
-                    
-                    <div class="new">
-                        <h5>Sei nuovo su Event?</h5>
-                    </div>
-                    
-                    
-                    
-                     <div class="registration">
-                        <a href="registration.html" id="createAccount">Crea il tuo account</a>
-                    </div>   
-                    </div>
+                        <div class= "account">
+                         <a href="registration.html" id="createAccount">Crea il tuo account</a>
+                        </div>
+                       
                 </form>
                 
                
