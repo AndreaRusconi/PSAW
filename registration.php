@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html>
-<body>
-   
 
 <?php
-    
-    $username = $_POST['username'];
+
+    $username = $_POST['UserName'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
-    
-    if(password == passwordConfirm){
-        $somecontent = $username."-". $email."-".$password."<br>";
+
+      $somecontent = $username."-".$email."-".$password;
         $somecontent.= "\r\n";
     
+    
+    if($password == $passwordConfirm){
         $myFile = "Utenti.txt";
-        $fh = fopen($myFile,'at');
+        $fh = fopen($myFile,'a+');
         fwrite($fh,$somecontent);
-        fclose($fh);
+        fclose($myFile);
     }
     else
-        echo "sei un coglione"
+        echo "sei un coglione";
 ?>
- </body></html>
