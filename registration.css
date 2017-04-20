@@ -118,3 +118,14 @@ body {
     background: trasparent;
     font-size: 1em;    
 }
+
+.footer {
+    
+    text-align: right;
+    color: white;
+    font-size: 70%;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    
+}
