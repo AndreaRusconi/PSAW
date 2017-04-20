@@ -6,7 +6,9 @@
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
 
-      $somecontent = $username."-".$email."-".$password;
+    $cryptpassword= crypt($password);
+
+      $somecontent = $username."-".$email."-".$cryptpassword;
         $somecontent.= "\r\n";
     
     
