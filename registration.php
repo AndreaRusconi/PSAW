@@ -15,6 +15,7 @@
         $fh = fopen($usersFile,'a+');
         fwrite($fh,$userData);
         fclose($usersFile);
+        header('Location: login.html'); 
     }
     else
         echo 'Errore';
@@ -58,9 +59,6 @@
 
         return true;
     }
-
-
-
 
 
 ?>
