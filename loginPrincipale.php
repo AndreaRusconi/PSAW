@@ -1,3 +1,17 @@
+<?php
+session_start();
+if(isset($_COOKIE['cookiename'])&& isset($_COOKIE['cookiepass'])){
+    $name= $_COOKIE['cookiename'];
+    $pass = $_COOKIE['cookiepass'];
+
+}
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +27,12 @@
                     
                         <h1>Accedi</h1>
                     
-                        <input id="username" name="username" type="text" required="required" aria-required="true" value="" autocomplete="off" placeholder="Indirizzo email o username">
+                        <input id="username" name="username" type="text" required="required" aria-required="true" <?php if (isset($name)){echo "value=".$name;}else echo "";?>  placeholder="Username">
                         
-                        <input id="password" name="password" type="password" required="required" aria-required="true" value="" placeholder="Password">
+                        <input id="password" name="password" type="password" required="required" aria-required="true" <?php if (isset($pass)){echo "value=".$pass;} else echo "";?>  placeholder="Password">
                         
                         <div class="rememberMe">
-                        <input type="checkbox" id="remBox" name="_remember_me" checked>
+                        <input type="checkbox" id="remBox" name="remember_me" checked>
                                 <label id="remLabel" for="remBox">Remember me.</label>
                         </div>
                     

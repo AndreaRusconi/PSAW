@@ -15,7 +15,7 @@
         $fh = fopen($usersFile,'a+');
         fwrite($fh,$userData);
         fclose($usersFile);
-        header('Location: login.html'); 
+        header('Location: loginPrincipale.php');
     }
     else
         echo 'Errore';

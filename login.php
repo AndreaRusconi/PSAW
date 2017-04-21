@@ -5,6 +5,7 @@ session_start();
 
 $username=$_POST['username'];
 $password=$_POST['password'];
+$remember=$_POST['remember_me'];
 
 $cryptpassword= md5($password);  
     
@@ -13,6 +14,7 @@ if(isset($username) && isset($password)){
     $good = false;
     $infile = fopen("Users.txt","r");
     $entry = fgets($infile);
+
     
     while (!feof($infile)) {
         $array = explode("-",$entry); 
@@ -27,6 +29,10 @@ if(isset($username) && isset($password)){
     if($good){
         $_SESSION['username'] = $username;
         header('Location: homepageLoggata.php');
+        if($remember) {
+            setcookie("cookiename", $username, time() + 6000);
+            setcookie("cookiepass", $password, time() + 6000);
+        }
     }
     else
         echo "try again";
