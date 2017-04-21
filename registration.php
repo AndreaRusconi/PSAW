@@ -5,34 +5,65 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
+
+    echo $password;
+    echo $passordConfirm;
     
-
-    //if controlliamo errori possibili tipo email vuota o cose del genere
-    // se non ci sono errori allora facciamo operazioni di pulizia e cose varie e intento ne scrivo alcuni che ho trovato
-    
-    if(strlen($username) < 21){
-        if($password == $passwordConfirm){
-        
-            $username = trim($username);
-            $email = trim($email);
-            $password = trim($password);
-            $passwordConfirm = trim($passwordConfirm);
-
-            $cryptpassword= crypt($password);
-
-            $userData = $username."-".$email."-".$cryptpassword;
-            $userData.= "\r\n";
-        
-            $usersFile = "Users.txt";
-            $fh = fopen($usersFile,'a+');
-            fwrite($fh,$userData);
-            fclose($usersFile);
-        }
-        else
-            echo "il contenuto di conferma password è diverso dal contenuto di password ";
+    if(chkEmail($email)&&chkUsername($username)&& chkPassword($password,$passwordConfirm)) {
+        echo 'Registrazione avvenuta con successo';
+        $cryptpassword= crypt($password);
+        $userData = $username."   ".$email."   ".$cryptpassword;
+        $userData.= "\r\n";
+        $usersFile = "Users.txt";
+        $fh = fopen($usersFile,'a+');
+        fwrite($fh,$userData);
+        fclose($usersFile);
     }
     else
-        echo "l'username deve avere meno di 21 caratteri";
+        echo 'Errore';
+
+    function chkEmail($email){
+        $email = trim($email);
+        if(!$email) {
+            return false;
+        }
+        $num_at = count(explode( '@', $email )) - 1;
+        if($num_at != 1) {
+            return false;
+        }
+        if(strpos($email,';') || strpos($email,',') || strpos($email,' ')) {
+            return false;
+        }
+        if(!preg_match( '/^[\w\.\-]+@\w+[\w\.\-]*?\.\w{1,4}$/', $email)) {
+            return false;
+        }
+        return true;
+    }
+    function chkUsername($username){
+        $username = trim($username);
+         if(strlen($username) > 25){
+             echo 'errore user';
+             return false;
+         }  
+        return true;
+    }
+    function chkPassword($password,$passwordConfirm){
+        $password = trim($password);
+        $passwordConfirm = trim($passwordConfirm);
+        if(strlen($password)<8){
+         
+            return false;
+        }
+        if($password != $passwordConfirm){
+            
+            return false;
+        }
+
+        return true;
+    }
+
+
+
 
 
 ?>
