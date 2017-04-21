@@ -8,8 +8,8 @@
 
     if(chkEmail($email)&&chkUsername($username)&& chkPassword($password,$passwordConfirm)) {
         echo 'Registrazione avvenuta con successo';
-        //$cryptpassword=password_hash($password,PASSWORD_DEFAULT);
-        $userData = $username."-".$email."-".$password;
+        $cryptpassword=md5($password);
+        $userData = $username."-".$email."-".$cryptpassword;
         $userData.= "\r\n";
         $usersFile = "Users.txt";
         $fh = fopen($usersFile,'a+');

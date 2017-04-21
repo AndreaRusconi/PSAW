@@ -1,43 +1,47 @@
 
 <?php
 
-session_start(login);
+session_start();
 
+//echo"temae";
 
-
-$username=$_POST['username'];
+$user=$_POST['userEmail'];
 $password=$_POST['password'];
 
-//$cryptpassword=password_hash($password,PASSWORD_DEFAULT);
+$cryptpassword= md5($password);
+  
     
-//if(isset($username) && isset($password)){
-    echo"<script> in if </script";
-    $myfile=fopen('Users.txt', 'r');
+if(isset($user) && isset($password)){
+   
     $good = false;
+    $infile = fopen("Users.txt","r");
+      $entry = fgets($infile);
     
-    while(!feof($myfyle)){
-        $line = fgets($myfile);
-        
-        list($user, $pass)=explode('-', $line);
-        
-        if(trim($user)== $username && trim ($pass) == $password ){
-            $good = true;
-            break;
-        }
-        
-    }
+         while (!feof($infile)) {
+    
+            $array = explode("-",$entry); 
+            
+             if((trim($array[0]) == $user || trim($array[1]) == $user) && trim($array[2]) == $cryptpassword){
+                 $good = true;
+            
+                 break;
+           
+             }
+            $entry = fgets($infile);
+         }
+    
     if($good){
-        echo 'welcome';
+        echo "welcome";
     }
-    else 
-        echo 'try again';
-    
-    fclose($myfile);
+    else{ 
+        echo "try again";
+    }
+    fclose($myFile);
     
 
-/*}
+}
 else 
-    include 'login.html';*/
+    header('Location: login.html');
 
     
 ?>
