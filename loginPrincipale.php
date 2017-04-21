@@ -15,13 +15,13 @@ if(isset($_COOKIE['cookiename'])&& isset($_COOKIE['cookiepass'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="login.css"/>
+    <link rel="stylesheet" href="CSS/login.css"/>
     <title>Accedi al tuo profilo</title>   
 </head>
     
 <body>
                 <header>
-                    <p class="logoEvent"><img src="Images/logo.png" height="100px" width="300px"></p>
+                    <p class="logoEvent"><img src="CSS/Images/logo.png" height="100px" width="300px"></p>
                 </header>
                 <form action="login.php" method="post" class="menu" name="login" autocomplete="off" novalidate="">
                     
