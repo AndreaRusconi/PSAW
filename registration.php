@@ -6,13 +6,10 @@
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
 
-    echo $password;
-    echo $passordConfirm;
-    
     if(chkEmail($email)&&chkUsername($username)&& chkPassword($password,$passwordConfirm)) {
         echo 'Registrazione avvenuta con successo';
-        $cryptpassword= crypt($password);
-        $userData = $username."   ".$email."   ".$cryptpassword;
+        //$cryptpassword=password_hash($password,PASSWORD_DEFAULT);
+        $userData = $username."-".$email."-".$password;
         $userData.= "\r\n";
         $usersFile = "Users.txt";
         $fh = fopen($usersFile,'a+');
