@@ -5,20 +5,39 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
+    $useromailgiainuso = false;
+    $infile = fopen("Users.txt","r");
+    $entry = fgets($infile);
+
+
+    while (!feof($infile)) {
+        $array = explode("-",$entry);
+
+        if(trim($array[0]) == $username || trim ($array[1])==$email){
+            $useromailgiainuso= true;
+            break;
+        }
+        $entry = fgets($infile);
+    }
 
     if(chkEmail($email)&&chkUsername($username)&& chkPassword($password,$passwordConfirm)) {
-        echo 'Registrazione avvenuta con successo';
-        $cryptpassword=md5($password);
-        $userData = $username."-".$email."-".$cryptpassword;
-        $userData.= "\r\n";
-        $usersFile = "Users.txt";
-        $fh = fopen($usersFile,'a+');
-        fwrite($fh,$userData);
-        fclose($usersFile);
-        header('Location: loginPrincipale.php');
+        if(!$useromailgiainuso){
+
+            echo 'Registrazione avvenuta con successo';
+            $cryptpassword=md5($password);
+            $userData = $username."-".$email."-".$cryptpassword;
+            $userData.= "\r\n";
+            $usersFile = "Users.txt";
+            $fh = fopen($usersFile,'a+');
+            fwrite($fh,$userData);
+            fclose($usersFile);
+            header('Location: loginPrincipale.php');
+        }
+        else
+            echo 'username o mail già in uso';
     }
     else
-        echo 'Errore';
+        echo 'Errore, la password deve essere di almeno 8 caratteri,il nome utente deve essere al massimo di 25 caratteri'  ;
 
     function chkEmail($email){
         $email = trim($email);
