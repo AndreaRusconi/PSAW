@@ -3,8 +3,9 @@
 // Questa prima parte dobbiamo inserirla in tutte le pagine che vogliamo proteggere con password prima di qualsiasi altra cosa 
 session_start(); 
 
-if(!isset($_SESSION['username'])){ 
-    header ("location:Homepage.html"); 
+if(!isset($_SESSION['username'])){
+    echo "non puoi visualizzare la pagina senza eseguire l'accesso";
+    header ("location:loginPrincipale.php"); 
 }
 ?>
 

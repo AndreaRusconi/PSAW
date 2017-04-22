@@ -19,6 +19,8 @@
         }
         $entry = fgets($infile);
     }
+    
+    fclose($infile);
 
     if(chkEmail($email)&&chkUsername($username)&& chkPassword($password,$passwordConfirm)) {
         if(!$useromailgiainuso){

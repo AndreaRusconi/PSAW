@@ -37,14 +37,9 @@ if(isset($username) && isset($password)){
     else
         echo "try again";
     
-    fclose($myFile);
+    fclose($infile);
     
 }
 else 
     header('Location: login.html');    
 ?>
-
-
-
-
-
