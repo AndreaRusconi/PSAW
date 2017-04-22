@@ -1,7 +1,7 @@
 
 <?php
 
-    $username =trim( $_POST['UserName']);
+    $username = $_POST['UserName'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
