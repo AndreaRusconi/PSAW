@@ -24,7 +24,7 @@ if(!isset($_SESSION['username'])){
         <li class="barra"><a>|</a></li>
         <li class="other"><a href="#">about us</a></li>
         <li class="other"><a href="#">assistance</a></li>
-        <li class="event"><a href="Homepage.html"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
+        <li class="event"><a href="homepageLoggata.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
     <h1>Search, Share, Have fun!</h1>

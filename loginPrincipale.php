@@ -21,7 +21,7 @@ if(isset($_COOKIE['cookiename'])&& isset($_COOKIE['cookiepass'])){
     
 <body>
                 <header>
-                    <p class="logoEvent"><img src="CSS/Images/logo.png" height="100px" width="300px"></p>
+                     <p class="logoEvent"><a href="Homepage.html"><img src="CSS/Images/logo.png" height="100px" width="300px"></a></p>
                 </header>
                 <form action="login.php" method="post" class="menu" name="login" autocomplete="off" novalidate="">
                     
