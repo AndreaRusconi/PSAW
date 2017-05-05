@@ -1,34 +1,47 @@
-<?php 
-// Controlla se la sessione Ã¨ stata registrata, altrimenti rimanda alla pagina di login 
-// Questa prima parte dobbiamo inserirla in tutte le pagine che vogliamo proteggere con password prima di qualsiasi altra cosa 
-session_start(); 
 
-if(!isset($_SESSION['username'])){
-    echo "non puoi visualizzare la pagina senza eseguire l'accesso";
-    header ("location:loginPrincipale.php"); 
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    header("Location: private.php");
 }
+if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
+    $file = fopen('Users.txt', 'r');
+    while(!feof($file)){
+        $line = fgets($file);
+        list($user, $email, $pass) = explode('-', $line);
+        $psw = trim($pass);
+        $usr = trim($user);
+        if($psw == $_COOKIE["cookiepass"] && $usr == $_COOKIE["cookiename"]){
+            $_SESSION['username'] = $usr;
+            header("Location: private.php");
+        }
+    }
+}
+
 ?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/homepageLoggata.css" />
+    <link rel="stylesheet" href="CSS/Homepage.css" />
     <title>Event</title>   
 </head>
     
 <body>
     <ul id="menu">
-        <li class="other"><a href="logout.php">logout</a></li>
-        <li class="other"><a href="" > <?php echo $_SESSION['username'] ?> </a></li>
+        <li class="other"><a href="login.php">login</a></li>
+        <li class="other"><a href="registration.php">sign up</a></li>
         <li class="barra"><a>|</a></li>
         <li class="other"><a href="#">about us</a></li>
         <li class="other"><a href="#">assistance</a></li>
-        <li class="event"><a href="homepageLoggata.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
+        <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
     <h1>Search, Share, Have fun!</h1>
-    
+
+
+
     <ul id="option">
         <li class="share">
             <p id="condividi">Condividi la tua serata,<br> fai sapere a tutti dove ti trovi. </p>

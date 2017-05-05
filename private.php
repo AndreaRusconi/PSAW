@@ -1,18 +1,30 @@
+<?php 
+// Controlla se la sessione Ã¨ stata registrata, altrimenti rimanda alla pagina di login 
+// Questa prima parte dobbiamo inserirla in tutte le pagine che vogliamo proteggere con password prima di qualsiasi altra cosa 
+session_start(); 
+
+if(!isset($_SESSION['username'])){
+    echo "non puoi visualizzare la pagina senza eseguire l'accesso";
+    header ("location:login.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/Homepage.css" />
+    <link rel="stylesheet" href="CSS/homepageLoggata.css" />
     <title>Event</title>   
 </head>
     
 <body>
     <ul id="menu">
-        <li class="other"><a href="loginPrincipale.php">login</a></li>
-        <li class="other"><a href="registration.html">sign up</a></li>
+        <li class="other"><a href="logout.php">logout</a></li>
+        <li class="other"><a href="" > <?php echo $_SESSION['username'] ?> </a></li>
         <li class="barra"><a>|</a></li>
         <li class="other"><a href="#">about us</a></li>
         <li class="other"><a href="#">assistance</a></li>
-        <li class="event"><a href="Homepage.html"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
+        <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
     <h1>Search, Share, Have fun!</h1>
