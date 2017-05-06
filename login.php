@@ -74,7 +74,7 @@ if(isset($_GET['submit'])) {
     <p id="new"></p>
 
     <div class= "account">
-        <a href="registration.html" id="createAccount">Crea il tuo account</a>
+        <a href="registration.php" id="createAccount">Crea il tuo account</a>
     </div>
 
 </form>
