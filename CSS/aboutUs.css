@@ -1,0 +1,46 @@
+h1{
+    font-family: Trebuchet MS;
+    font-weight: 500;
+    color: rgb(255,204,0);
+    font-size: 50px;
+    text-align: left;
+    margin-top: 6%;
+    margin-left: 6%;
+    font-style: italic;
+}
+
+body {
+    background-image: url(Images/sfondo.jpg);
+    background-size:cover;
+    margin: 0;
+}
+
+#presentation{
+    margin-left: 6%;
+    margin-right: 6%;
+    color: white;
+    text-align: justify;
+}
+
+#link{
+    text-align: right;
+}
+
+a{
+    text-align: right;
+    margin-top: -3%;
+    margin-right: 6%;
+    font-family: Trebuchet MS;
+    color: rgb(255,204,0);
+    font-style: italic;
+}
+a:hover {color: white;}
+
+.footer {
+    text-align: right;
+    color: white;
+    font-size: 70%;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+}

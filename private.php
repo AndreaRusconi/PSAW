@@ -13,7 +13,7 @@ if(!isset($_SESSION['username'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/homepageLoggata.css" />
+    <link rel="stylesheet" href="CSS/private.css" />
     <title>Event</title>   
 </head>
     
@@ -22,8 +22,8 @@ if(!isset($_SESSION['username'])){
         <li class="other"><a href="logout.php">logout</a></li>
         <li class="other"><a href="" > <?php echo $_SESSION['username'] ?> </a></li>
         <li class="barra"><a>|</a></li>
-        <li class="other"><a href="#">about us</a></li>
-        <li class="other"><a href="#">assistance</a></li>
+        <li class="other"><a href="#">info</a></li>
+        <li class="other"><a href="aboutUs.php">about us</a></li>
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
