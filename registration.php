@@ -1,6 +1,6 @@
 
 <?php
-
+include("db_con.php");
 function chkEmail($email)
 {
     $email = trim($email);
@@ -55,41 +55,49 @@ if(isset($_POST['submit'])) {
     $password = $_POST['password'];
     $passwordConfirm = $_POST['passwordConfirm'];
     $useromailgiainuso = false;
-    $infile = fopen("Users.txt", "r");
-    $entry = fgets($infile);
-
-    while (!feof($infile)) {
-        $array = explode("-", $entry);
-
-        if (trim($array[0]) == $username || trim($array[1]) == $email) {
-            $useromailgiainuso = true;
-            break;
 
 
+
+    $conn = connection();
+
+    $sql = "SELECT username FROM users";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            if ($row["username"] == $username){
+                $useromailgiainuso = true;
+                break;
+            }
         }
-        $entry = fgets($infile);
     }
 
-    fclose($infile);
 
     if (!$useromailgiainuso) {
 
-        if (chkEmail($email) && chkUsername($username) && chkPassword($password, $passwordConfirm) ) {
+        if (chkEmail($email) && chkUsername($username) && chkPassword($password, $passwordConfirm)) {
 
             echo 'Registrazione avvenuta con successo';
-            $cryptpassword = md5($password);
-            $userData = $username . "-" . $email . "-" . $cryptpassword;
-            $userData .= "\r\n";
-            $fh = fopen("Users.txt", 'a+');
-            fwrite($fh, $userData);
-            fclose($fh);
-            header('Location: login.php');
-       }
-        else
+            $cryptpassword = sha1($password);
+
+
+            $conn = connection();
+
+
+            $sql = "INSERT INTO users(username, email, password)
+                VALUES ('$username','$email','$cryptpassword')";
+
+            if ($conn->query($sql) == TRUE) {
+                header('Location: login.php');
+
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        } else
             echo 'Errore, la password deve essere di almeno 8 caratteri,il nome utente deve essere al massimo di 25 caratteri';
     }
-    else
-        echo 'username o mail già in uso';
+    echo "user gia in uso";
+
 }
 
 ?>
@@ -133,4 +141,3 @@ if(isset($_POST['submit'])) {
 
 </body>
 </html>
-

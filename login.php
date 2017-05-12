@@ -1,5 +1,7 @@
 <?php
 
+include("db_con.php");
+
 if(isset($_GET['submit'])) {
 
 
@@ -7,23 +9,23 @@ if(isset($_GET['submit'])) {
     $password = $_GET['password'];
     $remember = $_GET['remember_me'];
 
-    $cryptpassword = md5($password);
-
+    $cryptpassword = sha1($password);
     $good = false;
-    $infile = fopen("Users.txt", "r");
-    $entry = fgets($infile);
+    $conn = connection();
 
+    $sql = "SELECT username, password FROM users";
+    $result = $conn->query($sql);
 
-    while (!feof($infile)) {
-        $array = explode("-", $entry);
-
-        if (trim($array[0]) == $username && trim($array[2]) == $cryptpassword) {
-            $good = true;
-            break;
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            if ($row["username"] == $username && $row["password"] == $cryptpassword) {
+                $good = true;
+                break;
+            }
         }
-        $entry = fgets($infile);
+    } else {
+        echo "0 results";
     }
-    fclose($infile);
 
     if ($good) {
         session_start();
@@ -36,9 +38,8 @@ if(isset($_GET['submit'])) {
 
     } else
             echo "try again";
-
-
 }
+
 ?>
 
 
