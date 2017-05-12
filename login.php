@@ -68,6 +68,10 @@ if(isset($_GET['submit'])) {
 
     <input id="accesso" name="submit" type="submit" value="Accedi">
 
+    <div class="dimenticata">
+        <a href="#" id="link">Password dimenticata?</a>
+    </div>
+
 
     <h2>Sei nuovo su Event?</h2>
 
