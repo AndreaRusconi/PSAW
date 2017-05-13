@@ -1,5 +1,5 @@
 h1{
-    font-family: Trebuchet MS;
+    font-family: Trebuchet MS, sans-serif;
     font-weight: 500;
     color: rgb(255,204,0);
     font-size: 50px;
@@ -30,7 +30,7 @@ a{
     text-align: right;
     margin-top: -3%;
     margin-right: 6%;
-    font-family: Trebuchet MS;
+    font-family: Trebuchet MS, sans-serif;
     color: rgb(255,204,0);
     font-style: italic;
 }

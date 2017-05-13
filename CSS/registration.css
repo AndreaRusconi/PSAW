@@ -13,7 +13,7 @@ body {
 
 .menu{
    
-    border-radius: 0px;
+    border-radius: 0;
     border: 2px white solid;
     margin-left: 35%;
     margin-right: 35%; 
@@ -27,7 +27,7 @@ h1{
     margin-left: 7%;
     margin-top: 6%;
     color: white;
-    font-family: Trebuchet MS;
+    font-family: Trebuchet MS, sans-serif;
     font-weight: 200;
     margin-bottom: 1%;
     
@@ -108,11 +108,11 @@ h1{
     margin-bottom: 6%;
     height: 40px;
     width: 85%;
-    border: 0.5px solid black;
+    border: 1px solid black;
     padding: 0 10px;
     color: black;
-    font-family: Trebuchet MS;
-    border-radius: 0px;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 0;
     font-weight: 600;
     font-size: 1em;  
     cursor: pointer;

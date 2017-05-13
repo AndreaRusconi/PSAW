@@ -1,5 +1,5 @@
 h1{
-    font-family: Trebuchet MS;
+    font-family: Trebuchet MS, sans-serif;
     font-weight: 500;
     color: rgb(255,204,0);
     font-size: 50px;
@@ -27,7 +27,7 @@ h1{
     padding: 27px 14px;
     font-size: 18px;
     text-decoration: none;
-    font-family: Trebuchet MS;
+    font-family: Trebuchet MS, sans-serif;
 }
 .barra a {
     display: block;
@@ -36,7 +36,7 @@ h1{
     padding: 27px 12px;
     font-size: 18px;
     text-decoration: none;
-    font-family: Trebuchet MS;
+    font-family: Trebuchet MS, sans-serif;
 }
 
 .event a {
@@ -67,7 +67,7 @@ h1{
     font-size: 22px;
     padding: 10px 90px;
     text-decoration: none;
-    font-family: Trebuchet MS;
+    font-family: Trebuchet MS, sans-serif;
     border: rgb(255,204,0) solid 3px;
     background-color: transparent
 }
