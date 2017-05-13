@@ -2,9 +2,8 @@
 
 include("db_con.php");
 
-if(isset($_GET['submit'])) {
-
-
+if(isset($_GET['submit'])) {   
+    
     $username = $_GET['username'];
     $password = $_GET['password'];
     $remember = $_GET['remember_me'];
@@ -23,7 +22,8 @@ if(isset($_GET['submit'])) {
                 break;
             }
         }
-    } else {
+    }
+    else {
         echo "0 results";
     }
 
@@ -36,8 +36,12 @@ if(isset($_GET['submit'])) {
         }
         header('Location: private.php');
 
-    } else
+    } 
+        else
             echo "try again";
+
+
+        
 }
 
 ?>
