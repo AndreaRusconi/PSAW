@@ -1,22 +1,34 @@
 
 <?php
+include("db_con.php");
+
+
 session_start();
 
 if(isset($_SESSION['username'])){
     header("Location: private.php");
 }
-if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
-    $file = fopen('Users.txt', 'r');
-    while(!feof($file)){
-        $line = fgets($file);
-        list($user, $email, $pass) = explode('-', $line);
-        $psw = trim($pass);
-        $usr = trim($user);
-        if($psw == $_COOKIE["cookiepass"] && $usr == $_COOKIE["cookiename"]){
-            $_SESSION['username'] = $usr;
-            header("Location: private.php");
+
+if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){ 
+    
+    $good = false;
+    $conn = connection();
+    $sql = "SELECT username, password FROM users";
+    $result = $conn->query($sql);
+    
+   
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            if ($row["username"] == $_COOKIE["cookiename"] && $row["password"] == $_COOKIE["cookiepass"]) {
+                $good = true;
+                break;
+            }
         }
     }
+    if ($good) {
+        $_SESSION['username'] = $_COOKIE["cookiename"];
+        header('Location: private.php');
+    } 
 }
 
 ?>
