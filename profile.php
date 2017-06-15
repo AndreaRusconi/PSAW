@@ -4,7 +4,6 @@
 session_start(); 
 
 if(!isset($_SESSION['username'])){
-    echo "non puoi visualizzare la pagina senza eseguire l'accesso";
     header ("location:login.php");
 }
 ?>
@@ -13,11 +12,14 @@ if(!isset($_SESSION['username'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/private.css" />
-    <title>Event</title>   
+    <link rel="stylesheet" href="CSS/profile.css" />
+    <title>Profile</title>   
 </head>
     
-<body>
+    
+    
+    <body>
+        
     <ul id="menu">
         <li class="other"><a href="logout.php">logout</a></li>
         <li class="other"><a href="profile.php" > <?php echo $_SESSION['username'] ?> </a></li>
@@ -27,23 +29,13 @@ if(!isset($_SESSION['username'])){
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
-    <h1>Search, Share, Have fun!</h1>
-    
-    <ul id="option">
-        <li class="share">
-            <p id="condividi">Condividi la tua serata,<br> fai sapere a tutti dove ti trovi. </p>
-            <a href="#">CONDIVIDI EVENTO</a>
-        </li>
+    <h1>
+        Ciao <?php echo $_SESSION['username'] ?>!
+    </h1>
         
-        <li class="search">
-            <p id="ricerca">Cerca intorno a te,<br> trova la tua serata ideale.</p>
-            <a href="#">RICERCA EVENTO</a>
-        </li>
-    </ul>
+         <input id="username" name="username" type="text" required="required" aria-required="true" value=""  placeholder="Username">
+        
+        
+    </body>
     
-    <footer class="footer" role="contentinfo">
-                <p class="footerCopyright">Nessun Copyright registrato. Tutti i diritti non sono riservati.</p>
-    </footer>
-      
-</body>
 </html>
