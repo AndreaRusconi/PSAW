@@ -32,12 +32,12 @@ if(!isset($_SESSION['username'])){
     <ul id="option">
         <li class="share">
             <p id="condividi">Condividi la tua serata,<br> fai sapere a tutti dove ti trovi. </p>
-            <a href="#">CONDIVIDI EVENTO</a>
+            <a href="share.php">CONDIVIDI EVENTO</a>
         </li>
         
         <li class="search">
             <p id="ricerca">Cerca intorno a te,<br> trova la tua serata ideale.</p>
-            <a href="#">RICERCA EVENTO</a>
+            <a href="search.php">RICERCA EVENTO</a>
         </li>
     </ul>
     

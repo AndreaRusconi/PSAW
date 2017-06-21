@@ -6,6 +6,42 @@ session_start();
 if(!isset($_SESSION['username'])){
     header ("location:login.php");
 }
+include("db_con.php");
+
+    $conn = connection();
+
+    $username = $_SESSION['username'];
+
+ /*   $sql = "SELECT username FROM users";
+    $result = $conn->query($sql);
+    echo "sono fuori"
+    
+    if ($result->num_rows > 0) {
+        echo "sono nel if";
+        while($row = $result->fetch_assoc()) {
+        
+            if ($row["username"] == $username){
+                $email = $row["email"];
+                $name = $row["nome"];
+                $surname = $row["cognome"];
+            }
+        }
+   }
+   */
+if(empty($username)){
+    $username = 'none';
+}
+
+
+if(empty($name)){
+    $name = 'none';
+}
+
+if(empty($surname)){
+    $surname = 'none';
+}
+
+
 ?>
 
 
@@ -33,7 +69,12 @@ if(!isset($_SESSION['username'])){
         Ciao <?php echo $_SESSION['username'] ?>!
     </h1>
         
-         <input id="username" name="username" type="text" required="required" aria-required="true" value=""  placeholder="Username">
+        <ul id="dati">
+            <li class="username">Username: <?php echo $username ?></li>
+            <li class="name">Nome: <?php echo $name ?></li>
+            <li class="surname">Cognome: <?php echo $surname ?></li>
+            <li class="email">email: <?php echo $email ?></li>
+        </ul>
         
         
     </body>
