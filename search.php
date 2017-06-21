@@ -5,30 +5,72 @@ include("db_con.php");
     $conn = connection();
     
 
-    /*
+   /* 
     
     $nome = "plaza";
     $descrizione = "molto ma veramente molto molto bello";
-    $posizione = "51.508742,-0.120850";
+    $lat = "55.508742";
+    $long = "-8.120850";
     $utente = "gianni";
 
-    $sql = "INSERT INTO event(nome, descrizione, posizione, utente)
-                VALUES ('$nome','$descrizione','$posizione','$utente')";
+    $sql = "INSERT INTO event(nome,descrizione,latitudine,longitudine,username)
+                VALUES ('$nome','$descrizione','$lat','$long','$utente')";
 
-   $conn = connection();
-    
-    $sql = "SELECT posizione FROM event";
+
+    if ($conn->query($sql) == TRUE) {
+                header('Location: login.php');
+
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+
+   /*$conn = connection();
+    */
+    $sql = "SELECT latitudine, longitudine FROM event";
    
+
 
     $result = $conn->query($sql);
 
     $rowcount=mysqli_num_rows($result);
+   // $row=mysqli_fetch_assoc($result);
+  
+    echo $rowcount;
+$la;
+$lo;
+    
+   if ($result->num_rows > 0) {
+         while($rowcount>0){
+             
+             $row[$rowcount] = mysqli_fetch_assoc($result);
+             $rowcount = $rowcount - 1;
+             
+             echo "sono qui";
+         }
+   }
 
-     if ($result->num_rows > 0) {
-        $row=mysqli_fetch_assoc($result);
+        
+         
+         foreach ($row as $cord)
+{
+             
+     $la = $cord['latitudine'];  
+    $lo = $cord['longitudine'];
+             
+    echo 'Titolo film: ' , $cord['latitudine'];
+    echo '<br>';
+    echo 'Anno: ' , $cord['longitudine'];
+}
+         
+        //row=mysqli_fetch_assoc($result);
+        
+        /* echo $row["longitudine"];
+         $row=mysqli_fetch_assoc($result);
+         echo $row["latitudine"];
+         echo $row["longitudine"];
      }
-*/
 
+*/
 
 ?>
 
@@ -63,24 +105,31 @@ include("db_con.php");
         <script>
             function myMap() {
                 
-                var startCenter = new google.maps.LatLng(59.508742,-0.120850);
-                var mapProp= {center: startCenter ,zoom:15,};
+                var startCenter = new google.maps.LatLng(51.508742,-0.120850);
+                var mapProp= {center: startCenter ,zoom:4,};
                 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-                
-              var index = <?php echo $rowcount ?>;
               
-                for (var i = 0; i < index; i++) {
-                    (function(marker) {
+                
+                /*    function(marker) {          
                         
-                        var pos = new google.maps.LatLng(<?php echo $row[i] ?>);
+                        var pos = new google.maps.LatLng(59.508742,-0.120850);
                         var marker = new google.maps.Marker({
                         position: pos;
+                        
                         });
-                        marker.setMap(map); 
+                        marker.setMap(map);
+                        
                     }
+                
+                
+                for(){
+                    var startCenter = new google.maps.LatLng(51.508742,-0.120850);
+                    var marker = new google.maps.Marker({position:startCenter});
+                    marker.setMap(map);
+                    
                 }
                 
-                
+                */
                 var marker = new google.maps.Marker({position:startCenter});
                 marker.setMap(map);     
                 
@@ -90,15 +139,16 @@ include("db_con.php");
                 */
                 
                 google.maps.event.addListener(marker, 'click', function() {
-               /* var newCenter = new google.maps.LatLng(48.508742,-0.120850);
+                var newCenter = new google.maps.LatLng(<?php echo $cord['latitudine'] ?>,<?php echo $lo ?>);
                 marker.setPosition(newCenter);
-                */
+                
                 marker.setAnimation(google.maps.Animation.BOUNCE);
                 var x = "rusco sei un babbucchione";
                 document.getElementById("dataEvent").innerHTML =x;
                 });
                  
             }
+            
         </script>
         
     
