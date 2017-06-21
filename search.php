@@ -1,3 +1,41 @@
+<?php
+include("db_con.php");
+
+
+    $conn = connection();
+    
+
+    /*
+    
+    $nome = "plaza";
+    $descrizione = "molto ma veramente molto molto bello";
+    $posizione = "51.508742,-0.120850";
+    $utente = "gianni";
+
+    $sql = "INSERT INTO event(nome, descrizione, posizione, utente)
+                VALUES ('$nome','$descrizione','$posizione','$utente')";
+
+   $conn = connection();
+    
+    $sql = "SELECT posizione FROM event";
+   
+
+    $result = $conn->query($sql);
+
+    $rowcount=mysqli_num_rows($result);
+
+     if ($result->num_rows > 0) {
+        $row=mysqli_fetch_assoc($result);
+     }
+*/
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,10 +63,22 @@
         <script>
             function myMap() {
                 
-                var startCenter = new google.maps.LatLng(51.508742,-0.120850);
-                var mapProp= {center: startCenter ,zoom:5,};
+                var startCenter = new google.maps.LatLng(59.508742,-0.120850);
+                var mapProp= {center: startCenter ,zoom:15,};
                 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
                 
+              var index = <?php echo $rowcount ?>;
+              
+                for (var i = 0; i < index; i++) {
+                    (function(marker) {
+                        
+                        var pos = new google.maps.LatLng(<?php echo $row[i] ?>);
+                        var marker = new google.maps.Marker({
+                        position: pos;
+                        });
+                        marker.setMap(map); 
+                    }
+                }
                 
                 
                 var marker = new google.maps.Marker({position:startCenter});
