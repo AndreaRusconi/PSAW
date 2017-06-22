@@ -30,17 +30,52 @@ body {
     width:40%;
     height:400px;
     margin-left: 0%;
+
 }
 
 
 #dataEvent{
     
     float: right;
-    width:40%;
+    width:45%;
     height:400px;
     margin-right: 4%;
     font-family: Trebuchet MS, sans-serif;
-    font-size: 20px;
-    color: white;
+    color: white;   
+}
+
+
+
+
+#dataEvent #nome{
+    
+    font-size: 40px;
+    font-style: italic;
     
 }
+
+#dataEvent #descrizione{
+    
+    font-size: 25px;
+}
+
+#dataEvent #segnalazione{
+    font-size: 15px;
+    text-align: right;
+    font-style: italic;
+}
+
+#dataEvent #segnUser{
+    
+   color: white;
+    
+}
+
+
+
+
+
+
+
+
+
