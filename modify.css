@@ -1,25 +1,4 @@
-body {
-    background-image: url(Images/sfondo.jpg);
-    background-size:cover;
-    margin: 0;
-}
-#head {
-    font-family: Trebuchet MS, sans-serif;
-    font-weight: 100;
-    color: rgb(255, 204, 0);
-    font-size: 30px;
-    text-align: left;
-    margin-top: 5%;
-    margin-left: 20%;
-    font-style: italic;
-
-}
-.modify a{
-    border-bottom-style: solid;
-    border-bottom-width: medium;
-}
-
-#menu {
+menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -58,12 +37,6 @@ body {
 
 #menu .other a:hover {color: white;}
 
-
-
-
-
-
-
-
-
-
+#modify{
+    font-size: 70px;
+}
