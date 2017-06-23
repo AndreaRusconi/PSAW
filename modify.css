@@ -1,42 +1,154 @@
-menu {
-    list-style-type: none;
+
+body {
+    background-image: url("CSS/Images/sfondo.jpg");
+    background-size:cover;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(0,0,102,0.15);
 }
 
-.other {float: right;}
-.barra {float: right}
-.event {float: left;}
 
-.other a {
-    display: block;
-    color: rgb(255,204,0);
+.logoEvent{
+
     text-align: center;
-    padding: 27px 14px;
-    font-size: 18px;
+    margin-top: 5%;
+}
+
+
+.menu{
+
+    border-radius: 0;
+    border: 2px white solid;
+    background-color: transparent;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+}
+
+h1{
+
+    text-align: left;
+    margin-left: 7%;
+    margin-top: 6%;
+    color: white;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 200;
+    margin-bottom: 1%;
+}
+
+#username{
+
+    margin-top: 3%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+
+
+#password{
+
+    height: 40px;
+    width: 80%;
+    margin-top: 4%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+
+
+}
+
+.rememberMe{
+    color: white;
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 7%;
+}
+
+
+#accesso{
+
+    margin-top: 4%;
+    height: 40px;
+    width: 85%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+
+.dimenticata {
+    text-align: left;
+    margin-top: 4%;
+    margin-left: 8%;
+}
+
+.dimenticata #link {
     text-decoration: none;
+    color: white;
+
+}
+
+.dimenticata #link:hover {color:rgb(255,204,0);}
+
+h2{
+
+    margin-top: 4%;
+    color: white;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+
+#new {
+
+    content: "";
+    width: 20%;
+    margin-left: 5%;
+    background-color: transparent;
+    display: block;
+    border-top: 2px solid #e7e7e7;
+    position: absolute;
+    margin-top: -1%;
+
+}
+
+
+.account{
+
+    margin-top: 8%;
+    margin-bottom: 10%;
+
+}
+
+#createAccount{
+
+
+    color: black;
+    background-image: -webkit-linear-gradient(top , white, rgb(224,225,221) 40%);
+    text-decoration: none;
+    padding: 10px 100px;
+    border-radius: 2px;
+    border: 1px solid black;
+    font-size: 1em;
+    font-weight: 600;
     font-family: Trebuchet MS, sans-serif;
 }
-.barra a {
-    display: block;
-    color: rgb(255,204,0);
-    text-align: center;
-    padding: 27px 12px;
-    font-size: 18px;
-    text-decoration: none;
-    font-family: Trebuchet MS, sans-serif;
-}
 
-.event a {
-    display: block;
-    padding: 14px 16px;
-}
+.footer {
 
+    text-align: right;
+    color: white;
+    font-size: 70%;
+    bottom: 0;
+    position: fixed;
+    right: 0;
 
-#menu .other a:hover {color: white;}
-
-#modify{
-    font-size: 70px;
 }

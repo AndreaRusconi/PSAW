@@ -29,11 +29,11 @@ if(empty($surname)){
 
 ?>
 
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/profile.css" />
+    <link rel="stylesheet" href="modify.css" />
     <title>Modify</title>
 </head>
 
@@ -50,8 +50,7 @@ if(empty($surname)){
 </ul>
 
 
-
-<form method="get" class="modify" autocomplete="off" novalidate="">
+<form class="menu" method = "post" >
 
     <h1> Nome <input id="name" name="name" type="text" required="required" aria-required="true" value=""  placeholder=" <?php echo $name ?>"></h1>
     <h2> Cognome <input id="surname" name="surname" type="text" required="required" aria-required="true" value=""  placeholder=" <?php echo $surname ?>"></h2>
