@@ -4,8 +4,8 @@ h1{
     color: rgb(255,204,0);
     font-size: 50px;
     text-align: left;
-    margin-top: 6%;
-    margin-left: 6%;
+    margin-top: 3%;
+    margin-left: 3%;
     font-style: italic;
 }
 
@@ -14,3 +14,127 @@ body {
     background-size:cover;
     margin: 0;
 }
+
+
+#box{
+    
+    margin-top: 0%;
+    text-decoration: none;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+#googleMap{
+    
+    
+    float:left;
+    width:40%;
+    height:450px;
+    margin-left: 0%;
+
+}
+
+
+#dataEvent{
+    
+    float: right;
+    width:45%;
+    height:450px;
+    margin-right: 4%;
+    font-family: Trebuchet MS, sans-serif;
+    color: white;
+    align-content: center;
+    text-align: center;
+}
+
+
+
+
+#dataEvent #tit{
+    
+    font-size: 40px;
+    font-style: italic;
+    
+}
+
+#dataEvent #nome{
+    
+    margin-top: 1%;
+    width: 100%;
+    font-size: 20px;
+    font-style: italic;
+    font-family: Trebuchet MS, sans-serif;
+    color: black;
+    
+}
+
+
+#dataEvent #descrizione{
+    
+    margin-top: 1%;
+    width: 100%;
+    color: black;
+    font-size: 20px;
+    height: 35%;
+    font-family: Trebuchet MS, sans-serif;
+}
+
+.rememberMe{    
+    color: white;
+    text-align: left;
+    margin-top: 1%;
+    
+}
+
+
+#pos{
+    
+    
+    margin-top: 1%;
+    text-decoration: none;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+
+#dataEvent #lat{
+    
+    float:left;
+    width: 47%;
+    padding: 0;
+    color: black;
+    font-size: 20px;
+    font-family: Trebuchet MS, sans-serif;
+}
+
+#dataEvent #long{
+    
+    float: right;
+    width: 50%;
+    padding: 0;
+    color: black;
+    font-size: 20px;
+    font-family: Trebuchet MS, sans-serif;
+}
+
+
+
+#accesso{
+    
+    margin-top: 2%;
+    text-align: center;
+    height: 40px;
+    width: 50%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+
+
