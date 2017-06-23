@@ -1,0 +1,96 @@
+body {
+    background-image: url( CSS/Images/sfondo.jpg);
+    background-size:cover;
+    margin: 0;
+}
+
+.logoEvent{
+
+    text-align: center;
+    margin-top: 4%;
+}
+
+
+.modificapassword{
+
+    border-radius: 0;
+    border: 2px white solid;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+}
+
+h1{
+
+    text-align: left;
+    margin-left: 7%;
+    margin-top: 6%;
+    color: white;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 200;
+    margin-bottom: 1%;
+
+}
+
+
+
+#oldpass{
+
+    margin-top: 3%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+
+
+#newpass{
+
+
+    margin-top: 4%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+
+
+
+
+#newpasswordconfirm{
+
+
+    margin-top: 4%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+
+
+
+#modpass {
+
+    margin-top: 12%;
+    margin-bottom: 6%;
+    height: 40px;
+    width: 85%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+
+
+
+}
