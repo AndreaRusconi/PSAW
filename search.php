@@ -5,41 +5,14 @@ include("db_con.php");
 
 
     $conn = connection();
-    
 
-   /* 
-    
-    $nome = "plaza";
-    $descrizione = "molto ma veramente molto molto bello";
-    $lat = "55.508742";
-    $long = "-8.120850";
-    $utente = "gianni";
-
-    $sql = "INSERT INTO event(nome,descrizione,latitudine,longitudine,username)
-                VALUES ('$nome','$descrizione','$lat','$long','$utente')";
-
-
-    if ($conn->query($sql) == TRUE) {
-                header('Location: login.php');
-
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-
-   
-    */
     $sql = "SELECT * FROM event";
    
-
-
     $result = $conn->query($sql);
 
     $rowcount=mysqli_num_rows($result);
   
     $tot = $rowcount;
-
-    $la;
-    $lo;
     
     if ($result->num_rows > 0) {
          while($rowcount>0){

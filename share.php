@@ -141,8 +141,11 @@ if(!isset($_SESSION['username'])){
                                     };
                                     
                                     
-                                    document.getElementById("lat").innerHTML =pos.lat;
-                                    document.getElementById("long").innerHTML =pos.lng; 
+                                    var x = pos.lat;
+                                    var y = pos.lng;
+                                    
+                                    document.getElementById("lat").value = x;
+                                    document.getElementById("long").value = y; 
                                 });
                             }
                             
