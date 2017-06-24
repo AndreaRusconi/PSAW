@@ -51,11 +51,26 @@ if(empty($surname)){
 
 
 <form class="modifiche" method = "post" >
-    <div id="title">Modifica</div>
-    <h1>  Nome <input id="name" name="name" type="text" required="required" aria-required="true" value="<?php echo $name ?>"></h1>
-    <h2> Cognome <input id="surname" name="surname" type="text" required="required" aria-required="true" value=" <?php echo $surname ?>"></h2>
-    <h3> Email <input id="email" name="email" type="text" required="required" aria-required="true" value=" <?php echo $email ?>"></h3>
-    <h4>Password<a href="mod_pass.php" id="pass">Modifica password </a> </h4>
+    <div id="title">Modifica profilo</div>
+    
+    <div class="box">
+    <label id="nameLabel" for="name">Name</label>
+    </div>
+    <input id="name" name="name" type="text" required="required" aria-required="true" value="<?php echo $name ?>">
+    
+    
+    <div class="box">
+    <label id="surnameLabel" for="surname">Surname</label>
+     </div>
+    <input id="surname" name="surname" type="text" required="required" aria-required="true" value="<?php echo $surname ?>">
+   
+    <div class="box">
+    <label id="emailLabel" for="surname">Email</label>
+     </div>
+    <input id="email" name="email" type="text" required="required" aria-required="true" value="<?php echo $email ?>">
+    
+    
+    <a href="mod_pass.php" id="pass">Modifica password </a>
     <input id="modifyaccount" name = "submit" type = "submit" value = "Conferma">
 
 </form>
