@@ -3,20 +3,15 @@ body {
     background-size:cover;
     margin: 0;
 }
-#head {
+h1{
     font-family: Trebuchet MS, sans-serif;
-    font-weight: 100;
-    color: rgb(255, 204, 0);
-    font-size: 30px;
+    font-weight: 500;
+    color: rgb(255,204,0);
+    font-size: 50px;
     text-align: left;
-    margin-top: 5%;
-    margin-left: 20%;
+    margin-top: 6%;
+    margin-left: 6%;
     font-style: italic;
-
-}
-.modify a{
-    border-bottom-style: solid;
-    border-bottom-width: medium;
 }
 
 #menu {
@@ -60,6 +55,29 @@ body {
 
 
 
+#canvas{
+    
+    
+    list-style-type: none;
+    margin-top: 3%;
+    padding: 0;
+    overflow: hidden;
+    width: 66%;
+}
+
+
+
+#imgCanvas{
+display: block;
+    text-decoration: none;
+    float: left;
+}
+
+#data{
+    display: block;
+    float: left;
+    text-decoration: none;
+}
 
 
 

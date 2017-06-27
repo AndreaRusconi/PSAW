@@ -11,8 +11,8 @@ include("db_con.php");
 $conn = connection();
 
 $username = $_SESSION['username'];
-
-/*   $sql = "SELECT username FROM users";
+/*
+  $sql = "SELECT * FROM users WHERE $username";
    $result = $conn->query($sql);
    echo "sono fuori"
 
@@ -20,18 +20,15 @@ $username = $_SESSION['username'];
        echo "sono nel if";
        while($row = $result->fetch_assoc()) {
 
-           if ($row["username"] == $username){
-               $email = $row["email"];
-               $name = $row["nome"];
-               $surname = $row["cognome"];
-           }
+                $email = $row["email"];
+                $name = $row["nome"];
+                $surname = $row["cognome"];
+                $citta = $row["citta"];
+           
        }
   }
-  */
-if(empty($username)){
-    $username = 'none';
-}
-
+  
+*/
 
 if(empty($name)){
     $name = 'none';
@@ -39,6 +36,9 @@ if(empty($name)){
 
 if(empty($surname)){
     $surname = 'none';
+}
+if(empty($citta)){
+    $citta = 'none';
 }
 
 
@@ -64,11 +64,23 @@ if(empty($surname)){
     <li class="other"><a href="aboutUs.php">about us</a></li>
     <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
 </ul>
+    
+    <h1>Ciao Gianni</h1>
+    <ul id="canvas">
+        <li id="imgCanv"><img src="CSS/Images/logo.png" height="100px" width="250px"></li>
+        <li id = "dataCanv">
+            <ul id = "data">
+                <li id="nome"><?php echo $name ?></li>
+                <li id="cognome"><?php echo $surname ?></li>
+                <li id="email"><?php echo $email ?></li>
+                <li id="citta"><?php echo $citta ?></li>
+                <li id="modifica"><a href="modify.php">Modifica profilo </a></li>
+            </ul>
+        </li>
+    
+    </ul>
 
-<h1 id="head">
-    <?php echo $name ?> <?php echo $surname ?> <a href="modify.php" class="modify">Modifica profilo </a>
 
-</h1>
 
 
 
