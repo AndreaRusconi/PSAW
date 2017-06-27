@@ -1,34 +1,49 @@
 <?php
+session_start();
 // Controlla se la sessione Ã¨ stata registrata, altrimenti rimanda alla pagina di login
 // Questa prima parte dobbiamo inserirla in tutte le pagine che vogliamo proteggere con password prima di qualsiasi altra cosa
-session_start();
+
+
+include("db_con.php");
 
 if(!isset($_SESSION['username'])){
     header ("location:login.php");
 }
-include("db_con.php");
+
+$segn = $_SESSION['var'];
+echo $segn;
+
+$username = $_SESSION['username'];
+$flag = true;
+
+
+if($segn != $username){
+    $flag = false;
+    
+}
 
 $conn = connection();
 
-$username = $_SESSION['username'];
-/*
-  $sql = "SELECT * FROM users WHERE $username";
+if($flag){
+  $sql = "SELECT * FROM users WHERE username = '{$username}'";
+}
+else{
+   $sql = "SELECT * FROM users WHERE username = '{$segn}'"; 
+}
    $result = $conn->query($sql);
-   echo "sono fuori"
 
    if ($result->num_rows > 0) {
-       echo "sono nel if";
+      
        while($row = $result->fetch_assoc()) {
-
-                $email = $row["email"];
+               $email = $row["email"];
                 $name = $row["nome"];
                 $surname = $row["cognome"];
-                $citta = $row["citta"];
+                $citta = $row["citta"];    
            
        }
   }
   
-*/
+
 
 if(empty($name)){
     $name = 'none';

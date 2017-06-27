@@ -41,7 +41,9 @@ include("db_con.php");
             $i = $i + 1;
          }
 
+
 ?>
+
 
 
 
@@ -83,7 +85,9 @@ include("db_con.php");
                 
                 <div id= "nome">Seleziona un Evento...</div>
                 <div id= "descrizione"></div>
-                <div id="segnalazione"><a href="profile.php" id= "segnUser" ></a></div>
+                <div id="segnalazione"><a id= "segnUser" href="profile.php"></a></div>
+                
+               
                 
                 
             </li>
@@ -136,7 +140,9 @@ include("db_con.php");
                                 nomeTemp = "<?php echo $array[$index][0] ?>";
                                 descTemp = "<?php echo $array[$index][1] ?>";
                                 userTemp = "<?php echo $array[$index][4] ?>";
-                
+                                
+                                
+                                
                                 dati[j] = new Array(nomeTemp,descTemp,posTemp,userTemp);
                                 step(dati[j]);
                 
@@ -144,12 +150,15 @@ include("db_con.php");
                                 
                             
                                 google.maps.event.addListener(posTemp, 'click', function() {
-                                showClick(data);    
+                                showClick(data); 
+                                
                                     
 	                            });
                              }                                       
                                 j++;
-                            <?php $index++; } ?> 
+                            <?php 
+                                
+                                $index++; } ?> 
              
                                 
                          function showClick (marker){
@@ -168,7 +177,8 @@ include("db_con.php");
                                
                                 document.getElementById("nome").innerHTML =nome;
                                 document.getElementById("descrizione").innerHTML =descrizione;
-                                document.getElementById("segnUser").innerHTML =segnalatoDa;  
+                                document.getElementById("segnUser").innerHTML =segnalatoDa;
+                                
                         }  
         }
             
