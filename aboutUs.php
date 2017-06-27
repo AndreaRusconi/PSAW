@@ -1,3 +1,10 @@
+<?php
+session_start();
+    if(isset($_SESSION['username'])){
+        $ok = true;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +13,20 @@
     <title>aboutUs</title>
 </head>
 <body>
+         
+ 
+    <ul id="menu">
+        
+        <li class="other"><a href="<?php if($ok){echo "logout";} else{echo "login";} ?>.php"><?php if($ok){echo "logout";} else{echo "login";} ?></a></li>
+        <li class="other"><a href="<?php if($ok){echo "profile";} else{echo "registration";} ?>.php"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
+        <li class="barra"><a>|</a></li>
+        <li class="other"><a href="info.php">info</a></li>
+        <li class="other"><a href="aboutUs.php">about us</a></li>
+        <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
+    </ul>
+    
+     
+     
 
 
 <h1>About Us</h1>
@@ -18,9 +39,6 @@
     Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. »
 </p>
 
-<p id="link">
-    <a href="index.php">Torna alla Homepage</a>
-</p>
 
 <footer class="footer" role="contentinfo">
     <p class="footerCopyright">Nessun Copyright registrato. Tutti i diritti non sono riservati.</p>

@@ -33,7 +33,7 @@ if(empty($surname)){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="mod_pass.css" />
+    <link rel="stylesheet" href="CSS/mod_pass.css" />
     <title>Accedi al tuo profilo</title>
 </head>
 

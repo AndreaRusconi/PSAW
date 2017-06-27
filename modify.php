@@ -33,7 +33,7 @@ if(empty($surname)){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="modify.css" />
+    <link rel="stylesheet" href="CSS/modify.css" />
     <title>Modify</title>
 </head>
 
@@ -43,8 +43,8 @@ if(empty($surname)){
     <li class="other"><a href="logout.php">logout</a></li>
     <li class="other"><a href="profile.php" > <?php echo $_SESSION['username'] ?> </a></li>
     <li class="barra"><a>|</a></li>
-    <li class="other"><a href="info.html">info</a></li>
-    <li class="other"><a href="aboutUs.html">about us</a></li>
+    <li class="other"><a href="info.php">info</a></li>
+    <li class="other"><a href="aboutUs.php">about us</a></li>
     <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
 </ul>
 

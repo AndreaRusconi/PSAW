@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+    if(isset($_SESSION['username'])){
+        $ok = true;
+    }
  
 include("db_con.php");
 
@@ -33,6 +36,7 @@ include("db_con.php");
             $array[$i][2] =  $cord['latitudine'];
             $array[$i][3] =  $cord['longitudine'];
             $array[$i][4] =  $cord['user'];
+            $array[$i][5] =  $cord['immagine'];
 
             $i = $i + 1;
          }
@@ -55,7 +59,20 @@ include("db_con.php");
      
     
     <body>
-    <h1>search</h1>
+        
+    <ul id="menu">
+        
+        <li class="other"><a href="<?php if($ok){echo "logout";} else{echo "login";} ?>.php"><?php if($ok){echo "logout";} else{echo "login";} ?></a></li>
+        <li class="other"><a href="<?php if($ok){echo "profile";} else{echo "registration";} ?>.php"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
+        <li class="barra"><a>|</a></li>
+        <li class="other"><a href="info.php">info</a></li>
+        <li class="other"><a href="aboutUs.php">about us</a></li>
+        <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
+    </ul>    
+        
+        
+        
+   
     
         <ul id="box">
             <li id="googleMap">
@@ -112,6 +129,9 @@ include("db_con.php");
                                 
                                 var posMarker = new google.maps.LatLng(<?php echo $array[$index][2] ?>,<?php echo $array[$index][3] ?>);
                                 posTemp = new google.maps.Marker({position:posMarker});
+                                    
+                               
+                               
                                 posTemp.setMap(map);
                                 nomeTemp = "<?php echo $array[$index][0] ?>";
                                 descTemp = "<?php echo $array[$index][1] ?>";
@@ -124,7 +144,7 @@ include("db_con.php");
                                 
                             
                                 google.maps.event.addListener(posTemp, 'click', function() {
-                                showClick(data);
+                                showClick(data);    
                                     
 	                            });
                              }                                       
@@ -140,8 +160,11 @@ include("db_con.php");
                                 var pos = marker[2];
                                 var segnalatoDa =  marker[3];
                                 
+                                
+                                
                                    
                                 pos.setAnimation(google.maps.Animation.BOUNCE);
+                                
                                
                                 document.getElementById("nome").innerHTML =nome;
                                 document.getElementById("descrizione").innerHTML =descrizione;
