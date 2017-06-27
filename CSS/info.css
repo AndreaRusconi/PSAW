@@ -11,7 +11,7 @@
 }
 
 .other {float: right;}
-.barra {float: right}
+.barra {float: right;}
 .event {float: left;}
 
 .other a {
@@ -195,4 +195,24 @@ body {
 }
 
 
+.title  {
+    display:block;
+    font-weight: 500;
+    color: rgb(255,204,0);
+    font-size: 50px;
+    margin-top: 3%;
+    margin-left: 3%;
+    font-family: Trebuchet MS, sans-serif  ;
+    text-decoration: none;
 
+}
+
+.descr {
+    display: block;
+    font-size:20px;
+    font-family: Trebuchet MS, sans-serif;
+    color: white;
+    margin-left: 3%;
+    margin-right: 5%;
+    text-decoration: none;
+}
