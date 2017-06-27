@@ -12,12 +12,9 @@ session_start();
 <head> 
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
 	<title>Information</title> 
-	<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
-	<link rel="stylesheet" type="text/css" href="CSS/livello-3.css"/> 
-	<!--[if lte IE 7]>
-		<script type='text/javascript' src="js/sizzle.js"></script>
-	<![endif]-->
-	<script type='text/javascript' src="js/slider-livello-2.js"></script> 
+	<link rel="stylesheet" type="text/css" href="CSS/info.css"/>
+    
+
 </head> 
 <body> 
     
