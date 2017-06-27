@@ -3,6 +3,9 @@ session_start();
     if(isset($_SESSION['username'])){
         $ok = true;
     }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +21,20 @@ session_start();
     <ul id="menu">
         
         <li class="other"><a href="<?php if($ok){echo "logout";} else{echo "login";} ?>.php"><?php if($ok){echo "logout";} else{echo "login";} ?></a></li>
-        <li class="other"><a href="<?php if($ok){echo "profile";} else{echo "registration";} ?>.php"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
+        <li class="other"><a href="<?php if($ok){echo "generalProfile";} else{echo "registration";} ?>.php?gianni=<?php echo $_SESSION['username'] ?>"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
         <li class="barra"><a>|</a></li>
         <li class="other"><a href="info.php">info</a></li>
         <li class="other"><a href="aboutUs.php">about us</a></li>
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
-     
+    <script>
+    
+        
+        
+    </script> 
+    
+    
      
 
 

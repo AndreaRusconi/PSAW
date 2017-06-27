@@ -65,7 +65,7 @@ include("db_con.php");
     <ul id="menu">
         
         <li class="other"><a href="<?php if($ok){echo "logout";} else{echo "login";} ?>.php"><?php if($ok){echo "logout";} else{echo "login";} ?></a></li>
-        <li class="other"><a href="<?php if($ok){echo "profile";} else{echo "registration";} ?>.php"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
+        <li class="other"><a href="<?php if($ok){echo "Generalprofile";} else{echo "registration";} ?>.php?gianni=<?php echo $_SESSION['username'] ?>"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
         <li class="barra"><a>|</a></li>
         <li class="other"><a href="info.php">info</a></li>
         <li class="other"><a href="aboutUs.php">about us</a></li>
@@ -85,7 +85,7 @@ include("db_con.php");
                 
                 <div id= "nome">Seleziona un Evento...</div>
                 <div id= "descrizione"></div>
-                <div id="segnalazione"><a id= "segnUser" href="profile.php"></a></div>
+                <div id='segnalazione'><a id= 'segnUser'></a></div>
                 
                
                 
@@ -151,13 +151,17 @@ include("db_con.php");
                             
                                 google.maps.event.addListener(posTemp, 'click', function() {
                                 showClick(data); 
+                                 <?php 
                                 
+                                $segn =$array[$index][4]; 
+                                                        ?>
                                     
 	                            });
                              }                                       
                                 j++;
                             <?php 
                                 
+                                $segn =$array[$index][4]; 
                                 $index++; } ?> 
              
                                 
@@ -169,18 +173,20 @@ include("db_con.php");
                                 var pos = marker[2];
                                 var segnalatoDa =  marker[3];
                                 
-                                
-                                
                                    
                                 pos.setAnimation(google.maps.Animation.BOUNCE);
                                 
                                
                                 document.getElementById("nome").innerHTML =nome;
                                 document.getElementById("descrizione").innerHTML =descrizione;
-                                document.getElementById("segnUser").innerHTML =segnalatoDa;
+                                document.getElementById("segnUser").innerHTML = segnalatoDa;
+                                document.getElementById("segnUser").setAttribute('href', 'generalProfile.php?gianni=' + segnalatoDa);
+                                
+                                
                                 
                         }  
         }
+        
             
         </script>
         
