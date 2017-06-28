@@ -59,7 +59,7 @@ if(isset($_GET['submit'])) {
             $conn->close();
              
             
-            header("Location: generalProfile.php?gianni=$username");
+            header("Location: generalProfile.php?var=$username");
             
         }
         else

@@ -59,7 +59,35 @@ if(!isset($_SESSION['username'])){
     <meta charset="UTF-8">
     <link rel="stylesheet" href="CSS/share.css" />
     <title>share</title>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" ></script>
+        <script src="js_eventcreate.js"></script>
+        <script src="external-js/jonthornton-jquery-timepicker-e417a53/jquery.timepicker.min.js"></script>
+        <link rel="stylesheet" href="external-js/jonthornton-jquery-timepicker-e417a53/jquery.timepicker.css">
+        <style>
+            input {
+                vertical-align: middle;
+                height: 30px;
+            }
+        </style>
 </head>
+    
+    
+    <script>
+            $('document').ready(function () {
+                $( "#dataE" ).datepicker({
+                    dateFormat: "yy-mm-dd",
+                    minDate: new Date()
+                });
+                $('#timeE').timepicker({
+                    timeFormat: "H:i"
+                });
+            });
+        </script>
     
     
     
@@ -84,11 +112,24 @@ if(!isset($_SESSION['username'])){
         
             <li id="dataEvent">
                 
-                <div id= "tit">Drag the marker..</div>
-                <input id="nome" name="nome" type="text" required="required" aria-required="true" value=""  placeholder="Nome Evento">
-                <textarea id="descrizione" name="descrizione" rows="10" cols="30">Inserisci qui una descrizione dell'evento</textarea>
+                <h1 id= "tit">Drag the marker..</h1>
+                <div class="labels">
+                    <label id ="descNome" for="nome">Nome evento:</label>
+                    <input id="nome" name="nome" type="text" required="required" aria-required="true" value=""  placeholder="">
+                </div>
                 
-                <div class="rememberMe">
+                
+                <div class="labels">
+                    <label id ="descLabel" for="descrizione">Inserisci qui una descrizione dell'evento:</label>
+                    <textarea id="descrizione" name="descrizione"></textarea>
+                </div>
+                
+                
+                <ul>
+                    <li>IL GIORNO: <input type="datetime" name="dateE" id="dataE"></li>
+                    <li>    ALLE ORE: <input type="time" name="timeE" id="timeE"></li>
+                </ul>
+                <div class="labels">
                     <input type="checkbox" id="remBox" name="remember_me" onclick="unlock(this)" checked >
                     <label id="remLabel" for="remBox">Utilizza la geolocalizzazione</label>
                 </div>

@@ -36,7 +36,6 @@ include("db_con.php");
             $array[$i][2] =  $cord['latitudine'];
             $array[$i][3] =  $cord['longitudine'];
             $array[$i][4] =  $cord['user'];
-            $array[$i][5] =  $cord['immagine'];
 
             $i = $i + 1;
          }
@@ -87,6 +86,7 @@ include("db_con.php");
                 <div id="nome"></div>
                 <div id= "descrizione"></div>
                 <div id='segnalazione'><a id= 'segnUser'></a></div>
+                <div id ="comment"><a id='message'></a></div>
                 
                
                 
@@ -125,6 +125,7 @@ include("db_con.php");
                 
                             
                             dati = new Array();
+                            totMarker = new Array();
                         
                             var j = 0;
             
@@ -133,22 +134,22 @@ include("db_con.php");
                             ?>  
                                 
                                 var posMarker = new google.maps.LatLng(<?php echo $array[$index][2] ?>,<?php echo $array[$index][3] ?>);
-                                posTemp = new google.maps.Marker({position:posMarker});
+                                marker1 = new google.maps.Marker({position:posMarker});
                                     
+                               totMarker[j] = marker1;
                                
-                               
-                                posTemp.setMap(map);
+                                marker1.setMap(map);
                                 nomeTemp = "<?php echo $array[$index][0] ?>";
                                 descTemp = "<?php echo $array[$index][1] ?>";
                                 userTemp = "<?php echo $array[$index][4] ?>";
                                 
                                 
                                 
-                                dati[j] = new Array(nomeTemp,descTemp,posTemp,userTemp);
+                                dati[j] = new Array(nomeTemp,descTemp,marker1,userTemp);
                                 step(dati[j]);
                 
                             function step(data){
-                                google.maps.event.addListener(posTemp, 'click', function() {
+                                google.maps.event.addListener(marker1, 'click', function() {
                                 showClick(data);});
                              }                                       
                                 j++;
@@ -164,8 +165,17 @@ include("db_con.php");
                                 var descrizione = marker[1];
                                 var pos = marker[2];
                                 var segnalatoDa =  marker[3];
+                             
+                                 
+                            for(var n = 0; n < totMarker.length ; n++){
                                 
-                                   
+                                totMarker[n].setAnimation(null);
+                                
+                            }
+        
+                             
+                             
+                                         
                                 pos.setAnimation(google.maps.Animation.BOUNCE);
                                 
                                
@@ -173,7 +183,8 @@ include("db_con.php");
                                 document.getElementById("descrizione").innerHTML =descrizione;
                                 document.getElementById("segnUser").innerHTML = segnalatoDa;
                                 document.getElementById("segnUser").setAttribute('href', 'generalProfile.php?var=' + segnalatoDa);
-                                
+                                document.getElementById("message").innerHTML =  'commenti';
+                                document.getElementById("message").setAttribute('href', 'messages.php?var=' + nome);
                                 
                                 
                         }  

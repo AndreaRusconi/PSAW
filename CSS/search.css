@@ -127,6 +127,12 @@ body {
     
 }
 
+#dataEvent #message{
+    
+   color: yellow;
+    text-decoration: none;
+    
+}
 
 
 
