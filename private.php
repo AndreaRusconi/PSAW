@@ -20,7 +20,7 @@ if(!isset($_SESSION['username'])){
 <body>
     <ul id="menu">
         <li class="other"><a href="logout.php">logout</a></li>
-        <li class="other"><a href="generalProfile.php?gianni=<?php echo $_SESSION['username'] ?>" > <?php echo $_SESSION['username'] ?> </a></li>
+        <li class="other"><a href="generalProfile.php?var=<?php echo $_SESSION['username'] ?>" > <?php echo $_SESSION['username'] ?> </a></li>
         <li class="barra"><a>|</a></li>
         <li class="other"><a href="info.php">info</a></li>
         <li class="other"><a href="aboutUs.php">about us</a></li>

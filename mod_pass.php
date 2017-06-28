@@ -24,7 +24,8 @@ if(isset($_GET['submit'])) {
     
     $oldPass = $_GET['oldpass'];
     $newPass = $_GET['newpass'];
-    $confNewPass = $_GET['newpassconrifm'];
+    $confNewPass = $_GET['newpassconfirm'];
+    echo $oldPass. ' '. $newPass. ''. $conNewPass; 
 
     $cryptpass = sha1($oldPass);
     $cryptpass1 = sha1($newPass);
@@ -125,7 +126,7 @@ if(empty($surname)){
 </header>
 
 
- <form class="modificapassword" method = "post" >
+ <form class="modificapassword" method = "get" >
 
     <h1>Modifica Password</h1>
 
@@ -133,9 +134,9 @@ if(empty($surname)){
 
     <input name="newpass" id="newpass" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci nuova password">
 
-     <input name="newpasscofirm" id="newpasswordconfirm" type="password"  required="required" aria-required="true" autocomplete="off" placeholder="conferma nuova password">
+     <input name="newpassconfirm" id="newpasswordconfirm" type="password"  required="required" aria-required="true" autocomplete="off" placeholder="conferma nuova password">
 
 
-    <input id="modpass" name = "submit" type = "submit" value = "Modifica password"">
+    <input id="modpass" name = "submit" type = "submit" value = "Modifica password">
 
 </form>

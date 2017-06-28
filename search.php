@@ -65,7 +65,7 @@ include("db_con.php");
     <ul id="menu">
         
         <li class="other"><a href="<?php if($ok){echo "logout";} else{echo "login";} ?>.php"><?php if($ok){echo "logout";} else{echo "login";} ?></a></li>
-        <li class="other"><a href="<?php if($ok){echo "Generalprofile";} else{echo "registration";} ?>.php?gianni=<?php echo $_SESSION['username'] ?>"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
+        <li class="other"><a href="<?php if($ok){echo "Generalprofile";} else{echo "registration";} ?>.php?var=<?php echo $_SESSION['username'] ?>"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
         <li class="barra"><a>|</a></li>
         <li class="other"><a href="info.php">info</a></li>
         <li class="other"><a href="aboutUs.php">about us</a></li>
@@ -83,7 +83,8 @@ include("db_con.php");
         
             <li id="dataEvent">
                 
-                <div id= "nome">Seleziona un Evento...</div>
+                <div id= "testo">Seleziona un Evento...</div>
+                <div id="nome"></div>
                 <div id= "descrizione"></div>
                 <div id='segnalazione'><a id= 'segnUser'></a></div>
                 
@@ -171,7 +172,7 @@ include("db_con.php");
                                 document.getElementById("nome").innerHTML =nome;
                                 document.getElementById("descrizione").innerHTML =descrizione;
                                 document.getElementById("segnUser").innerHTML = segnalatoDa;
-                                document.getElementById("segnUser").setAttribute('href', 'generalProfile.php?gianni=' + segnalatoDa);
+                                document.getElementById("segnUser").setAttribute('href', 'generalProfile.php?var=' + segnalatoDa);
                                 
                                 
                                 
