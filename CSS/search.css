@@ -87,7 +87,7 @@ body {
     height:400px;
     margin-right: 4%;
     font-family: Trebuchet MS, sans-serif;
-       
+    color: white;   
 }
 
 
@@ -95,30 +95,20 @@ body {
 
 #dataEvent #nome{
     
-    font-size: 35px;
-    font-style: italic;
-    color: white;
-    
-}
-#dataEvent #testo{
-    
     font-size: 40px;
     font-style: italic;
-    color: yellow;
     
 }
 
 #dataEvent #descrizione{
     
     font-size: 25px;
-    color: white;
 }
 
 #dataEvent #segnalazione{
     font-size: 15px;
     text-align: right;
     font-style: italic;
-    color: white;
 }
 
 #dataEvent #segnUser{

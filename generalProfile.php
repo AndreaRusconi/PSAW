@@ -15,27 +15,65 @@ $flag = true;
 
 
 
-$var = $_GET['var'];
+$segn = $_GET['gianni'];
 
 
-if($var != $username){
+if($segn != $username){
     $flag = false;
+    
+    
 }
 
 $conn = connection();
 
     
-
-    $stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
-    $stmt->bind_param("s", $var);
-   
+if($flag){
+  $stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    
+}
+else{
+   $stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
+    $stmt->bind_param("s", $segn);
+}   
     $stmt->execute();
      $stmt->bind_result($email,$name,$surname,$citta)  ; 
 
 $stmt->fetch();
 $stmt->close();
     
+    
 
+
+
+
+
+
+/*
+
+if($flag){
+  $sql = "SELECT email,nome,cognome,citta FROM users WHERE username = '{$username}'";
+}
+else{
+   $sql = "SELECT * FROM users WHERE username = '{$segn}'"; 
+}
+   $result = $conn->query($sql);
+
+   if ($result->num_rows > 0) {
+       while($row = $result->fetch_assoc()) {
+               $email = $row["email"];
+                $name = $row["nome"];
+                $surname = $row["cognome"];
+                $citta = $row["citta"];    
+           
+       }
+  }
+    else{
+        echo 'l utente cercato dsi è cancellato';
+    }
+  
+
+*/
 if(empty($name)){
     $name = 'none';
 }
@@ -80,6 +118,7 @@ if(empty($citta)){
             <li class="datalist"><?php echo $surname ?></li>
             <li class="datalist"><?php echo $email ?></li>
             <li class="datalist"><?php echo $citta ?></li>
+            <?php //<li id="modifica"><a href="modify.php"><img src="CSS/Images/pencil2.png" ></a></li> ?>
             <li id="modifica"><a href="<?php if($flag){echo 'modify';}else{echo 'messages';}?>.php"><?php if($flag){echo 'modifica profilo'; }else{echo ' invia messaggio ';} ?></a></li>
             
         </ul>
@@ -91,4 +130,10 @@ if(empty($citta)){
 </ul>
 
 </body>
+</html>
+
+
+
+</body>
+
 </html>
