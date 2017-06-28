@@ -18,7 +18,7 @@
 <ul id="menu">
 
     <li class="other"><a href="<?php if($ok){echo "logout";} else{echo "login";} ?>.php"><?php if($ok){echo "logout";} else{echo "login";} ?></a></li>
-    <li class="other"><a href="<?php if($ok){echo "generalProfile";} else{echo "registration";} ?>.php?gianni=<?php echo $_SESSION['username'] ?>"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
+    <li class="other"><a href="<?php if($ok){echo "generalProfile";} else{echo "registration";} ?>.php?var=<?php echo $_SESSION['username'] ?>"><?php if($ok){echo $_SESSION['username'];} else{echo 'sign up';} ?></a></li>
     <li class="barra"><a>|</a></li>
     <li class="other"><a href="info.php">info</a></li>
     <li class="other"><a href="aboutUs.php">about us</a></li>
