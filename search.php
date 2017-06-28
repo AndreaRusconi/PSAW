@@ -147,21 +147,12 @@ include("db_con.php");
                                 step(dati[j]);
                 
                             function step(data){
-                                
-                            
                                 google.maps.event.addListener(posTemp, 'click', function() {
-                                showClick(data); 
-                                 <?php 
-                                
-                                $segn =$array[$index][4]; 
-                                                        ?>
-                                    
-	                            });
+                                showClick(data);});
                              }                                       
                                 j++;
                             <?php 
-                                
-                                $segn =$array[$index][4]; 
+                                 
                                 $index++; } ?> 
              
                                 

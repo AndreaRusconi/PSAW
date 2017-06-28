@@ -81,6 +81,8 @@ h1{
 #data{
     display: block;
     font-size: 30px;
+    margin-left: 5%;
+    margin-top: 2%;
     color: white;
     float: left;
     font-family: Trebuchet MS, sans-serif;
@@ -93,10 +95,24 @@ h1{
 
 
 #modifica{
-    margin-top: 10%;
-    margin-left:5%;
+    margin-top: 4%;
+    
 }
 
+#modifica a{
+    
+    text-decoration: none;
+    color: yellow;
+}
+
+#image{
+    
+    margin-left: 10%;
+    margin-top: 5%;
+    height: 300px;
+    width: 300px ;
+    
+}
 
 
 

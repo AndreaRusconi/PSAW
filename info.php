@@ -30,7 +30,7 @@ session_start();
     </ul>
 
 
-      <ul id=instruction">
+      <ul id="instruction">
                          
         <li class="title">Search!</li>
                        

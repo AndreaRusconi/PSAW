@@ -13,6 +13,20 @@ $conn = connection();
 
 $username = $_SESSION['username'];
 
+if(isset($_GET['submit'])) {
+
+    $username = $_GET['username'];
+    $password = $_GET['password'];
+    $remember = $_GET['remember_me'];
+
+    $cryptpassword = sha1($password);
+    $good = false;
+    $conn = connection();
+
+    $sql = "SELECT username, password FROM users";
+    $result = $conn->query($sql);
+
+}
 
 if(empty($username)){
     $username = 'none';

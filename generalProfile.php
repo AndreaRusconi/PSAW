@@ -84,17 +84,21 @@ if(empty($citta)){
     <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
 </ul>
 
-<h1>Ciao <?php echo $_SESSION['username'] ?></h1>
+
 <ul id="canvas">
-    <li id="imgCanv"><img src="CSS/Images/special.jpg" height="100px" width="250px"></li>
+    <li id="imgCanv"><img id = "image" src="CSS/Images/special.jpg" ></li>
     <li id = "dataCanv">
         <ul id = "data">
             <li class="datalist"><?php echo $name ?></li>
             <li class="datalist"><?php echo $surname ?></li>
             <li class="datalist"><?php echo $email ?></li>
             <li class="datalist"><?php echo $citta ?></li>
-            <li id="modifica"><a href="modify.php"><img src="CSS/Images/pencil2.png" > </a></li>
+            <?php //<li id="modifica"><a href="modify.php"><img src="CSS/Images/pencil2.png" ></a></li> ?>
+            <li id="modifica"><a href="modify.php"><?php if($flag){echo 'modifica profilo'; } ?></a></li>
         </ul>
+    </li>
+    <li id="eventCond">
+        
     </li>
 
 </ul>
