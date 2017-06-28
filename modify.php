@@ -9,22 +9,33 @@ if(!isset($_SESSION['username'])){
 }
 include("db_con.php");
 
-$conn = connection();
+
 
 $username = $_SESSION['username'];
 
-if(isset($_GET['submit'])) {
+if(isset($_POST['submit'])) {
 
-    $username = $_GET['username'];
-    $password = $_GET['password'];
-    $remember = $_GET['remember_me'];
-
-    $cryptpassword = sha1($password);
-    $good = false;
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $city = $_POST['city'];
+    
+    
     $conn = connection();
-
-    $sql = "SELECT username, password FROM users";
-    $result = $conn->query($sql);
+    
+    
+    
+    $stmt = $conn->prepare("UPDATE users SET email=?, nome=?, cognome=? ,citta=? WHERE username = '{$username}'");
+    $stmt->bind_param("ssss", $email, $name, $surname, $city);
+    
+    $stmt->execute();
+    
+    $stmt->close();
+    //$conn->close();
+    
+    //$sql = "UPDATE users SET email = '{$email}', nome = '{$name}', cognome = '{$surname}' WHERE username = '{$username}'";
+    //$result = $conn->query($sql);
+    
 
 }
 
@@ -40,6 +51,11 @@ if(empty($name)){
 if(empty($surname)){
     $surname = 'none';
 }
+
+if(empty($email)){
+    $email = 'none';
+}
+
 
 ?>
 
@@ -81,7 +97,13 @@ if(empty($surname)){
     <div class="box">
     <label id="emailLabel" for="surname">Email</label>
      </div>
-    <input id="email" name="email" type="text" required="required" aria-required="true" value="<?php echo $email ?>">
+    <input id="email" name="email" type="email" required="required" aria-required="true" value="<?php echo $email ?>">
+    
+    <div class="box">
+    <label id="cityLabel" for="city">City</label>
+     </div>
+    <input id="city" name="city" type="text" required="required" aria-required="true" value="<?php echo $city ?>">
+    
     
     
     <a href="mod_pass.php" id="pass">Modifica password </a>
