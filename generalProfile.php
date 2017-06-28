@@ -119,7 +119,8 @@ if(empty($citta)){
             <li class="datalist"><?php echo $email ?></li>
             <li class="datalist"><?php echo $citta ?></li>
             <?php //<li id="modifica"><a href="modify.php"><img src="CSS/Images/pencil2.png" ></a></li> ?>
-            <li id="modifica"><a href="modify.php"><?php if($flag){echo 'modifica profilo'; } ?></a></li>
+            <li id="modifica"><a href="<?php if($flag){echo 'modify';}else{echo 'messages';}?>.php"><?php if($flag){echo 'modifica profilo'; }else{echo ' invia messaggio ';} ?></a></li>
+            
         </ul>
     </li>
     <li id="eventCond">
