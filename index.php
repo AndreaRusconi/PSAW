@@ -73,12 +73,12 @@ if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
     <ul id="option">
         <li class="share">
             <p id="condividi">Condividi la tua serata,<br> fai sapere a tutti dove ti trovi. </p>
-            <a href="share.php">CONDIVIDI EVENTO</a>
+            <a href="share.php">Share event</a>
         </li>
         
         <li class="search">
             <p id="ricerca">Cerca intorno a te,<br> trova la tua serata ideale.</p>
-            <a href="search.php">RICERCA EVENTO</a>
+            <a href="search.php">Search event</a>
         </li>
     </ul>
     
