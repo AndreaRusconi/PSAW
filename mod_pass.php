@@ -20,6 +20,82 @@ $username = $_SESSION['username'];
 
 
 
+if(isset($_GET['submit'])) {   
+    
+    $oldPass = $_GET['oldpass'];
+    $newPass = $_GET['newpass'];
+    $confNewPass = $_GET['newpassconrifm'];
+
+    $cryptpass = sha1($oldPass);
+    $cryptpass1 = sha1($newPass);
+   
+    $conn = connection();
+    
+    if($newPass != $confNewPass){
+        echo 'pass e conPass diverse';
+        
+    }
+    
+    else{
+        
+        $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->bind_result($password);
+    
+   // $result = $conn->query($sql);
+        $stmt->fetch();
+        $stmt->close();
+        
+        if ($password == $cryptpass) {
+                 
+            $stmt1 = $conn->prepare("UPDATE users SET password=? WHERE username = '{$username}'");
+            $stmt1->bind_param("s", $cryptpass1);
+    
+            $stmt1->execute();
+    
+            $stmt1->close();
+            $conn->close();
+             
+            
+            header("Location: generalProfile.php?gianni=$username");
+            
+        }
+        else
+            echo "try again";
+    
+    
+        
+    }
+    
+    
+   
+    
+        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if(empty($username)){
     $username = 'none';
 }
