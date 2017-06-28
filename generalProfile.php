@@ -26,8 +26,33 @@ if($segn != $username){
 
 $conn = connection();
 
+    
 if($flag){
-  $sql = "SELECT * FROM users WHERE username = '{$username}'";
+  $stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    
+}
+else{
+   $stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
+    $stmt->bind_param("s", $segn);
+}   
+    $stmt->execute();
+     $stmt->bind_result($email,$name,$surname,$citta)  ; 
+
+$stmt->fetch();
+$stmt->close();
+    
+    
+
+
+
+
+
+
+/*
+
+if($flag){
+  $sql = "SELECT email,nome,cognome,citta FROM users WHERE username = '{$username}'";
 }
 else{
    $sql = "SELECT * FROM users WHERE username = '{$segn}'"; 
@@ -48,7 +73,7 @@ else{
     }
   
 
-
+*/
 if(empty($name)){
     $name = 'none';
 }

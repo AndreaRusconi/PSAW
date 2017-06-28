@@ -10,8 +10,6 @@ include("db_con.php");
 
 if(!isset($_SESSION['username'])){
     
-   // $message = "devi effettuare il login per poter accedere alla pagina";
-   //echo "<script type='text/javascript'>alert('$message');</script>";
     header ("location:login.php");
 }
 
@@ -31,17 +29,17 @@ if(!isset($_SESSION['username'])){
   
     $conn = connection();
 
-    $sql = "INSERT INTO event(nome,descrizione,latitudine,longitudine,user)
-                VALUES ('$nomeEvento','$descrizione','$lat','$long','$username')";
-
-
-    if ($conn->query($sql) == TRUE) {
+  
+        
+        
+    $stmt = $conn->prepare("INSERT INTO event (nome,descrizione,latitudine,longitudine,user) VALUES(?,?,?,?,?)");
+            $stmt->bind_param("ssdds", $nomeEvento,$descrizione,$lat,$long,$username);
+            $stmt->execute();
+            $stmt->close();    
+        
         header('Location: search.php');
 
-    }
-    else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+    
     }
 
 

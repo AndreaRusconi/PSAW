@@ -4,45 +4,42 @@ include("db_con.php");
 
 if(isset($_GET['submit'])) {   
     
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+    $user = $_GET['username'];
+    $pass = $_GET['password'];
     $remember = $_GET['remember_me'];
 
-    $cryptpassword = sha1($password);
+    $cryptpass = sha1($pass);
     $good = false;
     $conn = connection();
-
-    $sql = "SELECT username, password FROM users";
-    $result = $conn->query($sql);
-     
     
     
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            if ($row["username"] == $username && $row["password"] == $cryptpassword) {
-                $good = true;
-                break;
-            }
+    
+    
+    
+    $stmt = $conn->prepare("SELECT username,password FROM users WHERE username = ?");
+    $stmt->bind_param("s", $user);
+    
+    $stmt->execute();
+     $stmt->bind_result($username,$password)  ;
+    
+   // $result = $conn->query($sql);
+    
+    $stmt->fetch();
+        
+        if ($username == $user && $password == $cryptpass) {
+                 session_start();
+                $_SESSION['username'] = $username;
+                if ($remember) {
+                    setcookie("cookiename", $user, time() + 6000);
+                    setcookie("cookiepass", $cryptpass, time() + 6000);
+                }
+                header('Location: private.php');
         }
-    }
-    else {
-        echo "0 results";
-    }
-
-    if ($good) {
-        session_start();
-        $_SESSION['username'] = $username;
-        if ($remember) {
-            setcookie("cookiename", $username, time() + 6000);
-            setcookie("cookiepass", $cryptpassword, time() + 6000);
-        }
-        header('Location: private.php');
-
-    } 
         else
             echo "try again";
-
-
+    
+    $stmt->close();
+    
         
 }
 

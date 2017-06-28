@@ -14,6 +14,12 @@ $conn = connection();
 $username = $_SESSION['username'];
 
 
+
+
+
+
+
+
 if(empty($username)){
     $username = 'none';
 }

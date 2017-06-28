@@ -59,6 +59,31 @@ if(isset($_POST['submit'])) {
 
 
     $conn = connection();
+    
+    
+    
+    
+    $stmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    
+    $stmt->execute();
+     $stmt->bind_result($user);
+    
+   // $result = $conn->query($sql);
+    
+    $stmt->fetch();
+        if ($user == $username){
+                $useromailgiainuso = true;
+                
+            }
+    
+    $stmt->close();
+
+    
+    
+    
+  /*  
+    
 
     $sql = "SELECT username FROM users";
     $result = $conn->query($sql);
@@ -72,27 +97,29 @@ if(isset($_POST['submit'])) {
         }
     }
 
-
+*/
+    
     if (!$useromailgiainuso) {
 
         if (chkEmail($email) && chkUsername($username) && chkPassword($password, $passwordConfirm)) {
 
-            echo 'Registrazione avvenuta con successo';
+            
             $cryptpassword = sha1($password);
 
 
             $conn = connection();
 
-
-            $sql = "INSERT INTO users(username, email, password)
-                VALUES ('$username','$email','$cryptpassword')";
-
-            if ($conn->query($sql) == TRUE) {
-                header('Location: login.php');
-
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
+            
+            
+            $stmt = $conn->prepare("INSERT INTO users (username,email,password) VALUES(?,?,?)");
+            $stmt->bind_param("sss", $username,$email,$cryptpassword);
+            $stmt->execute();
+            $stmt->close();
+            header('Location: login.php');
+            //$sql = "INSERT INTO users(username, email, password)
+              //  VALUES ('$username','$email','$cryptpassword')";
+//todo check
+        
         } else
             echo 'Errore, la password deve essere di almeno 8 caratteri,il nome utente deve essere al massimo di 25 caratteri';
     }

@@ -13,22 +13,37 @@ if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
     
     $good = false;
     $conn = connection();
-    $sql = "SELECT username, password FROM users";
-    $result = $conn->query($sql);
+    $user = $_COOKIE["cookiename"];
+    
+  //  $sql = "SELECT username, password FROM users";
+    
+    $stmt = $conn->prepare("SELECT username,password FROM users WHERE username = ?");
+    $stmt->bind_param("s", $user);
+    
+    $stmt->execute();
+     $stmt->bind_result($username,$password,$surname)  ;
+    
+   // $result = $conn->query($sql);
+    
+    $stmt->fetch();
+        
+        if ($username == $_COOKIE["cookiename"] && $password == $_COOKIE["cookiepass"]) {
+                $_SESSION['username'] = $_COOKIE["cookiename"];
+                header('Location: private.php');
+            }
+    
+    $stmt->close();
     
    
-    if ($result->num_rows > 0) {
+   /* if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             if ($row["username"] == $_COOKIE["cookiename"] && $row["password"] == $_COOKIE["cookiepass"]) {
                 $good = true;
                 break;
             }
         }
-    }
-    if ($good) {
-        $_SESSION['username'] = $_COOKIE["cookiename"];
-        header('Location: private.php');
-    } 
+    }*/
+  
 }
 
 ?>
