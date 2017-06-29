@@ -3,9 +3,6 @@ session_start();
     if(isset($_SESSION['username'])){
         $ok = true;
     }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -27,17 +24,7 @@ session_start();
         <li class="other"><a href="aboutUs.php">about us</a></li>
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
-    
-    <script>
-    
-        
-        
-    </script> 
-    
-    
-     
-
-
+         
 <h1>About Us</h1>
 
 <p id="presentation">

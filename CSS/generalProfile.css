@@ -115,5 +115,37 @@ h1{
 }
 
 
+#eventiCondivisi{
+    
+    float: right;
+    margin-top: 4%;
+    
+}
+
+
+.roundContainer{
+    
+    color: white;
+    margin-left: 5%;
+    font-family: Trebuchet MS, sans-serif;
+    
+}
+#submit{
+    
+    margin-top: 1%;
+    height: 25px;
+    width: 10%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+
+
 
 

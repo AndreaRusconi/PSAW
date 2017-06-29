@@ -1,9 +1,5 @@
 <?php
 session_start();
-// Controlla se la sessione Ã¨ stata registrata, altrimenti rimanda alla pagina di login
-// Questa prima parte dobbiamo inserirla in tutte le pagine che vogliamo proteggere con password prima di qualsiasi altra cosa
-
-
 include("db_con.php");
 
 if(!isset($_SESSION['username'])){
@@ -13,26 +9,20 @@ if(!isset($_SESSION['username'])){
 $username = $_SESSION['username'];
 $flag = true;
 
+$varProfile = $_GET['var'];
 
-
-
-
-$var = $_GET['var'];
-
-$sourceImage = sha1($var);
-if($var != $username){
+$sourceImage = sha1($varProfile);
+if($varProfile != $username){
     $flag = false;
 }
 
 $conn = connection();
 
-    
-
-    $stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
-    $stmt->bind_param("s", $var);
+$stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
+$stmt->bind_param("s", $varProfile);
    
-    $stmt->execute();
-     $stmt->bind_result($email,$name,$surname,$citta)  ; 
+$stmt->execute();
+$stmt->bind_result($email,$name,$surname,$citta); 
 
 $stmt->fetch();
 $stmt->close();
@@ -48,9 +38,6 @@ if(empty($surname)){
 if(empty($citta)){
     $citta = 'none';
 }
-
-
-
 ?>
 
 
@@ -82,28 +69,23 @@ if(empty($citta)){
             <li class="datalist"><?php echo $surname ?></li>
             <li class="datalist"><?php echo $email ?></li>
             <li class="datalist"><?php echo $citta ?></li>
-            <li id="modifica"><a href="<?php if($flag){echo 'modify';}else{echo 'msg_received';}?>.php?var=<?php echo $var; ?>"><?php if($flag){echo 'modifica profilo'; }else{echo ' invia messaggio ';} ?></a></li>
-            
+            <li id="modifica"><a href="<?php if($flag){echo 'modify';}?>.php"><?php if($flag){echo 'modifica profilo'; }?></a></li>    
         </ul>
     </li>
     <li id="eventCond">
-        <ul>
+        <ul id="eventiCondivisi">
             <li></li>
             <li></li>
-        
         </ul>
     </li>
-
 </ul>
-<div class="roundContainer">
-        <br><br>
-        <p class="pageText">MODIFICA IMMAGINE</p>
+    
+<div class="roundContainer" <?php if(!$flag){ echo 'hidden';}?>>
+        <p class="pageText">Modifica immagine del profilo</p>
         <div id="error"></div>
-        <br><br>
-        <form action="serv_changeimg.php" method="post" enctype="multipart/form-data" style="color:white;">
-            Select image to upload:
+        <form action="modifyImage.php" method="post" enctype="multipart/form-data">
             <input type="file" name="fileToUpload" id="fileToUpload"><br>
-            <input type="submit" value="Upload Image" name="submit">
+            <input type="submit" value="Upload Image" name="submit" id="submit">
         </form>
     </div>
 

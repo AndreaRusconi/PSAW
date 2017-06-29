@@ -25,6 +25,12 @@ if(!isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $lat = $_POST['lat'];
         $long = $_POST['long'];
+   //controlla bene     
+        if(empty($nomeEvento)){
+            echo 'impossibile salvare evento';
+            header('Location: share.php');
+            
+        }
 
   
     $conn = connection();
@@ -113,21 +119,22 @@ if(!isset($_SESSION['username'])){
             <li id="dataEvent">
                 
                 <h1 id= "tit">Drag the marker..</h1>
-                <div class="labels">
+               <div class="labels">
                     <label id ="descNome" for="nome">Nome evento:</label>
-                    <input id="nome" name="nome" type="text" required="required" aria-required="true" value=""  placeholder="">
+                    <input id="nome" name="nome" type="text" required="required" aria-required="true" autocomplete="off"  placeholder="">
                 </div>
                 
+               
                 
                 <div class="labels">
                     <label id ="descLabel" for="descrizione">Inserisci qui una descrizione dell'evento:</label>
-                    <textarea id="descrizione" name="descrizione"></textarea>
+                    <textarea id="descrizione" name="descrizione" required="required" autocomplete="off" ></textarea>
                 </div>
                 
                 
-                <ul>
-                    <li>IL GIORNO: <input type="datetime" name="dateE" id="dataE"></li>
-                    <li>    ALLE ORE: <input type="time" name="timeE" id="timeE"></li>
+                <ul id="quando">
+                    <li id="giorno">Giorno: <input type="datetime" name="dateE" id="dataE"></li>
+                    <li id = "ora">Ore: <input type="time" name="timeE" id="timeE"></li>
                 </ul>
                 <div class="labels">
                     <input type="checkbox" id="remBox" name="remember_me" onclick="unlock(this)" checked >
@@ -253,13 +260,8 @@ if(!isset($_SESSION['username'])){
                                             document.getElementById("long").value = yNew; 
                                             document.getElementById("remBox").checked = false;
                                          
-                                          });
-  
-                                    
-                                    
-                                });
-                                    
-                                        
+                                          });  
+                               });         
                                 
                             }
                             

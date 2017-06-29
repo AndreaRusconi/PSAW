@@ -9,7 +9,6 @@ if(isset($_GET['submit'])) {
     $remember = $_GET['remember_me'];
 
     $cryptpass = sha1($pass);
-    $good = false;
     $conn = connection();
     
     
@@ -18,28 +17,23 @@ if(isset($_GET['submit'])) {
     
     $stmt = $conn->prepare("SELECT username,password FROM users WHERE username = ?");
     $stmt->bind_param("s", $user);
-    
     $stmt->execute();
-     $stmt->bind_result($username,$password)  ;
-    
-   // $result = $conn->query($sql);
-    
+    $stmt->bind_result($username,$password);
     $stmt->fetch();
         
         if ($username == $user && $password == $cryptpass) {
-                 session_start();
-                $_SESSION['username'] = $username;
-                if ($remember) {
-                    setcookie("cookiename", $user, time() + 6000);
-                    setcookie("cookiepass", $cryptpass, time() + 6000);
-                }
-                header('Location: private.php');
+            session_start();
+            $_SESSION['username'] = $username;
+            if ($remember) {
+                setcookie("cookiename", $user, time() + 6000);
+                setcookie("cookiepass", $cryptpass, time() + 6000);
+            }
+            header('Location: private.php');
         }
         else
             echo "try again";
     
     $stmt->close();
-    
         
 }
 
@@ -88,21 +82,9 @@ if(isset($_GET['submit'])) {
 </form>
 
 
-
-
-
-
 <footer class="footer" role="contentinfo">
     <p class="footerCopyright">Nessun Copyright registrato. Tutti i diritti non sono riservati.</p>
 </footer>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

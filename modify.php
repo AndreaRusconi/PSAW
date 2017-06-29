@@ -9,59 +9,18 @@ if(!isset($_SESSION['username'])){
 }
 include("db_con.php");
 
-
-
 $username = $_SESSION['username'];
-
-
-
-
 $conn = connection();  
 
-
-
-
-  $stmt = $conn->prepare("SELECT nome,cognome,email,citta FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT nome,cognome,email,citta FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
-    
     $stmt->execute();
-     $stmt->bind_result($name,$surname,$email,$city);
-    
-   // $result = $conn->query($sql);
-    
+    $stmt->bind_result($name,$surname,$email,$city);
     $stmt->fetch();
     $stmt->close();
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*
-
-$sql = "SELECT nome,cognome,email,citta FROM users WHERE username = '{$username}'";
-$result = $conn->query($sql);
-     
-    
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $name = $row["nome"];
-            $surname = $row["cognome"];
-            $email = $row["email"];
-            $city = $row["citta"];
-        }
-    }
-    else {
-        echo "0 results";
-    }
-*/
 
 if(isset($_POST['submit'])) {
 
@@ -82,16 +41,8 @@ if(isset($_POST['submit'])) {
     $stmt1->close();
     $conn->close();
     
-    header ("location:generalProfile.php?gianni=$username");
-    
-    
-    
-    //$sql = "UPDATE users SET email = '{$email}', nome = '{$name}', cognome = '{$surname}' WHERE username = '{$username}'";
-    //$result = $conn->query($sql);
-    
+    header ("location:generalProfile.php?var=$username");
 }
-
-
 
 
 if(empty($name)){

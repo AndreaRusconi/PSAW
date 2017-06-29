@@ -3,7 +3,6 @@ session_start();
 
 include("db_con.php");
 
-
 if(!isset($_SESSION['username'])){
     header ("location:login.php");
 }
@@ -15,45 +14,39 @@ $username = $_SESSION['username'];
 
 $conn = connection();
 
- $sql = "SELECT username,commento FROM message WHERE nome = '{$nomeEvento}'";
-   
-    $result = $conn->query($sql);
+$sql = "SELECT username,commento FROM message WHERE nome = '{$nomeEvento}'";
+$result = $conn->query($sql);
 
-    $rowcount=mysqli_num_rows($result);
+$rowcount=mysqli_num_rows($result);
   
-    $tot = $rowcount;
+$tot = $rowcount;
     
-    if ($result->num_rows > 0) {
-         while($rowcount>0){
-             
-             $row[$rowcount] = mysqli_fetch_assoc($result);
-             $rowcount = $rowcount - 1;
-             
-         }
-   }
-
-        $i = 0;
-        $array[$tot][2];
+if ($result->num_rows > 0) {
+        while($rowcount>0){
+            $row[$rowcount] = mysqli_fetch_assoc($result);
+            $rowcount = $rowcount - 1; 
+        }
+}
+$i = 0;
+$comments[$tot][2];
          
-         foreach ($row as $cord){
+foreach ($row as $cord){
              
-            $array[$i][0] =  $cord['username']; 
-            $array[$i][1] =  $cord['commento'];
-           
-            $i = $i + 1;
-         }
+    $comments[$i][0] =  $cord['commento'];
+    $comments[$i][1] =  $cord['username']; 
+    $i = $i + 1;
+}
+       
 
 if(isset($_POST['submit'])) {   
     
     
-            $commento = $_POST['descrizione'];
-    
-            
-            $stmt = $conn->prepare("INSERT INTO message (username,nome,commento) VALUES(?,?,?)");
-            $stmt->bind_param("sss", $username,$nomeEvento,$commento);
-            $stmt->execute();
-            $stmt->close();
-            header("Location: messages.php?var=$nomeEvento");
+    $commento = $_POST['descrizione'];        
+    $stmt = $conn->prepare("INSERT INTO message (username,nome,commento) VALUES(?,?,?)");
+    $stmt->bind_param("sss", $username,$nomeEvento,$commento);
+    $stmt->execute();
+    $stmt->close();
+    header("Location: messages.php?var=$nomeEvento");
 }
 
 
@@ -89,11 +82,17 @@ if(isset($_POST['submit'])) {
     
     $j =0;
     
+    if($tot == 0){
+        $tot = 1;
+        $comments[0][0] = "non ci sono commenti";
+         $comments[0][1] = "admin";
+    }
+    
     while($j < $tot){
             
         echo "<tr>
-                <td>{$array[$j][1]}</td>
-                <td>{$array[$j][0]}</td>
+                <td>{$comments[$j][0]}</td>
+                <td>{$comments[$j][1]}</td>
               </tr>";
         $j ++;
     

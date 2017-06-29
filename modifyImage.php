@@ -1,12 +1,10 @@
 <?php
 session_start();
-    echo "ale doria";
-    
-    echo "ale doria";
+
     $user_email = $_SESSION['username'];
 
     $target_dir = "../profile_images/";
-    echo $target_dir ;
+   
 
     $imageFileType = pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION);
 
@@ -27,7 +25,7 @@ session_start();
     }
 
     // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 500000) {
+    if ($_FILES["fileToUpload"]["size"] > 5000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -57,14 +55,5 @@ session_start();
 
 
     
-   /* 
-
-    $sql = "UPDATE user SET photo='{$target_file}' WHERE email='{$user_email}'";
-    $stmt = mysqli_prepare($conn,$sql);
-    if( ! mysqli_stmt_execute($stmt) )
-        echo mysqli_error($conn);
-    else {
-        echo "<br>Wait...Redirecting to profile page.";
-        header("refresh:2;url=logged.php");
-    }*/
+   
 ?>

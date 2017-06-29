@@ -1,7 +1,4 @@
 <?php
-
-// Controlla se la sessione Ã¨ stata registrata, altrimenti rimanda alla pagina di login
-// Questa prima parte dobbiamo inserirla in tutte le pagine che vogliamo proteggere con password prima di qualsiasi altra cosa
 session_start();
 
 if(!isset($_SESSION['username'])){
@@ -12,12 +9,6 @@ include("db_con.php");
 $conn = connection();
 
 $username = $_SESSION['username'];
-
-
-
-
-
-
 
 
 if(isset($_GET['submit'])) {   
@@ -44,7 +35,6 @@ if(isset($_GET['submit'])) {
         $stmt->execute();
         $stmt->bind_result($password);
     
-   // $result = $conn->query($sql);
         $stmt->fetch();
         $stmt->close();
         
@@ -64,38 +54,10 @@ if(isset($_GET['submit'])) {
         }
         else
             echo "try again";
-    
-    
         
     }
-    
-    
-   
-    
-        
+     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if(empty($username)){
     $username = 'none';

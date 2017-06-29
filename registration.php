@@ -1,4 +1,3 @@
-
 <?php
 include("db_con.php");
 function chkEmail($email)
@@ -69,7 +68,6 @@ if(isset($_POST['submit'])) {
     $stmt->execute();
      $stmt->bind_result($user);
     
-   // $result = $conn->query($sql);
     
     $stmt->fetch();
         if ($user == $username){
@@ -80,24 +78,7 @@ if(isset($_POST['submit'])) {
     $stmt->close();
 
     
-    
-    
-  /*  
-    
 
-    $sql = "SELECT username FROM users";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            if ($row["username"] == $username){
-                $useromailgiainuso = true;
-                break;
-            }
-        }
-    }
-
-*/
     
     if (!$useromailgiainuso) {
 
@@ -116,9 +97,6 @@ if(isset($_POST['submit'])) {
             $stmt->execute();
             $stmt->close();
             header('Location: login.php');
-            //$sql = "INSERT INTO users(username, email, password)
-              //  VALUES ('$username','$email','$cryptpassword')";
-//todo check
         
         } else
             echo 'Errore, la password deve essere di almeno 8 caratteri,il nome utente deve essere al massimo di 25 caratteri';
