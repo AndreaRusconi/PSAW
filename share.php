@@ -25,25 +25,39 @@ if(!isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $lat = $_POST['lat'];
         $long = $_POST['long'];
+        $giorno = $_POST['dateE'];
+        $ora = $_POST['timeE'];
+        $cate = $_POST['categ'];
+        
+        echo "<script>
+        console.log($nomeEvento,$descrizione,$lat,$long,$giorno,$ora);</script>";
+        
    //controlla bene     
-        if(empty($nomeEvento)){
-            echo 'impossibile salvare evento';
-            header('Location: share.php');
+        if(empty($nomeEvento) || empty($descrizione) || empty($lat) || empty($long) || empty($giorno) || empty($ora) || empty($cate)){
+           echo "<script>alert('tutti i campi sono obbligatori')</script>";
+                
+        }
+        else{
+          
+            $conn = connection();
+
+  
+        
+        
+            $stmt = $conn->prepare("INSERT INTO event (nome,descrizione,latitudine,longitudine,user,giorno,ora,categoria) VALUES(?,?,?,?,?,?,?,?)");
+            $stmt->bind_param("ssddssss", $nomeEvento,$descrizione,$lat,$long,$username,$giorno,$ora,$cate);
+            $stmt->execute();
+            $stmt->close();  
+            $conn->close();
+        
+            header('Location: search.php');
+            
             
         }
-
+            
+       // header('Location: share.php');
   
-    $conn = connection();
-
-  
-        
-        
-    $stmt = $conn->prepare("INSERT INTO event (nome,descrizione,latitudine,longitudine,user) VALUES(?,?,?,?,?)");
-            $stmt->bind_param("ssdds", $nomeEvento,$descrizione,$lat,$long,$username);
-            $stmt->execute();
-            $stmt->close();    
-        
-        header('Location: search.php');
+    
 
     
     }
@@ -68,12 +82,11 @@ if(!isset($_SESSION['username'])){
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" ></script>
-        <script src="js_eventcreate.js"></script>
-        <script src="external-js/jonthornton-jquery-timepicker-e417a53/jquery.timepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" ></script> 
+        <script src="jonthornton-jquery-timepicker-e417a53/jquery.timepicker.min.js"></script>
         <link rel="stylesheet" href="external-js/jonthornton-jquery-timepicker-e417a53/jquery.timepicker.css">
+        
         <style>
             input {
                 vertical-align: middle;
@@ -124,6 +137,12 @@ if(!isset($_SESSION['username'])){
                     <input id="nome" name="nome" type="text" required="required" aria-required="true" autocomplete="off"  placeholder="">
                 </div>
                 
+                
+                <div class="labels">
+                    <label id ="categLabel" for="nome">Categoria:</label>
+                    <input id="categ" name="categ" type="text" required="required" aria-required="true" autocomplete="off"  placeholder="">
+                </div>
+                
                
                 
                 <div class="labels">
@@ -134,7 +153,7 @@ if(!isset($_SESSION['username'])){
                 
                 <ul id="quando">
                     <li id="giorno">Giorno: <input type="datetime" name="dateE" id="dataE"></li>
-                    <li id = "ora">Ore: <input type="time" name="timeE" id="timeE"></li>
+                    <li id = "ora">Ore: <input type="time" name="timeE" id="timeE"> hh:mm</li>
                 </ul>
                 <div class="labels">
                     <input type="checkbox" id="remBox" name="remember_me" onclick="unlock(this)" checked >
