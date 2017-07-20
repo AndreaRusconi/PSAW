@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
         }
 }
 $i = 0;
-$comments[$tot][2];
+//$comments[$tot][2];
          
 foreach ($row as $cord){
              
@@ -41,21 +41,30 @@ foreach ($row as $cord){
 if(isset($_POST['submit'])) {   
     
     
-    $commento = $_POST['descrizione'];        
+    
+    
+    $commento = $_POST['descrizione']; 
+    if(empty($commento)){
+       echo "<script>alert('commento obbligatorio')</script>";
+        //header("Location: messages.php?var=$nomeEvento");  
+    }
+    else{
     $stmt = $conn->prepare("INSERT INTO message (username,nome,commento) VALUES(?,?,?)");
     $stmt->bind_param("sss", $username,$nomeEvento,$commento);
     $stmt->execute();
     $stmt->close();
     header("Location: messages.php?var=$nomeEvento");
+    }
 }
 
+$conn->close();
 
 ?>
 <!DOCTYPE html>
 
 <head>
 
-    <link rel="stylesheet" href="CSS/messages.css" />
+    <link rel="stylesheet" href="CSS/Bar.css" />
     <title>Message</title>
 </head>
 
@@ -70,14 +79,14 @@ if(isset($_POST['submit'])) {
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
 </ul>
     
-    <h1><?php echo $nomeEvento; ?></h1>
+    <h1 class="title"><?php echo $nomeEvento; ?></h1>
     
     <?php 
     
-    echo "<table id = 'table'>";
+    echo "<table id = 'tabella'>";
     echo "<tr>
-            <th id ='com'>Commento</th>
-            <th id='mit'>Mittente</th>
+            <th id ='com' class='voci'>Commento</th>
+            <th id='mittente' class='voci'>Mittente</th>
           </tr>";
     
     $j =0;
@@ -91,8 +100,8 @@ if(isset($_POST['submit'])) {
     while($j < $tot){
             
         echo "<tr>
-                <td>{$comments[$j][0]}</td>
-                <td>{$comments[$j][1]}</td>
+                <td class='linea'>{$comments[$j][0]}</td>
+                <td class='linea'>{$comments[$j][1]}</td>
               </tr>";
         $j ++;
     
@@ -100,7 +109,7 @@ if(isset($_POST['submit'])) {
     echo "</table>";
     
     ?>
-    <form method="post" class="menu" name="event" autocomplete="off" novalidate="">
+    <form method="post" class="testi" name="event" autocomplete="off" novalidate="">
     <textarea id="descrizione" name="descrizione"></textarea>
     
         <input id="accesso" name="submit" type="submit" value="commenta">

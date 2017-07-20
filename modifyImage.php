@@ -30,8 +30,8 @@ session_start();
         $uploadOk = 0;
     }
     // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG & PNG  files are allowed.";
+    if($imageFileType != "jpg") {
+        echo "Sorry, only JPG  files are allowed.";
         $uploadOk = 0;
     }
 

@@ -41,6 +41,7 @@ if(isset($_POST['submit'])) {
     $stmt1->close();
     $conn->close();
     
+    
     header ("location:generalProfile.php?var=$username");
 }
 
@@ -64,7 +65,7 @@ if(empty($email)){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/modify.css" />
+    <link rel="stylesheet" href="CSS/Bar.css" />
     <title>Modify</title>
 </head>
 
@@ -81,34 +82,34 @@ if(empty($email)){
 
 
 
-<form class="modifiche" method = "post" >
-    <div id="title">Modifica profilo</div>
+<form class="blocco_campi" method = "post" >
+    <div id="intestazione_blocco_campi">Modifica profilo</div>
     
     <div class="box">
-    <label id="nameLabel" for="name">Name</label>
+    <label  " for="name">Name</label>
     </div>
-    <input id="name" name="name" type="text" required="required" aria-required="true" value="<?php echo $name ?>">
+    <input id="name"  name="name"  class="modifiche" type="text" required="required" aria-required="true" value="<?php echo $name ?>">
     
     
     <div class="box">
-    <label id="surnameLabel" for="surname">Surname</label>
+    <label  for="surname">Surname</label>
      </div>
-    <input id="surname" name="surname" type="text" required="required" aria-required="true" value="<?php echo $surname ?>">
+    <input id="surname" class="modifiche" name="surname" type="text" required="required" aria-required="true" value="<?php echo $surname ?>">
    
     <div class="box">
-    <label id="emailLabel" for="surname">Email</label>
+    <label  for="surname">Email</label>
      </div>
-    <input id="email" name="email" type="email" required="required" aria-required="true" value="<?php echo $email ?>">
+    <input id="email" class="modifiche" name="email" type="email" required="required" aria-required="true" value="<?php echo $email ?>">
     
     <div class="box">
-    <label id="cityLabel" for="city">City</label>
+    <label  for="city">City</label>
      </div>
-    <input id="city" name="city" type="text" required="required" aria-required="true" value="<?php echo $city ?>">
+    <input id="city" class="modifiche" name="city" type="text" required="required" aria-required="true" value="<?php echo $city ?>">
     
     
     
-    <a href="mod_pass.php" id="pass">Modifica password </a>
-    <input id="modifyaccount" name = "submit" type = "submit" value = "Conferma">
+    <a href="mod_pass.php" id="to_modifica_pass">Modifica password </a>
+    <input id="tasto_giallo" name = "submit" type = "submit" value = "Conferma">
 
 </form>
 </body>

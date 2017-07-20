@@ -11,7 +11,7 @@ if(!isset($_SESSION['username'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/private.css" />
+    <link rel="stylesheet" href="CSS/Bar.css" />
     <title>Event</title>   
 </head>
     
@@ -25,7 +25,7 @@ if(!isset($_SESSION['username'])){
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
-    <h1>Search, Share, Have fun!</h1>
+    <h1 id="motto">Search, Share, Have fun!</h1>
     
     <ul id="option">
         <li class="share">

@@ -96,6 +96,7 @@ if(isset($_POST['submit'])) {
             $stmt->bind_param("sss", $username,$email,$cryptpassword);
             $stmt->execute();
             $stmt->close();
+            $conn->close();
             header('Location: login.php');
         
         } else
@@ -111,7 +112,7 @@ if(isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/registration.css" />
+    <link rel="stylesheet" href="CSS/Nobar.css" />
     <title>Accedi al tuo profilo</title>
 </head>
 
@@ -120,11 +121,11 @@ if(isset($_POST['submit'])) {
     <p class="logoEvent"><a href="index.php"><img src="CSS/Images/logo.png" height="100px" width="300px"></a></p>
 </header>
 
-<form class="menu" method = "post" >
+<form class="blocco_campi" method = "post" >
 
-    <h1>Registrati</h1>
+    <h1 id="intestazione_blocco_campi">Registrati</h1>
 
-    <input name="username" id="userName" type="text" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci username">
+    <input name="username" id="username" type="text" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci username">
 
     <input name="email" id="email" type="email" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci email">
 
@@ -132,9 +133,9 @@ if(isset($_POST['submit'])) {
 
     <input name="passwordConfirm" id="passwordConfirm" type="password" class="passwordConfirm" required="required" aria-required="true" autocomplete="off" placeholder="Conferma password">
 
-    <p id="new"></p>
+    <p class="barretta" id="registration_bar"></p>
 
-    <input id="creaAccount" name = "submit" type = "submit" value = "Crea il tuo account Event">
+    <input id="tasto_giallo" name = "submit" type = "submit" value = "Crea il tuo account Event">
 
 </form>
 

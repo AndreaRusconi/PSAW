@@ -9,6 +9,11 @@ if(isset($_GET['submit'])) {
     $remember = $_GET['remember_me'];
 
     $cryptpass = sha1($pass);
+    
+    if(empty($user) || empty($pass)){
+         echo "<script>alert('tutti i campi sono obbligatori')</script>";
+    }
+    else{
     $conn = connection();
     
     
@@ -31,9 +36,11 @@ if(isset($_GET['submit'])) {
             header('Location: private.php');
         }
         else
-            echo "try again";
+             echo "<script>alert('error input')</script>";
     
     $stmt->close();
+    $conn->close();
+    }
         
 }
 
@@ -43,7 +50,7 @@ if(isset($_GET['submit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/login.css"/>
+    <link rel="stylesheet" href="CSS/Nobar.css"/>
     <title>Accedi al tuo profilo</title>
 </head>
 
@@ -51,9 +58,9 @@ if(isset($_GET['submit'])) {
 <header>
     <p class="logoEvent"><a href="index.php"><img src="CSS/Images/logo.png" height="100px" width="300px"></a></p>
 </header>
-<form method="get" class="menu" name="login" autocomplete="off" novalidate="">
+<form method="get" class="blocco_campi" name="login" autocomplete="off" novalidate="">
 
-    <h1>Accedi</h1>
+    <h1 id="intestazione_blocco_campi">Accedi</h1>
 
     <input id="username" name="username" type="text" required="required" aria-required="true" value=""  placeholder="Username">
 
@@ -64,19 +71,15 @@ if(isset($_GET['submit'])) {
         <label id="remLabel" for="remBox">Remember me.</label>
     </div>
 
-    <input id="accesso" name="submit" type="submit" value="Accedi">
-
-    <div class="dimenticata">
-        <a href="#" id="link">Password dimenticata?</a>
-    </div>
+    <input id="tasto_giallo" name="submit" type="submit" value="Accedi">
 
 
-    <h2>Sei nuovo su Event?</h2>
+    <p class="barretta" id="login_bar"></p>
 
-    <p id="new"></p>
+    <h2 id="nuovo_su_event">Sei nuovo su Event?</h2>
 
-    <div class= "account">
-        <a href="registration.php" id="createAccount">Crea il tuo account</a>
+    <div id="tasto_grigio">
+        <a href="registration.php" id="to_account">Crea il tuo account</a>
     </div>
 
 </form>

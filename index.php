@@ -21,6 +21,7 @@ if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
         header('Location: private.php');
     }
     $stmt->close(); 
+    $conn->close();
 }
 
 ?>
@@ -29,7 +30,7 @@ if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/Homepage.css" />
+    <link rel="stylesheet" href="CSS/Bar.css" />
     <title>Event</title>   
 </head>
     
@@ -43,7 +44,7 @@ if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     
-    <h1>Search, Share, Have fun!</h1>
+    <h1 id="motto">Search, Share, Have fun!</h1>
 
 
 

@@ -12,7 +12,7 @@ session_start();
 <head> 
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
 	<title>Information</title> 
-	<link rel="stylesheet" type="text/css" href="CSS/info.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/Bar.css"/>
 
 
 </head> 

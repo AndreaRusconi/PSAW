@@ -1,0 +1,319 @@
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0,0,102,0.15);
+}
+
+.other {float: right;}
+.barra {float: right}
+.event {float: left;}
+
+.other a {
+    display: block;
+    color: rgb(255,204,0);
+    text-align: center;
+    padding: 27px 14px;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: Trebuchet MS, sans-serif;
+}
+.barra a {
+    display: block;
+    color: rgb(255,204,0);
+    text-align: center;
+    padding: 27px 12px;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: Trebuchet MS, sans-serif;
+}
+
+.event a {
+    display: block;
+    padding: 14px 16px;
+}
+
+
+#menu .other a:hover {color: white;}
+
+body{
+    background-image: url(Images/sfondo.jpg);
+    background-size:cover;
+    margin: 0;
+}
+
+.footer p{
+    text-align: right;
+    color: white;
+    font-size: 70%;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+}
+/*________________________________________________________*/
+#motto{
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 500;
+    color: rgb(255,204,0);
+    font-size: 50px;
+    text-align: center;
+    margin-top: 7%;
+    font-style: oblique;
+}
+#option {
+    list-style-type: none;
+    margin-top: 8%;
+    margin-left: 18%;
+    margin-right: 18%;
+    padding: 0;
+}
+.share {float : left}
+.search {float: right}
+#option a {
+    display: block;
+    color: rgb(255,204,0);
+    text-align: center;
+    border-radius: 50px;
+    font-size: 22px;
+    padding: 10px 90px;
+    text-decoration: none;
+    font-family: Trebuchet MS, sans-serif;
+    border: rgb(255,204,0) solid 3px;
+    background-color: transparent;
+}
+#option a:hover {
+    color: white;
+    border-color: white;
+}
+#condividi{
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+#ricerca{
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+#instruction{
+    margin-top: 5%;
+}
+.title  {
+    display:block;
+    font-weight: 500;
+    color: rgb(255,204,0);
+    font-size: 50px;
+    margin-top: 3%;
+    margin-left: 3%;
+    font-family: Trebuchet MS, sans-serif  ;
+    text-decoration: none;
+}
+.descr {
+    display: block;
+    font-size:20px;
+    font-family: Trebuchet MS, sans-serif;
+    color: white;
+    margin-left: 3%;
+    margin-right: 5%;
+    text-decoration: none;
+}
+#tasto_giallo{
+    margin-top: 9%;
+    margin-bottom: 6%;
+    height: 40px;
+    width: 85%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+#canvas{
+    display: block;
+    list-style-type: none;
+    margin-top: 3%;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+}
+#img_canv{
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+#data_canv{
+    display: block;
+}
+#datalist{
+    display: block;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-top: 2%;
+    color: white;
+    float: left;
+    font-family: Trebuchet MS, sans-serif;
+    list-style-type: none;
+}
+.data{
+    margin-top: 4%;
+}
+
+#to_modifica {
+    margin-top: 4%;
+}
+#to_modifica a{
+    text-decoration: none;
+    color: yellow;
+}
+#image{
+    margin-left: 10%;
+    margin-top: 5%;
+    height: 300px;
+    width: 300px ;
+}
+#eventi_condivisi{
+    margin-top: 6%;
+    color: white;
+    display: block;
+    font-size: 30px;
+    font-family: Trebuchet MS, sans-serif;
+    list-style-type: none;
+}
+#eventCond{
+    float:right;
+    margin-right: 15%;
+}
+#item{
+    color: yellow;
+}
+.roundContainer{
+    color: white;
+    margin-left: 5%;
+    font-family: Trebuchet MS, sans-serif;
+}
+#submit{
+    margin-top: 1%;
+    height: 25px;
+    width: 10%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+#tabella{
+    margin-top: 1%;
+    margin-left: 10%;
+    width: 80%;
+    text-align:left;
+    font-family: Trebuchet MS, sans-serif;
+    color: white;
+    line-height: 40px;
+}
+#mittente{
+    width: 20%;
+}
+.voci {
+    font-weight: bold;
+    background-color: transparent;
+    color: yellow;
+}
+.linea{
+    word-wrap: break-word;
+    max-width: 150px;
+    color: white;
+    border: white 1px solid;
+    line-height: 120%;
+}
+#descrizione{
+    margin-top: 3%;
+    width: 80%;
+    height: 1%;
+    margin-left: 10%;
+}
+#accesso{
+    float: right;
+    margin-right: 10%;
+    margin-top: 1%;
+    text-align: center;
+    height: 25px;
+    width: 10%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+#tasto_giallo{
+    margin-top: 9%;
+    margin-bottom: 6%;
+    height: 40px;
+    width: 85%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+#intestazione_blocco_campi{
+    text-align: left;
+    margin-left: 7%;
+    margin-top: 6%;
+    color: white;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 200;
+    margin-bottom: 1%;
+    font-size: 30px;
+}
+.blocco_campi{
+    margin-top:3%;
+    border-radius: 0;
+    border: 2px white solid;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+}
+.box{
+    margin-top: 3%;
+    width: 85%;
+    text-align: left;
+    margin-left: 5%;
+    color:white;
+    font-family: Trebuchet MS, sans-serif;
+}
+.modifiche{
+    margin-top: 1%;
+    height: 40px;
+    width: 85%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+#to_modifica_pass{
+    color: yellow;
+    text-decoration: none;
+    margin-top: 20%;
+}
+
+
+

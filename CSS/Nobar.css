@@ -1,0 +1,157 @@
+.logoEvent{
+    text-align: center;
+    margin-top: 4%;
+}
+body{
+    background-image: url(Images/sfondo.jpg);
+    background-size:cover;
+    margin: 0;
+}
+
+.footer p{
+    text-align: right;
+    color: white;
+    font-size: 70%;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+}
+/*________________________________________________________*/
+#intestazione_blocco_campi{
+    text-align: left;
+    margin-left: 7%;
+    margin-top: 6%;
+    color: white;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 200;
+    margin-bottom: 1%;
+}
+.blocco_campi{
+    border-radius: 0;
+    border: 2px white solid;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+}
+#username{
+    margin-top: 3%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+#email{
+    margin-top: 4%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+#password{
+    margin-top: 4%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+#passwordConfirm{
+    margin-top: 4%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+.barretta{
+    content: "";
+    width: 20%;
+    margin-left: 5%;
+    background-color: transparent;
+    display: block;
+    border-top: 2px solid #e7e7e7;
+    position: absolute;
+}
+#login_bar{
+    margin_top: -1%
+}
+#registration_bar{
+    margin-top:2%;
+}
+#tasto_giallo{
+    margin-top: 9%;
+    margin-bottom: 6%;
+    height: 40px;
+    width: 85%;
+    border: 1px solid black;
+    padding: 0 10px;
+    color: black;
+    font-family: Trebuchet MS, sans-serif;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
+}
+.rememberMe{
+    color: white;
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 7%;
+}
+#nuovo_su_event{
+    margin-top: -1.5%;
+    color: white;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+}
+#tasto_grigio{
+    margin-top: 8%;
+    margin-bottom: 10%;
+}
+#to_account{
+    color: black;
+    background-image: -webkit-linear-gradient(top , white, rgb(224,225,221) 40%);
+    text-decoration: none;
+    padding: 10px 100px;
+    border-radius: 2px;
+    border: 1px solid black;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: Trebuchet MS, sans-serif;
+}
+#old_pass{
+    margin-top: 3%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+#new_pass{
+    margin-top: 4%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+#new_password_confirm{
+    margin-top: 4%;
+    height: 40px;
+    width: 80%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1em;
+}
+

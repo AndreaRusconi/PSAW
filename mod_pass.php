@@ -47,6 +47,7 @@ if(isset($_GET['submit'])) {
     
             $stmt1->close();
             $conn->close();
+            
              
             
             header("Location: generalProfile.php?var=$username");
@@ -78,7 +79,7 @@ if(empty($surname)){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="CSS/mod_pass.css" />
+    <link rel="stylesheet" href="CSS/Nobar.css" />
     <title>Accedi al tuo profilo</title>
 </head>
 
@@ -88,17 +89,17 @@ if(empty($surname)){
 </header>
 
 
- <form class="modificapassword" method = "get" >
+ <form class="blocco_campi" method = "get" >
 
-    <h1>Modifica Password</h1>
+    <h1 id="intestazione_blocco_campi">Modifica Password</h1>
 
-    <input name="oldpass" id="oldpass" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci vecchia password">
+    <input name="oldpass" id="old_pass" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci vecchia password">
 
-    <input name="newpass" id="newpass" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci nuova password">
+    <input name="newpass" id="new_pass" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci nuova password">
 
-     <input name="newpassconfirm" id="newpasswordconfirm" type="password"  required="required" aria-required="true" autocomplete="off" placeholder="conferma nuova password">
+     <input name="newpassconfirm" id="new_password_confirm" type="password"  required="required" aria-required="true" autocomplete="off" placeholder="conferma nuova password">
 
 
-    <input id="modpass" name = "submit" type = "submit" value = "Modifica password">
+    <input id="tasto_giallo" name = "submit" type = "submit" value = "Modifica password">
 
 </form>

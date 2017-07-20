@@ -121,6 +121,18 @@ body {
     color: white;
 }
 
+#dataEvent #giorno{
+   
+    color: white;
+    text-align: left;
+}
+
+#dataEvent #ora{
+    
+    color: white;
+    text-align: left;
+}
+
 #dataEvent #segnUser{
     
    color: white;

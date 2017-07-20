@@ -9,7 +9,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/aboutUs.css" />
+    <link rel="stylesheet" href="CSS/Bar.css" />
     <title>aboutUs</title>
 </head>
 <body>
@@ -25,9 +25,9 @@ session_start();
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
          
-<h1>About Us</h1>
+<h1 class="title">About Us</h1>
 
-<p id="presentation">
+<p class="descr">
     « Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt
     ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem
     ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
