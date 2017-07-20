@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+    if(!isset($_SESSION['username'])){
+    header ("location:login.php");
+}
+
     $user_email = $_SESSION['username'];
 
     $target_dir = "../profile_images/";
