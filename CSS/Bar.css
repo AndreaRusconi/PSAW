@@ -522,10 +522,11 @@ body{
 }
 #nuvola{
     min-width: 200px;
+    max-width: 400px;
 }
 #descrizione_search{
     word-wrap: break-word;
-    max-width: 190px;
+
 }
 
 
