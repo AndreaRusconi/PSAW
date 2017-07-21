@@ -6,7 +6,7 @@ if(!isset($_SESSION['username'])){
 }
 if(isset($_POST['submit'])) {
     $nomeEvento = $_POST['nome'];
-    $descrizione = $_POST['descrizione'];
+    $descrizione = $_POST['descrizione_evento'];
     $username = $_SESSION['username'];
     $lat = $_POST['lat'];
     $long = $_POST['long'];

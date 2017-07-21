@@ -1,5 +1,6 @@
 <?php
 session_start();
+$ok = false;
     if(isset($_SESSION['username'])){
         $ok = true;
     }

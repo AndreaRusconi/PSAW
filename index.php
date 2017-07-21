@@ -13,7 +13,7 @@ if(isset($_COOKIE["cookiename"]) && isset($_COOKIE["cookiepass"])){
     $stmt = $conn->prepare("SELECT username,password FROM users WHERE username = ?");
     $stmt->bind_param("s", $user);
     $stmt->execute();
-    $stmt->bind_result($username,$password,$surname);
+    $stmt->bind_result($username,$password);
     $stmt->fetch();
         
     if ($username == $_COOKIE["cookiename"] && $password == $_COOKIE["cookiepass"]) {

@@ -86,7 +86,7 @@ if(empty($email)){
     <div id="intestazione_blocco_campi">Modifica profilo</div>
     
     <div class="box">
-    <label  " for="name">Name</label>
+    <label for="name">Name</label>
     </div>
     <input id="name"  name="name"  class="modifiche" type="text" required="required" aria-required="true" value="<?php echo $name ?>">
     
