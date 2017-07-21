@@ -131,11 +131,11 @@ if(isset($_POST['submit'])) {
 
     <input name="password" id="password" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci password">
 
-    <input name="passwordConfirm" id="passwordConfirm" type="password" class="passwordConfirm" required="required" aria-required="true" autocomplete="off" placeholder="Conferma password">
+    <input name="passwordConfirm" id="passwordConfirm" type="password" class="passwordConfirm" required aria-required="true" autocomplete="off" placeholder="Conferma password">
 
     <p class="barretta" id="registration_bar"></p>
 
-    <input id="tasto_giallo" name = "submit" type = "submit" value = "Crea il tuo account Event">
+    <input class="tasto_giallo" name = "submit" type = "submit" value = "Crea il tuo account Event">
 
 </form>
 

@@ -10,10 +10,7 @@ if(isset($_GET['submit'])) {
 
     $cryptpass = sha1($pass);
     
-    if(empty($user) || empty($pass)){
-         echo "<script>alert('tutti i campi sono obbligatori')</script>";
-    }
-    else{
+
         
         $conn = connection();
 
@@ -37,7 +34,7 @@ if(isset($_GET['submit'])) {
 
         $stmt->close();
         $conn->close();
-    }
+
         
 }
 
@@ -55,7 +52,7 @@ if(isset($_GET['submit'])) {
 <header>
     <p class="logoEvent"><a href="index.php"><img src="CSS/Images/logo.png" height="100px" width="300px"></a></p>
 </header>
-<form method="get" class="blocco_campi" name="login" autocomplete="off" novalidate="">
+<form method="get" class="blocco_campi" name="login" autocomplete="off" >
 
     <h1 id="intestazione_blocco_campi">Accedi</h1>
 
@@ -68,7 +65,7 @@ if(isset($_GET['submit'])) {
         <label id="remLabel" for="remBox">Remember me.</label>
     </div>
 
-    <input id="tasto_giallo" name="submit" type="submit" value="Accedi">
+    <input class="tasto_giallo" name="submit" type="submit" value="Accedi">
 
 
     <p class="barretta" id="login_bar"></p>

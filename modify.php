@@ -109,7 +109,7 @@ if(empty($email)){
     
     
     <a href="mod_pass.php" id="to_modifica_pass">Modifica password </a>
-    <input id="tasto_giallo" name = "submit" type = "submit" value = "Conferma">
+    <input class="tasto_giallo" name = "submit" type = "submit" value = "Conferma">
 
 </form>
 </body>

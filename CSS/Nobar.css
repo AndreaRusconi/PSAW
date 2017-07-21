@@ -84,7 +84,7 @@ body{
 #registration_bar{
     margin-top:2%;
 }
-#tasto_giallo{
+.tasto_giallo{
     margin-top: 9%;
     margin-bottom: 6%;
     height: 40px;
