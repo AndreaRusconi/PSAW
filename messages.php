@@ -7,53 +7,39 @@ if(!isset($_SESSION['username'])){
     header ("location:login.php");
 }
 
-
 $nomeEvento = $_GET['var'];
 $username = $_SESSION['username'];
 
 
 $conn = connection();
+$dati= array();
 
-$sql = "SELECT username,commento FROM message WHERE nome = '{$nomeEvento}'";
-$result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT username,commento FROM message WHERE nome= ?");
+    $stmt->bind_param("s", $nomeEvento);
+    $stmt->execute();
+    $stmt->bind_result($mittente,$messaggio);
+        
+    while($stmt->fetch()){
+        array_push($dati, array('mittente' => $mittente, 'messaggio' => $messaggio));
+    }
 
-$rowcount=mysqli_num_rows($result);
-  
-$tot = $rowcount;
-    
-if ($result->num_rows > 0) {
-        while($rowcount>0){
-            $row[$rowcount] = mysqli_fetch_assoc($result);
-            $rowcount = $rowcount - 1; 
-        }
-}
-$i = 0;
-//$comments[$tot][2];
-         
-foreach ($row as $cord){
-             
-    $comments[$i][0] =  $cord['commento'];
-    $comments[$i][1] =  $cord['username']; 
-    $i = $i + 1;
-}
-       
+    $stmt->close();
+
 
 if(isset($_POST['submit'])) {   
-    
-    
-    
-    
+     
     $commento = $_POST['descrizione']; 
+    
     if(empty($commento)){
        echo "<script>alert('commento obbligatorio')</script>";
-        //header("Location: messages.php?var=$nomeEvento");  
     }
     else{
-    $stmt = $conn->prepare("INSERT INTO message (username,nome,commento) VALUES(?,?,?)");
-    $stmt->bind_param("sss", $username,$nomeEvento,$commento);
-    $stmt->execute();
-    $stmt->close();
-    header("Location: messages.php?var=$nomeEvento");
+    
+        $stmt = $conn->prepare("INSERT INTO message (username,nome,commento) VALUES(?,?,?)");
+        $stmt->bind_param("sss", $username,$nomeEvento,$commento);
+        $stmt->execute();
+        $stmt->close();
+        header("Location: messages.php?var=$nomeEvento");
     }
 }
 
@@ -61,7 +47,8 @@ $conn->close();
 
 ?>
 <!DOCTYPE html>
-
+<html>
+    
 <head>
 
     <link rel="stylesheet" href="CSS/Bar.css" />
@@ -80,39 +67,67 @@ $conn->close();
 </ul>
     
     <h1 class="title"><?php echo $nomeEvento; ?></h1>
+      
     
-    <?php 
+    <table id='tabella'>
+
+        <thead>
+            <tr>
+                <th id ="messaggio" class="voci">Messaggio</th>
+                <th id="mittente" class="voci">Mittente</th>
+            </tr>
+        </thead>
+
+	    <tbody>
+
+	    <!-- IL BODY E' INIZIALMENTE VUOTO -->
+
+	    </tbody>
+
+    </table>
     
-    echo "<table id = 'tabella'>";
-    echo "<tr>
-            <th id ='com' class='voci'>Commento</th>
-            <th id='mittente' class='voci'>Mittente</th>
-          </tr>";
-    
-    $j =0;
-    
-    if($tot == 0){
-        $tot = 1;
-        $comments[0][0] = "non ci sono commenti";
-         $comments[0][1] = "admin";
-    }
-    
-    while($j < $tot){
-            
-        echo "<tr>
-                <td class='linea'>{$comments[$j][0]}</td>
-                <td class='linea'>{$comments[$j][1]}</td>
-              </tr>";
-        $j ++;
-    
-    }
-    echo "</table>";
-    
-    ?>
     <form method="post" class="testi" name="event" autocomplete="off" novalidate="">
     <textarea id="descrizione" name="descrizione"></textarea>
-    
         <input id="accesso" name="submit" type="submit" value="commenta">
     </form>
 
 </body>
+
+</html>    
+
+    
+<script>  
+        
+        
+        var dati = <?php echo json_encode($dati, JSON_PRETTY_PRINT) ?>;
+            
+
+	     var table = document.getElementById('tabella');
+
+	     var tbody = table.getElementsByTagName('tbody')[0];
+
+	    
+        for(let i in dati) { 
+        
+            var tr = document.createElement('tr');
+            
+            var td_0 = document.createElement('td');
+            var td_1 = document.createElement('td');
+            
+            td_0.setAttribute('class','linea');
+	        td_1.setAttribute('class','linea');
+            
+            var tx_0 = dati[i]['messaggio'];
+            var tx_1 = dati[i]['mittente'];
+            
+            td_0.innerHTML=tx_0;
+            td_1.innerHTML=tx_1;
+             
+            tr.appendChild(td_0);
+            tr.appendChild(td_1);
+            
+            tbody.appendChild(tr);
+	    
+        }
+ 
+</script>

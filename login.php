@@ -14,18 +14,15 @@ if(isset($_GET['submit'])) {
          echo "<script>alert('tutti i campi sono obbligatori')</script>";
     }
     else{
-    $conn = connection();
-    
-    
-    
-    
-    
-    $stmt = $conn->prepare("SELECT username,password FROM users WHERE username = ?");
-    $stmt->bind_param("s", $user);
-    $stmt->execute();
-    $stmt->bind_result($username,$password);
-    $stmt->fetch();
         
+        $conn = connection();
+
+        $stmt = $conn->prepare("SELECT username,password FROM users WHERE username = ?");
+        $stmt->bind_param("s", $user);
+        $stmt->execute();
+        $stmt->bind_result($username,$password);
+        $stmt->fetch();
+
         if ($username == $user && $password == $cryptpass) {
             session_start();
             $_SESSION['username'] = $username;
@@ -37,9 +34,9 @@ if(isset($_GET['submit'])) {
         }
         else
              echo "<script>alert('error input')</script>";
-    
-    $stmt->close();
-    $conn->close();
+
+        $stmt->close();
+        $conn->close();
     }
         
 }

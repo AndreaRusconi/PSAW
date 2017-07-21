@@ -33,7 +33,7 @@ include("db_con.php");
    }
 
         $i = 0;
-        $array[$tot][8];
+        $array = array(array());
         
          
          foreach ($row as $cord){
@@ -117,6 +117,7 @@ include("db_con.php");
                             var startCenter = new google.maps.LatLng(44.4264000, 8.9151900);
                             var mapProp= {center: startCenter ,zoom:11,};
                             var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                            var infowindow;
                 
                             if (navigator.geolocation) {
                 
@@ -147,6 +148,9 @@ include("db_con.php");
                                 
                                 var posMarker = new google.maps.LatLng(<?php echo $array[$index][2] ?>,<?php echo $array[$index][3] ?>);
                                 marker1 = new google.maps.Marker({position:posMarker});
+                                marker1.infowindow = new google.maps.InfoWindow({
+                                        content: 'An InfoWindow'
+                                    });
                                     
                                totMarker[j] = marker1;
                                
@@ -186,6 +190,8 @@ include("db_con.php");
                             for(var n = 0; n < totMarker.length ; n++){
                                 
                                 totMarker[n].setAnimation(null);
+                                totMarker[n].infowindow.close();
+                               
                                 
                             }
         
@@ -194,7 +200,28 @@ include("db_con.php");
                                          
                                 pos.setAnimation(google.maps.Animation.BOUNCE);
                                 
-                               
+                                pos.infowindow.open(map, pos);
+                             
+                             
+                             
+                            
+                            
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
                                 document.getElementById("nome").innerHTML =nome;
                                 document.getElementById("descrizione").innerHTML =descrizione;
                                 document.getElementById("segnUser").innerHTML = segnalatoDa;

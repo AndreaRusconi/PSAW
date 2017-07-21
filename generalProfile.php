@@ -12,11 +12,14 @@ $flag = true;
 $varProfile = $_GET['var'];
 
 $sourceImage = sha1($varProfile);
+
+
 if($varProfile != $username){
     $flag = false;
 }
 
 $conn = connection();
+
 
 $stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
 $stmt->bind_param("s", $varProfile);
