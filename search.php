@@ -1,6 +1,7 @@
 <?php
 session_start();
-    if(isset($_SESSION['username'])){
+$ok=false;
+if(isset($_SESSION['username'])){
         $ok = true;
     }
  
@@ -27,7 +28,7 @@ include("db_con.php");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/search.css" />
+    <link rel="stylesheet" href="CSS/Bar.css" />
     <title>search</title>
 </head>
     
@@ -51,9 +52,9 @@ include("db_con.php");
             <li id="titolone">
                 <div id="testo">Seleziona un evento</div>    
             </li>
-            <li class="dropdown" nome= "dropdown">
-                            <input class="dropbtn" id="categoria" name="categoria" value="Categoria">
-                                <div class="dropdown-content">
+            <li class="dropdown_search" nome= "dropdown_search">
+                            <input class="dropbtn_search" id="categoria" name="categoria" value="Categoria">
+                                <div class="dropdown-content_search">
                                     <p class="opzione" onclick="category(this)">Tutti gli eventi</p>
                                     <p class="opzione" onclick="category(this)">Concerto</p>
                                     <p class="opzione" onclick="category(this)">Sagra</p>
@@ -67,20 +68,14 @@ include("db_con.php");
         
         
         </ul>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        <div id="googleMap">
-        </div>    
+
+
+
+
+
+
+        <div id="googleMap_2">
+        </div>
     
         <script>
             
@@ -97,7 +92,7 @@ include("db_con.php");
                         
                             var startCenter = new google.maps.LatLng(44.4264000, 8.9151900);
                             var mapProp= {center: startCenter ,zoom:12,};
-                            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                            var map=new google.maps.Map(document.getElementById("googleMap_2"),mapProp);
                             var infowindow;
                 
                             if (navigator.geolocation) {
@@ -125,12 +120,12 @@ include("db_con.php");
                                 var posMarker = new google.maps.LatLng(dati[i]['latitudine'],dati[i]['longitudine']);
                                 marker = new google.maps.Marker({position:posMarker});
                                     
-                                var string =   '<div id="nome">' + '<h1>' + dati[i]["nome"] + '</h1>' + '</div>' +
-                                                    '<div id="descrizione">' + '<p>' + dati[i]["descrizione"] + '</p>' + '</div>'+
-                                                '<div id="giorno">' + dati[i]["giorno"] + '</div>' + 
-                                    '<div id="ora">' + dati[i]["ora"] + '</div>' +
-                                    '<div id="user">' + '<a href="generalProfile.php?var=' + dati[i]['user'] + '">' + dati[i]["user"]+ '</a>'  + '</div>' +        
-                                        '<div id="forum">' + '<a href="messages.php?var=' + dati[i]['nome'] + '">' + 'forum evento</a>' + '</div>'; 
+                                var string =   '<div id="nuvola">' + '<div id="nome_search">' + '<h1>' + dati[i]["nome"] + '</h1>' + '</div>' +
+                                                    '<div id="descrizione_search">' + '<p>' + dati[i]["descrizione"] + '</p>' + '</div>'+
+                                                '<div id="giorno_search">' + dati[i]["giorno"] + '</div>' +
+                                    '<div id="ora_search">' + dati[i]["ora"] + '</div>' +
+                                    '<div id="user_search">' + '<a href="generalProfile.php?var=' + dati[i]['user'] + '">' + dati[i]["user"]+ '</a>'  + '</div>' +
+                                        '<div id="forum_search">' + '<a href="messages.php?var=' + dati[i]['nome'] + '">' + 'forum evento</a>' + '</div>'+'</div>';
                                     
                                 marker.infowindow = new google.maps.InfoWindow({
                                         content: string

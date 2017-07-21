@@ -320,6 +320,11 @@ body{
     height:540px;
     margin-left: -2%;
 }
+#googleMap_2{
+    width:98%;
+    height:470px;
+    margin: 1%;
+}
 #box{
     margin-top: 1%;
     text-decoration: none;
@@ -440,9 +445,87 @@ body{
     margin-top: 4%;
     width: 71%;
 }
+#head{
+    list-style-type: none;
+    margin-left: 1%;
+    margin-top: 0%;
+    padding: 0%;
+    margin-right: 1%;
+}
+#titolone{
+    float: left;
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: 500;
+    color: rgb(255,204,0);
+    font-size: 50px;
+    margin: 0%;
+    font-style: italic;
+}
+.dropdown_search {
+    width: 15%;
+    float: right;
+    margin-top: 1.5%;
+}
+.dropbtn_search {
+    background-color: white;
+    color: black;
+    padding: 4px;
+    margin-top: 1%;
+    font-size: 16px;
+    border: none;
+    cursor:alias;
+    width: 100%;
+}
+.dropdown-content_search {
+    display: none;
+    position: absolute;
+    margin-left: 1%;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
+.dropdown-content_search p {
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
 
+.dropdown-content_search p:hover {background-color: #f1f1f1}
 
+.dropdown_search:hover .dropdown-content_search {
+    display: block;
+}
 
+.dropdown_search:hover .dropbtn_search {
+    background-color: #f1f1f1;
+}
+
+#giorno_search{
+    float: right;
+}
+
+#user_search{
+    float:right;
+}
+
+#nome_search{
+    text-align: center;
+    font-size: 80%;
+    font-family: Trebuchet MS, sans-serif;
+
+}
+#nuvola{
+    min-width: 200px;
+}
+#descrizione_search{
+    word-wrap: break-word;
+    max-width: 190px;
+}
 
 
