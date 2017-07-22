@@ -545,6 +545,7 @@ body{
     width: 15%;
     float: right;
     margin-top: 1.5%;
+    margin-right: 0.6%;
 }
 .dropbtn_search {
     background-color: white;
@@ -586,6 +587,17 @@ body{
     background-color: #f1f1f1;
 }
 
+/*-------------------------------Nuvola--------------------*/
+
+#nuvola{
+    min-width: 200px;
+    max-width: 400px;
+}
+#descrizione_search{
+    word-wrap: break-word;
+
+}
+
 #giorno_search{
     float: right;
 }
@@ -600,13 +612,3 @@ body{
     font-family: Trebuchet MS, sans-serif;
 
 }
-#nuvola{
-    min-width: 200px;
-    max-width: 400px;
-}
-#descrizione_search{
-    word-wrap: break-word;
-
-}
-
-

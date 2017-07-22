@@ -13,11 +13,12 @@ if(isset($_POST['submit'])) {
     $giorno = $_POST['dataE'];
     $ora = $_POST['timeE'];
     $cate = $_POST['categoria'];
+    $address = $_POST['address'];
 
     $conn = connection();
 
-    $stmt = $conn->prepare("INSERT INTO event (nome,descrizione,latitudine,longitudine,user,giorno,ora,categoria) VALUES(?,?,?,?,?,?,?,?)");
-    $stmt->bind_param("ssddssss", $nomeEvento,$descrizione,$lat,$long,$username,$giorno,$ora,$cate);
+    $stmt = $conn->prepare("INSERT INTO event (nome,descrizione,latitudine,longitudine,user,giorno,ora,categoria,indirizzo) VALUES(?,?,?,?,?,?,?,?,?)");
+    $stmt->bind_param("ssddsssss", $nomeEvento,$descrizione,$lat,$long,$username,$giorno,$ora,$cate,$address);
     $stmt->execute();
     $stmt->close();
     $conn->close();
@@ -91,8 +92,8 @@ if(isset($_POST['submit'])) {
                                 <p class="opzione" onclick="category(this)">Sagra</p>
                                 <p class="opzione" onclick="category(this)">Spettacolo Teatrale</p>
                                 <p class="opzione" onclick="category(this)">Fuochi D'Artificio</p>
-                                <p class="opzione" onclick="category(this)">Discoteca</p>
-                                <p class="opzione" onclick="category(this)">Altro</p>
+                                <p class="opzione" onclick="category(this)">Party</p>
+                                <p class="opzione" onclick="category(this)">Altro..</p>
                             </div>
                         </div>
                     </div>

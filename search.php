@@ -17,7 +17,7 @@ include("db_con.php");
     
     if ($result->num_rows > 0) {
          while($row = $result->fetch_assoc()){
-             array_push($dati, array('nome' => $row['nome'], 'descrizione' => $row['descrizione'], 'latitudine' => $row['latitudine'], 'longitudine' => $row['longitudine'],'user' => $row['user'],'giorno' => $row['giorno'],'ora' => $row['ora'],'categoria' => $row['categoria'],));
+             array_push($dati, array('nome' => $row['nome'], 'descrizione' => $row['descrizione'], 'latitudine' => $row['latitudine'], 'longitudine' => $row['longitudine'],'user' => $row['user'],'giorno' => $row['giorno'],'ora' => $row['ora'],'categoria' => $row['categoria'], 'indirizzo' => $row['indirizzo']));
          }
    }
 
@@ -60,8 +60,8 @@ include("db_con.php");
                                     <p class="opzione" onclick="category(this)">Sagra</p>
                                     <p class="opzione" onclick="category(this)">Spettacolo Teatrale</p>
                                     <p class="opzione" onclick="category(this)">Fuochi D'Artificio</p>
-                                    <p class="opzione" onclick="category(this)">Discoteca</p>
-                                    <p class="opzione" onclick="category(this)">Altro</p>
+                                    <p class="opzione" onclick="category(this)">Party</p>
+                                    <p class="opzione" onclick="category(this)">Altro..</p>
                                 </div>
             </li>
             
@@ -112,20 +112,41 @@ include("db_con.php");
                                 }            
                 
                             totMarker = new Array();
-                
+                            var indirizzo;
                             dati = <?php echo json_encode($dati, JSON_PRETTY_PRINT) ?>;
                         
                                 for(let i in dati) {
                                     
                                 var posMarker = new google.maps.LatLng(dati[i]['latitudine'],dati[i]['longitudine']);
                                 marker = new google.maps.Marker({position:posMarker});
-                                    
-                                var string =   '<div id="nuvola">' + '<div id="nome_search">' + '<h1>' + dati[i]["nome"] + '</h1>' + '</div>' +
-                                                    '<div id="descrizione_search">' + '<p>' + dati[i]["descrizione"] + '</p>' + '</div>'+
-                                                '<div id="giorno_search">' + dati[i]["giorno"] + '</div>' +
-                                    '<div id="ora_search">' + dati[i]["ora"] + '</div>' +
-                                    '<div id="user_search">' + '<a href="generalProfile.php?var=' + dati[i]['user'] + '">' + dati[i]["user"]+ '</a>'  + '</div>' +
-                                        '<div id="forum_search">' + '<a href="messages.php?var=' + dati[i]['nome'] + '">' + 'forum evento</a>' + '</div>'+'</div>';
+                                 
+                                
+                              
+                                var string =
+                                    '<div id="nuvola">' + 
+                                        '<div id="nome_search">' + 
+                                            '<h1>' + dati[i]["nome"] + '</h1>' + 
+                                        '</div>' +
+                                        '<div id="indirizzo">' +
+                                            dati[i]['indirizzo'] +
+                                        '</div>' +
+                                        '<div id="descrizione_search">' + 
+                                            '<p>' + dati[i]["descrizione"] + '</p>' + 
+                                        '</div>'+
+                                        
+                                        '<div id="giorno_search">' + 
+                                            dati[i]["giorno"] + 
+                                        '</div>' +
+                                        '<div id="ora_search">' + 
+                                            dati[i]["ora"] +
+                                        '</div>' +
+                                        '<div id="user_search">' + 
+                                            '<a href="generalProfile.php?var=' + dati[i]['user'] + '">' + dati[i]["user"]+ '</a>'  + 
+                                        '</div>' +
+                                        '<div id="forum_search">' + 
+                                            '<a href="messages.php?var=' + dati[i]['nome'] + '">' + 'forum evento</a>' + 
+                                        '</div>'+
+                                    '</div>';
                                     
                                 marker.infowindow = new google.maps.InfoWindow({
                                         content: string
