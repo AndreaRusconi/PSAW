@@ -91,7 +91,7 @@ include("db_con.php");
                       
                         
                             var startCenter = new google.maps.LatLng(44.4264000, 8.9151900);
-                            var mapProp= {center: startCenter ,zoom:12,};
+                            var mapProp= {center: startCenter ,zoom:13,};
                             var map=new google.maps.Map(document.getElementById("googleMap_2"),mapProp);
                             var infowindow;
                 

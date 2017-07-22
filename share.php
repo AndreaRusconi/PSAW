@@ -185,7 +185,7 @@ if(isset($_POST['submit'])) {
             }
             function myMap() {
                 var startCenter = new google.maps.LatLng(44.4264000, 8.9151900);
-                var mapProp= {center: startCenter ,zoom:13,mapTypeControl: true,navigationControl: true,};
+                var mapProp= {center: startCenter ,zoom:15,mapTypeControl: true,navigationControl: true,};
                 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
                 var geocoder = new google.maps.Geocoder();
                 if (navigator.geolocation) {
