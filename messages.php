@@ -73,7 +73,7 @@ $conn->close();
 
         <thead>
             <tr>
-                <th id ="messaggio" class="voci">Messaggio</th>
+                <th id ="messaggio" class="voci">Messaggi</th>
                 <th id="mittente" class="voci">Mittente</th>
             </tr>
         </thead>
@@ -88,7 +88,7 @@ $conn->close();
     
     <form method="post" class="testi" name="event" autocomplete="off" novalidate="">
     <textarea id="descrizione" name="descrizione"></textarea>
-        <input id="accesso" name="submit" type="submit" value="commenta">
+        <button id="commento" name="submit" type="submit" value="commenta">Commenta</button>
     </form>
 
 </body>
@@ -115,16 +115,24 @@ $conn->close();
             var td_1 = document.createElement('td');
             
             td_0.setAttribute('class','linea');
+            td_0.setAttribute('id','mitt');
 	        td_1.setAttribute('class','linea');
             
-            var tx_0 = dati[i]['messaggio'];
-            var tx_1 = dati[i]['mittente'];
+            var tx_0 = dati[i]['mittente'];
+            var tx_1 = dati[i]['messaggio'];
             
-            td_0.innerHTML=tx_0;
+            var a_0 = document.createElement('a');
+            
+            a_0.innerHTML=tx_0;
+            a_0.setAttribute('href', 'generalProfile.php?var=' + dati[i]['mittente']);
+            
+            td_0.appendChild(a_0);
             td_1.innerHTML=tx_1;
+            
+           
              
-            tr.appendChild(td_0);
             tr.appendChild(td_1);
+            tr.appendChild(td_0);
             
             tbody.appendChild(tr);
 	    

@@ -1,3 +1,7 @@
+
+/*---------------------------Barra intestazione-------------------------------------*/
+
+
 #menu {
     list-style-type: none;
     margin: 0;
@@ -51,7 +55,12 @@ body{
     position: fixed;
     right: 0;
 }
-/*________________________________________________________*/
+
+
+
+/*_____________________________Bottoni Homepage/Private___________________________*/
+
+
 #motto{
     font-family: Trebuchet MS, sans-serif;
     font-weight: 500;
@@ -98,6 +107,13 @@ body{
     font-family: sans-serif;
     text-align: center;
 }
+
+
+
+/*---------------------------------Pagina Info/AboutUs-----------------------------------------------*/
+
+
+
 #instruction{
     margin-top: 5%;
 }
@@ -120,6 +136,12 @@ body{
     margin-right: 5%;
     text-decoration: none;
 }
+
+
+/*---------------------------------GeneralProfile--------------------------------------------*/
+
+
+
 #tasto_giallo{
     margin-top: 9%;
     margin-bottom: 6%;
@@ -141,58 +163,71 @@ body{
     margin-top: 3%;
     padding: 0;
     overflow: hidden;
-    width: 100%;
+    width: 100%;    
+    
 }
 #img_canv{
     display: block;
     text-decoration: none;
     float: left;
 }
+
+#event_canv{
+    float:right;
+    margin-right: 5%;
+}
+
 #data_canv{
-    display: block;
-}
-#datalist{
-    display: block;
-    font-size: 30px;
-    margin-left: 5%;
-    margin-top: 2%;
-    color: white;
     float: left;
-    font-family: Trebuchet MS, sans-serif;
-    list-style-type: none;
+    margin-left: 5%;
 }
-.data{
-    margin-top: 4%;
+
+#image{
+    margin-left: 10%;
+    height: 300px;
+    width: 300px ;
 }
+
 
 #to_modifica {
     margin-top: 4%;
 }
 #to_modifica a{
     text-decoration: none;
-    color: yellow;
+    color: rgb(255,204,0);
 }
-#image{
-    margin-left: 10%;
-    margin-top: 5%;
-    height: 300px;
-    width: 300px ;
-}
-#eventi_condivisi{
-    margin-top: 6%;
-    color: white;
-    display: block;
-    font-size: 30px;
+
+
+.tabellaProfile{
+    
+  text-align: left;
+    line-height: 40px;
     font-family: Trebuchet MS, sans-serif;
-    list-style-type: none;
 }
-#eventCond{
-    float:right;
-    margin-right: 15%;
+
+.intestation{
+    color:rgb(255,204,0);
+    font-size: 25px;
+    
 }
-#item{
-    color: yellow;
+
+.datiTabella{
+    
+    max-width: 350px;
+    width: 350px;
+    color: white;
 }
+
+.datiTabella a {
+    
+    color:white;
+}
+
+
+
+
+
+
 .roundContainer{
     color: white;
     margin-left: 5%;
@@ -212,6 +247,12 @@ body{
     cursor: pointer;
     background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
 }
+
+
+/*------------------------------------Forum Messaggi----------------------------------------------------*/
+
+
+
 #tabella{
     margin-top: 1%;
     margin-left: 10%;
@@ -235,14 +276,24 @@ body{
     color: white;
     border: white 1px solid;
     line-height: 120%;
+    text-align: justify;
 }
+
+.linea a{
+    color: white;
+    font-style: italic;
+}
+#mitt{
+    text-align: center;  
+}
+
 #descrizione{
     margin-top: 3%;
     width: 80%;
     height: 8%;
     margin-left: 10%;
 }
-#accesso{
+#commento{
     float: right;
     margin-right: 10%;
     margin-top: 1%;
@@ -259,6 +310,11 @@ body{
     cursor: pointer;
     background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
 }
+
+
+
+/*-----------------------------------------ModificaProfilo(modify)----------------------------------------------------------*/
+
 .tasto_giallo{
     margin-top: 9%;
     margin-bottom: 6%;
@@ -314,17 +370,17 @@ body{
     text-decoration: none;
     margin-top: 20%;
 }
+
+/*-------------------------------------SHARE-----------------------------------------------*/
+
+
 #googleMap{
     float:left;
     width:78%;
     height:540px;
     margin-left: -2%;
 }
-#googleMap_2{
-    width:98%;
-    height:470px;
-    margin: 1%;
-}
+
 #box{
     margin-top: 1%;
     text-decoration: none;
@@ -445,6 +501,20 @@ body{
     margin-top: 4%;
     width: 71%;
 }
+
+
+
+
+
+
+
+/*-------------------------------------------SEARCH----------------------------------------------------------*/
+
+
+
+
+
+
 #head{
     list-style-type: none;
     margin-left: 1%;
@@ -461,6 +531,16 @@ body{
     margin: 0%;
     font-style: italic;
 }
+
+
+
+#googleMap_2{
+    width:98%;
+    height:470px;
+    margin: 1%;
+}
+
+
 .dropdown_search {
     width: 15%;
     float: right;

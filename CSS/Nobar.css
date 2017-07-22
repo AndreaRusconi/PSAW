@@ -79,7 +79,7 @@ body{
     position: absolute;
 }
 #login_bar{
-    margin_top: -1%
+    margin-top: -1%;
 }
 #registration_bar{
     margin-top:2%;
@@ -127,31 +127,12 @@ body{
     font-weight: 600;
     font-family: Trebuchet MS, sans-serif;
 }
-#old_pass{
+.modPass{
     margin-top: 3%;
     height: 40px;
-    width: 80%;
+    width: 85%;
     padding: 0 10px;
     border-radius: 5px;
     border: 1px solid white;
     font-size: 1em;
 }
-#new_pass{
-    margin-top: 4%;
-    height: 40px;
-    width: 80%;
-    padding: 0 10px;
-    border-radius: 5px;
-    border: 1px solid white;
-    font-size: 1em;
-}
-#new_password_confirm{
-    margin-top: 4%;
-    height: 40px;
-    width: 80%;
-    padding: 0 10px;
-    border-radius: 5px;
-    border: 1px solid white;
-    font-size: 1em;
-}
-
