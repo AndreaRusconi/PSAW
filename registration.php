@@ -90,10 +90,10 @@ if(isset($_POST['submit'])) {
 
             $conn = connection();
 
+            $default = 'default';
             
-            
-            $stmt = $conn->prepare("INSERT INTO users (username,email,password) VALUES(?,?,?)");
-            $stmt->bind_param("sss", $username,$email,$cryptpassword);
+            $stmt = $conn->prepare("INSERT INTO users (username,email,password,immagine) VALUES(?,?,?,?)");
+            $stmt->bind_param("ssss", $username,$email,$cryptpassword,$default);
             $stmt->execute();
             $stmt->close();
             $conn->close();

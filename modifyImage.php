@@ -5,6 +5,9 @@ session_start();
     header ("location:login.php");
 }
 
+include("db_con.php");
+$conn = connection(); 
+
     $user_email = $_SESSION['username'];
 
     $target_dir = "../profile_images/";
@@ -34,8 +37,8 @@ session_start();
         $uploadOk = 0;
     }
     // Allow certain file formats
-    if($imageFileType != "jpg") {
-        echo "Sorry, only JPG  files are allowed.";
+    if($imageFileType != "jpg"  && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"  ) {
+        echo "Sorry, only JPG png jpeg gif  files are allowed.";
         $uploadOk = 0;
     }
 
@@ -51,6 +54,13 @@ session_start();
 
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            
+            $stmt1 = $conn->prepare("UPDATE users SET immagine=? WHERE username = '{$user_email}'");
+            $stmt1->bind_param("s", $target_file);
+            $stmt1->execute();
+            $stmt1->close();
+            $conn->close();
+            
             header("Location: generalProfile.php?var=$user_email");
         } else {
             echo "Sorry, there was an error uploading your file.";

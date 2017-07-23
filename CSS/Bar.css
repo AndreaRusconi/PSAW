@@ -465,7 +465,7 @@ body{
     text-align: left;
     margin-top: 4%;
     margin-bottom: 1%;
-    font-size: 17px;
+    
 }
 .dropbtn {
     background-color: white;
@@ -513,12 +513,14 @@ body{
     color: black;
     font-size: 17px;
     font-family: Trebuchet MS, sans-serif;
+     margin-bottom: 2%;
 }
 #timeE{
     width: 34%;
     color: black;
     font-size: 17px;
     font-family: Trebuchet MS, sans-serif;
+    margin-bottom: 2%;
 }
 #pos{
     margin-top: 1%;
@@ -527,12 +529,44 @@ body{
     overflow: hidden;
     padding: 0;
 }
-#address{
-    margin-top:-3%;
-    width: 70%;
+
+
+#findBox{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    
 }
+
+#address{
+    width: 55%;
+    float:left;
+}
+
+#find{
+    color: black;
+    background-image: -webkit-linear-gradient(top , white, rgb(224,225,221) 40%);
+    text-decoration: none;
+    width: 9%;
+    margin-left: 2%;
+    padding:7px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-family: Trebuchet MS, sans-serif;
+    cursor: pointer;
+    float: left;
+}
+
+.labelsBox{
+    text-align: left;
+}
+
+
 #giallo_2{
-    margin-top: 4%;
+    margin-top: 2%;
     width: 71%;
 }
 

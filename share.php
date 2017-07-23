@@ -99,10 +99,10 @@ if(isset($_POST['submit'])) {
                             </div>
                         </div>
                     </div>
-                    <div class="labels">
+                <div class="labels">
                         <label  id ="descLabel" for="descrizione">Inserisci qui una descrizione:</label>
                         <textarea id="descrizione_evento" name="descrizione_evento" required="required" autocomplete="off" aria-required="true" placeholder="Inserisci una descrizione"></textarea>
-                    </div>
+                </div>
                     <label class="labels" id="label_giorno"  for="dataE">Giorno:</label>
                     <label class="labels" id="label_ora" for="timeE">Ore:</label>
                 <div>
@@ -110,16 +110,20 @@ if(isset($_POST['submit'])) {
                     <input type="datetime" name="dataE" id="dataE" required aria-required="true" placeholder="dd-mm-yy">
                     <input type="time" name="timeE" id="timeE" required aria-required="true">
                 </div>
-                    <div class="labels">
-                        <input type="checkbox"  id="remBox" name="remember_me" onclick="unlock(this)" checked >
-                        <label id="remLabel" for="remBox">Utilizza la geolocalizzazione</label>
-                    </div>
-                    <label id="addressLabel" for="address">Via/Piazza:</label>
-                    <div class="labels">
+                    
+                    <label class ="labels"  id="addressLabel" for="address">Via/Piazza:</label>
+                    <ul class="labels" id="findBox">
 
-                        <input id="address" name="address" required aria-required="true" autocomplete="off"  placeholder="">
-                        <div id="find" onclick="find()">Find</div>
+                        <li><input id="address" name="address" required aria-required="true" autocomplete="off"  placeholder=""></li>
+                        <li id="find" onclick="find()">find</li>
+                    </ul>
+                    
+                    
+                    <div class="labelsBox">
+                        <input  type="checkbox"  id="remBox" name="remember_me" onclick="unlock(this)" checked >
+                        <label  id="remLabel" for="remBox">Utilizza la geolocalizzazione</label>
                     </div>
+                    
                     <ul id="pos">
                         <li>
                             <input id="lat" name="lat" type="text" required="required" aria-required="true" value=""  placeholder="latitudine" hidden="hidden">

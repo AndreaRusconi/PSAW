@@ -7,18 +7,19 @@ if(!isset($_SESSION['username'])){
 $username = $_SESSION['username'];
 $flag = true;
 $varProfile = $_GET['var'];
-$sourceImage = sha1($varProfile);
+
 if($varProfile != $username){
     $flag = false;
 }
 $infoPersonali = array();
 $dati = array();
 $conn = connection();
-$stmt = $conn->prepare("SELECT email,nome,cognome,citta FROM users WHERE username = ?");
+$stmt = $conn->prepare("SELECT email,nome,cognome,citta,immagine FROM users WHERE username = ?");
 $stmt->bind_param("s", $varProfile);
 $stmt->execute();
-$stmt->bind_result($email,$nome,$cognome,$citta); 
+$stmt->bind_result($email,$nome,$cognome,$citta,$sourceImage); 
 $stmt->fetch();
+
 if(empty($nome)){$nome = 'nome';}
 if(empty($cognome)){$cognome = 'cognome';}
 if(empty($citta)){$citta = 'citta';}
@@ -26,6 +27,18 @@ if(empty($email)){
     echo '<script>alert("questo utente non esiste");</script>';
     header ("location:index.php");
 }
+
+if($sourceImage == 'default'){
+    $immagine = "../profile_images/default.png";
+}
+else{
+    $immagine = "../profile_images/";
+    $immagine .= $sourceImage;   
+}
+
+
+ echo '<script>alert($immagine);</script>';
+
 array_push($infoPersonali, array('nome' => $nome , 'email' => $email, 'cognome' => $cognome, 'citta' => $citta));
 $stmt->close();
 $result = $conn->query("SELECT nome FROM event WHERE user = '{$varProfile}'");
@@ -52,7 +65,7 @@ $conn->close();
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
     </ul>
     <ul id="canvas">
-        <li id="img_canv"><img id = "image" src="../profile_images/<?php echo $sourceImage; ?>.jpg"></li>
+        <li id="img_canv"><?php print"<img id = 'image' src = '$immagine'>";?></li>
         <li id = "data_canv">    
             <table id = "datalist" class="tabellaProfile">
                 <thead>
