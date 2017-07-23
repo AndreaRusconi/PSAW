@@ -252,9 +252,38 @@ body{
 /*------------------------------------Forum Messaggi----------------------------------------------------*/
 
 
+#messagesHead{
+    list-style-type: none;
+    margin-top: 2%;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+#tornaAllaRicerca{
+    float:right;
+    margin-right: 8%;
+    margin-top: 1%;
+}
+
+#messagesTitle{
+    float: left;
+    margin-left: 5%;
+    color:rgb(255,204,0);
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    font-style: italic;
+}
+#tornaAllaRicerca a{
+    color:rgb(255,204,0);
+    font-family: Trebuchet MS, sans-serif;
+     font-size: 20px;
+    font-weight: 500;
+}
 
 #tabella{
-    margin-top: 1%;
+    margin-top: 5%;
     margin-left: 10%;
     width: 80%;
     text-align:left;
@@ -269,6 +298,7 @@ body{
     font-weight: bold;
     background-color: transparent;
     color: yellow;
+    
 }
 .linea{
     word-wrap: break-word;
@@ -284,6 +314,9 @@ body{
     font-style: italic;
 }
 #mitt{
+    text-align: center;  
+}
+#adminMit{
     text-align: center;  
 }
 
@@ -366,9 +399,10 @@ body{
     font-size: 1em;
 }
 #to_modifica_pass{
-    color: yellow;
+    margin: 0;
     text-decoration: none;
-    margin-top: 20%;
+    color: rgb(255,204,0);
+    font-family: Trebuchet MS, sans-serif;
 }
 
 /*-------------------------------------SHARE-----------------------------------------------*/
@@ -592,7 +626,15 @@ body{
 #nuvola{
     min-width: 200px;
     max-width: 400px;
+    font-family: Trebuchet MS, sans-serif;
 }
+
+#indirizzo{
+    text-align: center;
+}
+
+
+
 #descrizione_search{
     word-wrap: break-word;
 
@@ -609,6 +651,17 @@ body{
 #nome_search{
     text-align: center;
     font-size: 80%;
-    font-family: Trebuchet MS, sans-serif;
-
+    color:black;
+    font-size: 16px;
+    margin-bottom: -4%;
 }
+#user_search a{
+    color: blue;
+    
+}
+
+#forum_search a{
+    color: blue;
+}
+
+

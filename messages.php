@@ -18,10 +18,13 @@ $dati= array();
     $stmt->bind_param("s", $nomeEvento);
     $stmt->execute();
     $stmt->bind_result($mittente,$messaggio);
-        
-    while($stmt->fetch()){
-        array_push($dati, array('mittente' => $mittente, 'messaggio' => $messaggio));
-    }
+     
+    if(empty($mittente)){$mittente = 'admin'; $messaggio = 'Non ci sono messaggi';}
+
+
+   do{
+       array_push($dati, array('mittente' => $mittente, 'messaggio' => $messaggio));
+    }while($stmt->fetch());
 
     $stmt->close();
 
@@ -30,17 +33,13 @@ if(isset($_POST['submit'])) {
      
     $commento = $_POST['descrizione']; 
     
-    if(empty($commento)){
-       echo "<script>alert('commento obbligatorio')</script>";
-    }
-    else{
     
         $stmt = $conn->prepare("INSERT INTO message (username,nome,commento) VALUES(?,?,?)");
         $stmt->bind_param("sss", $username,$nomeEvento,$commento);
         $stmt->execute();
         $stmt->close();
         header("Location: messages.php?var=$nomeEvento");
-    }
+    
 }
 
 $conn->close();
@@ -52,6 +51,7 @@ $conn->close();
 <head>
 
     <link rel="stylesheet" href="CSS/Bar.css" />
+    
     <title>Message</title>
 </head>
 
@@ -66,7 +66,12 @@ $conn->close();
         <li class="event"><a href="index.php"><img src="CSS/Images/logo.png" height="50px" width="140px"></a></li>
 </ul>
     
-    <h1 class="title"><?php echo $nomeEvento; ?></h1>
+<ul id="messagesHead">
+    
+    <li id="messagesTitle"><?php echo $nomeEvento; ?></li>
+    <li id="tornaAllaRicerca"><a href="search.php?var=null">Torna alla ricerca</a></li>
+    
+</ul>
       
     
     <table id='tabella'>
@@ -86,56 +91,16 @@ $conn->close();
 
     </table>
     
-    <form method="post" class="testi" name="event" autocomplete="off" novalidate="">
-    <textarea id="descrizione" name="descrizione"></textarea>
+    <form method="post" class="testi" name="event" autocomplete="off">
+    <textarea id="descrizione" name="descrizione" required></textarea>
         <button id="commento" name="submit" type="submit" value="commenta">Commenta</button>
     </form>
 
 </body>
 
-</html>    
+</html>
 
-    
-<script>  
-        
-        
-        var dati = <?php echo json_encode($dati, JSON_PRETTY_PRINT) ?>;
-            
 
-	     var table = document.getElementById('tabella');
-
-	     var tbody = table.getElementsByTagName('tbody')[0];
-
-	    
-        for(let i in dati) { 
-        
-            var tr = document.createElement('tr');
-            
-            var td_0 = document.createElement('td');
-            var td_1 = document.createElement('td');
-            
-            td_0.setAttribute('class','linea');
-            td_0.setAttribute('id','mitt');
-	        td_1.setAttribute('class','linea');
-            
-            var tx_0 = dati[i]['mittente'];
-            var tx_1 = dati[i]['messaggio'];
-            
-            var a_0 = document.createElement('a');
-            
-            a_0.innerHTML=tx_0;
-            a_0.setAttribute('href', 'generalProfile.php?var=' + dati[i]['mittente']);
-            
-            td_0.appendChild(a_0);
-            td_1.innerHTML=tx_1;
-            
-           
-             
-            tr.appendChild(td_1);
-            tr.appendChild(td_0);
-            
-            tbody.appendChild(tr);
-	    
-        }
- 
-</script>
+ <script type="text/javascript">var dati = <?php echo json_encode($dati, JSON_PRETTY_PRINT) ?>;</script>
+    <script type="text/javascript" src="js/messages.js"></script>
+   

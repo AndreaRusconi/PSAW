@@ -47,16 +47,17 @@ if(isset($_POST['submit'])) {
 
 
 if(empty($name)){
-    $name = 'none';
+    $name = '';
 }
 
 if(empty($surname)){
-    $surname = 'none';
+    $surname = '';
 }
 
-if(empty($email)){
-    $email = 'none';
+if(empty($citta)){
+    $citta = '';
 }
+
 
 
 ?>

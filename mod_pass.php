@@ -60,18 +60,6 @@ if(isset($_GET['submit'])) {
      
 }
 
-if(empty($username)){
-    $username = 'none';
-}
-
-
-if(empty($name)){
-    $name = 'none';
-}
-
-if(empty($surname)){
-    $surname = 'none';
-}
 
 ?>
 
@@ -93,11 +81,11 @@ if(empty($surname)){
 
     <h1 id="intestazione_blocco_campi">Modifica Password</h1>
 
-    <input name="oldpass" class="modPass" id="old_pass" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci vecchia password">
+    <input name="oldpass" class="modPass" id="old_pass" type="password" required aria-required="true" autocomplete="off" placeholder="Inserisci vecchia password">
 
-    <input name="newpass" class="modPass" id="new_pass" type="password" required="required" aria-required="true" autocomplete="off" placeholder="Inserisci nuova password">
+    <input name="newpass" class="modPass" id="new_pass" type="password" required aria-required="true" autocomplete="off" placeholder="Inserisci nuova password">
 
-     <input name="newpassconfirm" class="modPass" id="new_password_confirm" type="password"  required="required" aria-required="true" autocomplete="off" placeholder="conferma nuova password">
+     <input name="newpassconfirm" class="modPass" id="new_password_confirm" type="password"  required aria-required="true" autocomplete="off" placeholder="conferma nuova password">
 
 
     <input id="tasto_giallo" class="tasto_giallo" name = "submit" type = "submit" value = "Modifica password">

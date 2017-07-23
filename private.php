@@ -35,7 +35,7 @@ if(!isset($_SESSION['username'])){
         
         <li class="search">
             <p id="ricerca">Cerca intorno a te,<br> trova la tua serata ideale.</p>
-            <a href="search.php">Search event</a>
+            <a href="search.php?var=null">Search event</a>
         </li>
     </ul>
     
