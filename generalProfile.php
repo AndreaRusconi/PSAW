@@ -47,6 +47,10 @@ if ($result->num_rows > 0) {
         array_push($dati, array('nome' => $row['nome']));
     }
 }
+else{
+    $nessunEvento = 'nessun evento condiviso';
+    array_push($dati, array('nome' => $nessunEvento));  
+}
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -76,7 +80,7 @@ $conn->close();
                     <tr><td class="datiTabella" id="cognome"></td></tr>
                     <tr><td class="datiTabella" id="email"></td></tr>
                     <tr><td class="datiTabella" id="citta"></td></tr>
-                    <tr><td class="datiTabella" id="to_modifica"><a href="<?php if($flag){echo 'modify';}?>.php"><?php if($flag){echo 'modifica profilo'; }?></a></td></tr>	            
+                    <tr><td class="datiTabella" id="to_modifica"><a href="modify.php">modifica profilo</a></td></tr>	            
                 </tbody>
             </table>
         </li>
@@ -89,7 +93,7 @@ $conn->close();
             </table>
         </li>
     </ul>
-    <div class="roundContainer" <?php if(!$flag){ echo 'hidden';}?>>   
+    <div class="roundContainer" id="datiDaRimuovere">   
         <p class="pageText">Modifica immagine del profilo</p>
         <div id="error"></div>
         <form action="modifyImage.php" method="post" enctype="multipart/form-data">
@@ -102,5 +106,6 @@ $conn->close();
 <script>
     var datiPersonali = <?php echo json_encode($infoPersonali, JSON_PRETTY_PRINT) ?>;
     var dati = <?php echo json_encode($dati, JSON_PRETTY_PRINT) ?>;
+    var remove = <?php echo json_encode($flag, JSON_PRETTY_PRINT) ?>;
 </script>
 <script src="js/generalProfile.js"></script>
