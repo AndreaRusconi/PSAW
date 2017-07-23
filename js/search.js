@@ -34,7 +34,7 @@
                                       
                             
                             totMarker = new Array();
-                            var indirizzo;
+                            
                             
                         
                                 for(let i in dati) {
@@ -72,8 +72,6 @@
                                     
                                 marker.infowindow = new google.maps.InfoWindow({
                                         content: string,
-                                        backgroundColor: 'rgb(57,57,57)',
-                                        borderRadius: 5
                                     });
                                     
                                

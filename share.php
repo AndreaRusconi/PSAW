@@ -118,6 +118,7 @@ if(isset($_POST['submit'])) {
                     <div class="labels">
 
                         <input id="address" name="address" required aria-required="true" autocomplete="off"  placeholder="">
+                        <div id="find" onclick="find()">Find</div>
                     </div>
                     <ul id="pos">
                         <li>

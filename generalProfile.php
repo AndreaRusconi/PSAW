@@ -22,6 +22,10 @@ $stmt->fetch();
 if(empty($nome)){$nome = 'nome';}
 if(empty($cognome)){$cognome = 'cognome';}
 if(empty($citta)){$citta = 'citta';}
+if(empty($email)){
+    echo '<script>alert("questo utente non esiste");</script>';
+    header ("location:index.php");
+}
 array_push($infoPersonali, array('nome' => $nome , 'email' => $email, 'cognome' => $cognome, 'citta' => $citta));
 $stmt->close();
 $result = $conn->query("SELECT nome FROM event WHERE user = '{$varProfile}'");

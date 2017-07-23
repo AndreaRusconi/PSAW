@@ -31,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_con.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_con.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_con.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -63,12 +63,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generalProfile.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="generalProfile.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generalProfile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="88" column="44" lean-forward="false" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="323">
+              <caret line="50" column="67" lean-forward="false" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+              <folding>
+                <marker date="1500757434946" expanded="true" signature="369:430" ph="SELECT email... users" />
+                <marker date="1500757434946" expanded="true" signature="824:875" ph="SELECT nome event" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -330,16 +333,15 @@
       <workItem from="1500471641845" duration="214000" />
       <workItem from="1500472007937" duration="9271000" />
       <workItem from="1500802775020" duration="38000" />
-      <workItem from="1500803025287" duration="106000" />
+      <workItem from="1500803025287" duration="1119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102544000" />
+    <option name="totallyTimeSpent" value="103557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14128843" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -488,14 +490,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/search.css" />
-    <entry file="file://$PROJECT_DIR$/generalProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="44" lean-forward="false" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/messages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
@@ -560,6 +554,17 @@
         <state relative-caret-position="119">
           <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generalProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="50" column="67" lean-forward="false" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+          <folding>
+            <marker date="1500757434946" expanded="true" signature="369:430" ph="SELECT email... users" />
+            <marker date="1500757434946" expanded="true" signature="824:875" ph="SELECT nome event" />
+          </folding>
         </state>
       </provider>
     </entry>
