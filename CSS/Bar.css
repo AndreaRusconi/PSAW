@@ -1,7 +1,5 @@
 
 /*---------------------------Barra intestazione-------------------------------------*/
-
-
 #menu {
     list-style-type: none;
     margin: 0;
@@ -9,11 +7,9 @@
     overflow: hidden;
     background-color: rgba(0,0,102,0.15);
 }
-
 .other {float: right;}
 .barra {float: right}
 .event {float: left;}
-
 .other a {
     display: block;
     color: rgb(255,204,0);
@@ -32,21 +28,16 @@
     text-decoration: none;
     font-family: Trebuchet MS, sans-serif;
 }
-
 .event a {
     display: block;
     padding: 14px 16px;
 }
-
-
 #menu .other a:hover {color: white;}
-
 body{
     background-image: url(Images/sfondo.jpg);
     background-size:cover;
     margin: 0;
 }
-
 .footer p{
     text-align: right;
     color: white;
@@ -55,12 +46,7 @@ body{
     position: fixed;
     right: 0;
 }
-
-
-
 /*_____________________________Bottoni Homepage/Private___________________________*/
-
-
 #motto{
     font-family: Trebuchet MS, sans-serif;
     font-weight: 500;
@@ -107,13 +93,7 @@ body{
     font-family: sans-serif;
     text-align: center;
 }
-
-
-
 /*---------------------------------Pagina Info/AboutUs-----------------------------------------------*/
-
-
-
 #instruction{
     margin-top: 5%;
 }
@@ -136,12 +116,7 @@ body{
     margin-right: 5%;
     text-decoration: none;
 }
-
-
 /*---------------------------------GeneralProfile--------------------------------------------*/
-
-
-
 #tasto_giallo{
     margin-top: 9%;
     margin-bottom: 6%;
@@ -164,31 +139,25 @@ body{
     padding: 0;
     overflow: hidden;
     width: 100%;    
-    
 }
 #img_canv{
     display: block;
     text-decoration: none;
     float: left;
 }
-
 #event_canv{
     float:right;
     margin-right: 5%;
 }
-
 #data_canv{
     float: left;
     margin-left: 5%;
 }
-
 #image{
     margin-left: 10%;
     height: 300px;
     width: 300px ;
 }
-
-
 #to_modifica {
     margin-top: 4%;
 }
@@ -196,38 +165,23 @@ body{
     text-decoration: none;
     color: rgb(255,204,0);
 }
-
-
 .tabellaProfile{
-    
-  text-align: left;
+    text-align: left;
     line-height: 40px;
     font-family: Trebuchet MS, sans-serif;
 }
-
 .intestation{
     color:rgb(255,204,0);
     font-size: 25px;
-    
 }
-
 .datiTabella{
-    
     max-width: 350px;
     width: 350px;
     color: white;
 }
-
 .datiTabella a {
-    
     color:white;
 }
-
-
-
-
-
-
 .roundContainer{
     color: white;
     margin-left: 5%;
@@ -247,25 +201,18 @@ body{
     cursor: pointer;
     background-image: -webkit-linear-gradient(top , rgb(239,255,0), rgb(255,204,0) 40%);
 }
-
-
 /*------------------------------------Forum Messaggi----------------------------------------------------*/
-
-
 #messagesHead{
     list-style-type: none;
     margin-top: 2%;
     padding: 0;
     overflow: hidden;
-    
 }
-
 #tornaAllaRicerca{
     float:right;
     margin-right: 8%;
     margin-top: 1%;
 }
-
 #messagesTitle{
     float: left;
     margin-left: 5%;
@@ -308,7 +255,6 @@ body{
     line-height: 120%;
     text-align: justify;
 }
-
 .linea a{
     color: white;
     font-style: italic;
@@ -319,7 +265,6 @@ body{
 #adminMit{
     text-align: center;  
 }
-
 #descrizione{
     margin-top: 3%;
     width: 80%;
@@ -404,26 +349,18 @@ body{
     color: rgb(255,204,0);
     font-family: Trebuchet MS, sans-serif;
 }
-
 /*-------------------------------------SHARE-----------------------------------------------*/
-
-
 #googleMap{
     float:left;
     width:78%;
     height:540px;
     margin-left: -2%;
 }
-
 #box{
     margin-top: 1%;
     text-decoration: none;
     list-style-type: none;
     overflow: hidden;
-}
-#modulo_share{
-
-
 }
 #modulo{
     float: right;
@@ -451,7 +388,6 @@ body{
     font-size: 18px;
     color: black;
 }
-
 #descrizione_evento{
     margin-bottom:1%;
     text-align: left;
@@ -465,7 +401,6 @@ body{
     text-align: left;
     margin-top: 4%;
     margin-bottom: 1%;
-    
 }
 .dropbtn {
     background-color: white;
@@ -529,22 +464,16 @@ body{
     overflow: hidden;
     padding: 0;
 }
-
-
 #findBox{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
-    
 }
-
 #address{
     width: 55%;
     float:left;
 }
-
 #find{
     color: black;
     background-image: -webkit-linear-gradient(top , white, rgb(224,225,221) 40%);
@@ -559,12 +488,9 @@ body{
     cursor: pointer;
     float: left;
 }
-
 .labelsBox{
     text-align: left;
 }
-
-
 #giallo_2{
     margin-top: 2%;
     width: 71%;
